@@ -2,8 +2,10 @@ package game;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 import game.display.Display;
+import game.gfx.ImageLoader;
 
 public class Game implements Runnable{
 
@@ -16,6 +18,7 @@ public class Game implements Runnable{
 	
 	private BufferStrategy bs;
 	private Graphics g;
+	
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -38,9 +41,11 @@ public class Game implements Runnable{
 			return;
 		}
 		g = bs.getDrawGraphics();
-		// Dibujos aca
+		// Clear Screen
 		
-		g.fillRect(10, 10, 30, 30);
+		g.clearRect(0, 0, width, height);
+		
+		// Dibujos aca
 		
 		// jejeje
 		
