@@ -1,4 +1,6 @@
-package logica;
+package logica.atravesable;
+
+import logica.noAtravesable.Enemigo;
 
 public class Agua extends ObjetoAtravesable{
 	//atributos

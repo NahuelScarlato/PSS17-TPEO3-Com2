@@ -1,5 +1,8 @@
 package logica;
 
+import logica.atravesable.ObjetoAtravesable;
+import logica.noAtravesable.ObjetoNoAtravesable;
+
 public class Tile {
 	//atributos
 	protected ObjetoNoAtravesable componente;

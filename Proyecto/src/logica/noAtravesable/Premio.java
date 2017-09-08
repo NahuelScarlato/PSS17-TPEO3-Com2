@@ -1,4 +1,4 @@
-package logica;
+package logica.noAtravesable;
 
 public abstract class Premio extends ObjetoNoAtravesable{
 	//metodos

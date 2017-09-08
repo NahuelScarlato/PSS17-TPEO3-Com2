@@ -1,5 +1,8 @@
 package logica;
 
+import logica.noAtravesable.Aliado;
+import logica.noAtravesable.OTConVida;
+
 public class Tienda {
 	//atributos
 	protected int monedas;
