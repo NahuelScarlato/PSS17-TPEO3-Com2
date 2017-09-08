@@ -8,4 +8,7 @@ public abstract class ObjetoNoAtravesable {
 	public Tile getTile(){
 		return miTile;
 	}
+	public void setTile(Tile t){
+		miTile=t;
+	}
 }

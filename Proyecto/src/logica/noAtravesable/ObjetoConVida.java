@@ -5,6 +5,7 @@ public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	protected int vida;
 	protected static int maxVida;
 	protected int ancho;
+	protected int alto;
 	
 	//metodos
 	public void restarVida(int v){
