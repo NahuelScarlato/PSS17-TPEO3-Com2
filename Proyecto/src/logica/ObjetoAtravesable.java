@@ -5,7 +5,7 @@ public abstract class ObjetoAtravesable {
 	protected Tile miTile;
 	
 	//metodos
-	public abstract void modificar(Personaje p);
+	public void modificar(Personaje p){};
 	public Tile getTile(){
 		return miTile;
 	}
