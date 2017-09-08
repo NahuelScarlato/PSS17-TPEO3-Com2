@@ -1,7 +1,7 @@
 package logica;
 
-import logica.atravesable.ObjetoAtravesable;
-import logica.noAtravesable.ObjetoNoAtravesable;
+import objeto.atravesable.ObjetoAtravesable;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Tile {
 	//atributos

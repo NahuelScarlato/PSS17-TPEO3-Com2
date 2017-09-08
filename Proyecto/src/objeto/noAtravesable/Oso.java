@@ -1,4 +1,4 @@
-package logica.noAtravesable;
+package objeto.noAtravesable;
 
 public class Oso extends Aliado{
 	//constructor

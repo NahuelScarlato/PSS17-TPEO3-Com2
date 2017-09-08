@@ -1,7 +1,7 @@
-package logica.atravesable;
+package objeto.atravesable;
 
 import logica.Tile;
-import logica.noAtravesable.Personaje;
+import objeto.noAtravesable.Personaje;
 
 public abstract class ObjetoAtravesable {
 	//atributos

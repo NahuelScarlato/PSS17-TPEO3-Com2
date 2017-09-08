@@ -1,4 +1,4 @@
-package logica.noAtravesable;
+package objeto.noAtravesable;
 
 public abstract class Aliado extends Personaje {
 	//atributos

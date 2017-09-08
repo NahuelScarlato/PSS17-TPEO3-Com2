@@ -1,6 +1,6 @@
-package logica.atravesable;
+package objeto.atravesable;
 
-import logica.noAtravesable.Personaje;
+import objeto.noAtravesable.Personaje;
 
 public class Lava extends ObjetoAtravesable{
 	public void modificar(Personaje p){

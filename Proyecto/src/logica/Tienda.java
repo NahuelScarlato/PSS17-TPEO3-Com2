@@ -1,6 +1,9 @@
 package logica;
 
-import logica.noAtravesable.*;
+import objeto.noAtravesable.Aliado;
+import objeto.noAtravesable.EnanoCazador;
+import objeto.noAtravesable.OTConVida;
+import objeto.noAtravesable.Oso;
 
 public class Tienda {
 	//atributos
