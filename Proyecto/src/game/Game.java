@@ -57,9 +57,28 @@ public class Game implements Runnable{
 		
 		init();
 		
+		// Aca estabilizamos la cantidad de fps de la ejecucion del juego.
+		
+		int fps=60;
+		double timePerTick = 1000000000/fps; 
+		double delta = 0;
+		long now;
+		long lastTime = System.nanoTime();
+		
 		while(running){
-			update();
-			render();
+			
+			now = System.nanoTime();	// 
+			delta += (now - lastTime) / timePerTick; // delta va a ir aumentando lentamente por cada vuelta del ciclo while
+			lastTime = now;   
+			
+			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
+				
+				update();
+				render();
+				delta--;
+				
+			}
+			
 		}
 		
 		stop();
