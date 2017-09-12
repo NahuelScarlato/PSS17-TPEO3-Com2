@@ -19,6 +19,7 @@ public class Game implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
+	private BufferedImage testImage; int x = 0;// Codigo temporal para el bichito moviendose.
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -28,6 +29,7 @@ public class Game implements Runnable{
 	
 	private void init(){
 		display = new Display(title , width , height);
+		testImage = ImageLoader.loadImage("/Textures/mago.png");// Codigo temporal, maguito caminando.
 	}
 	
 	private void update(){
@@ -46,6 +48,8 @@ public class Game implements Runnable{
 		g.clearRect(0, 0, width, height);
 		
 		// Dibujos aca
+		
+		g.drawImage(testImage, x++, 20 , null);
 		
 		// jejeje
 		
@@ -67,7 +71,7 @@ public class Game implements Runnable{
 		
 		while(running){
 			
-			now = System.nanoTime();	// 
+			now = System.nanoTime();	
 			delta += (now - lastTime) / timePerTick; // delta va a ir aumentando lentamente por cada vuelta del ciclo while
 			lastTime = now;   
 			
@@ -75,6 +79,7 @@ public class Game implements Runnable{
 				
 				update();
 				render();
+				
 				delta--;
 				
 			}
