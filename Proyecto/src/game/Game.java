@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
+import logica.*;
 import game.display.Display;
 import game.gfx.ImageLoader;
 
@@ -12,6 +13,8 @@ public class Game implements Runnable{
 	private Display display;
 	public int width,height;
 	public String title;
+	
+	private Logica miLogic;
 	
 	private boolean running=false;
 	private Thread thread;
@@ -29,6 +32,8 @@ public class Game implements Runnable{
 	
 	private void init(){
 		display = new Display(title , width , height);
+		miLogic = new Logica();
+		miLogic.generarMapa();
 		testImage = ImageLoader.loadImage("/Textures/mago.png");// Codigo temporal, maguito caminando.
 	}
 	
