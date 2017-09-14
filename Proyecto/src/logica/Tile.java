@@ -7,11 +7,11 @@ public class Tile {
 	//atributos
 	protected ObjetoNoAtravesable componente;
 	protected ObjetoAtravesable componenteAtravesable;
-	protected Juego miJuego;
+	protected Logica miJuego;
 	protected int fila, columna;
 	
 	//constructor
-	public Tile(Juego j,int f, int c){
+	public Tile(Logica j,int f, int c){
 		componente=null;
 		componenteAtravesable=null;
 		fila=f;

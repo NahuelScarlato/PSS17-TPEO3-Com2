@@ -1,14 +1,11 @@
 package logica;
 
-import objeto.noAtravesable.Aliado;
-import objeto.noAtravesable.EnanoCazador;
-import objeto.noAtravesable.OTConVida;
-import objeto.noAtravesable.Oso;
+import objeto.noAtravesable.*;
 
 public class Tienda {
 	//atributos
 	protected int monedas;
-	protected Juego juego;
+	protected Logica juego;
 	
 	//constructor
 	public Tienda(){

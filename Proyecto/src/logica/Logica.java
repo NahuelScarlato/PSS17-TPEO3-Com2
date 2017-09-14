@@ -1,15 +1,15 @@
 package logica;
 
-public class Juego {
+public class Logica {
 	//atributos
 	protected Tienda tienda;
 	protected int score;
 	protected Tile[][] tablero;
 	
 	//constructor
-	public Juego(){
+	public Logica(){
 		score=0;
-		tablero=new Tile[6][15];
+		tablero=new Tile[6][12];
 	}
 	
 	//metodos
