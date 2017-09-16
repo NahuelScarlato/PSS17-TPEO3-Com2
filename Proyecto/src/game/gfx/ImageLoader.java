@@ -7,8 +7,17 @@ import javax.imageio.ImageIO;
 
 public class ImageLoader {
 
+	private static int width = 32, height = 32;
+	private static BufferedImage sheet;
+	public static BufferedImage tierra, agua, piedra , arbol;
 	
-	private BufferedImage spriteSheet = loadImage("/res/SpriteSheet2x2.png");
+	public static void init(){
+		sheet = loadImage("/Textures/SpriteSheet2x2.png");
+		tierra = sheet.getSubimage(0, 0, width, height);
+		agua = sheet.getSubimage(0, height, width, height);
+		piedra = sheet.getSubimage(width, 0, width, height);
+		arbol = sheet.getSubimage(width , height, width, height);
+	}
 	
 	public static BufferedImage loadImage(String path){
 		try {
@@ -19,5 +28,9 @@ public class ImageLoader {
 		}
 		return null;
 	}
+	
+	/*public BufferedImage crop(int x, int y, int width, int height){
+		return sheet.getSubimage(x, y, width, height);
+	}*/
 	
 }

@@ -2,8 +2,11 @@ package logica;
 
 import java.util.LinkedList;
 import java.util.Random;
-import objeto.atravesable.*;
-import objeto.noAtravesable.*;
+import java.awt.Graphics;
+import game.gfx.ImageLoader;
+import objeto.atravesable.Agua;
+import objeto.noAtravesable.Arbol;
+import objeto.noAtravesable.Piedra;
 
 public class Logica {
 	//atributos
@@ -12,12 +15,12 @@ public class Logica {
 	protected LinkedList<Objeto> lista;
 	protected int score;
 	protected Tile[][] tablero;
-	protected final int alto=6, ancho=12;
+	protected final int filas=6, columnas=12;
 	
 	//constructor
 	public Logica(){
 		score=0;
-		tablero=new Tile[alto][ancho];
+		tablero=new Tile[filas][columnas];
 		lista=new LinkedList<Objeto>();
 		om=new ObjectManager();
 	}
@@ -29,29 +32,41 @@ public class Logica {
 		int r;
 		Random random = new Random();
 		
-		for (int i = 0; i < alto ; i++){
-			for (int j = 0; j < ancho; j++){
+		for (int i = 0; i < filas ; i++){
+			for (int j = 0; j < columnas; j++){
 				tablero[i][j] = new Tile(this,i,j);
 			}
 		}
 		
-		for (int i = 0; i < alto ; i++){
-			for (int j = 0; j < ancho; j++){
+		for (int i = 0; i < filas ; i++){
+			for (int j = 0; j < columnas; j++){
 				r = random.nextInt(100);
-				if (r < 5) {
-					tablero[i][j].setComponenteAtravesable(new Agua());
+				if (r < 7) {
+					tablero[i][j].setComponenteAtravesable(new Agua(ImageLoader.agua));
 				}
-				else if ( r < 7) {
+				else if ( r < 10) {
 					tablero[i][j].setComponente(new Arbol());
 				}
-				else if (r < 9) {
+				else if (r < 13) {
 					tablero[i][j].setComponente(new Piedra());
 				}
 				
 			}
 		}
-		
 	}
+	
+	public void dibujarMapa(Graphics g){
+		for (int i = 0; i < filas ; i++){
+			for (int j = 0; j < columnas; j++){
+				g.drawImage(ImageLoader.tierra, j*64, i*64, 64, 64, null );
+				if ((tablero[i][j].getComponenteAtravesable())!=null){
+					g.drawImage(tablero[i][j].getComponenteAtravesable().getImage(), j*64, i*64, 64,64, null);
+					System.out.println("dibuje");
+				}
+			}
+		}
+	}
+	
 	public void actualizar(){
 		for(Objeto objeto:lista){
 			objeto.accept(om);

@@ -34,6 +34,7 @@ public class Game implements Runnable{
 		display = new Display(title , width , height);
 		miLogic = new Logica();
 		miLogic.generarMapa();
+		ImageLoader.init();
 		testImage = ImageLoader.loadImage("/Textures/mago.png");// Codigo temporal, maguito caminando.
 	}
 	
@@ -54,8 +55,9 @@ public class Game implements Runnable{
 		
 		// Dibujos aca
 		
-		g.drawImage(testImage, x++, 20 , null);
-		
+		miLogic.dibujarMapa(g);
+		g.drawImage(testImage, x++, 0, 64, 64,  null);
+
 		// jejeje
 		
 		bs.show();
