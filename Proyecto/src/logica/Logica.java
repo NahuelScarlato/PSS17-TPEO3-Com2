@@ -1,5 +1,6 @@
 package logica;
 
+import java.util.LinkedList;
 import java.util.Random;
 import objeto.atravesable.*;
 import objeto.noAtravesable.*;
@@ -7,6 +8,8 @@ import objeto.noAtravesable.*;
 public class Logica {
 	//atributos
 	protected Tienda tienda;
+	protected ObjectManager om;
+	protected LinkedList<Objeto> lista;
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int alto=6, ancho=12;
@@ -15,6 +18,8 @@ public class Logica {
 	public Logica(){
 		score=0;
 		tablero=new Tile[alto][ancho];
+		lista=new LinkedList<Objeto>();
+		om=new ObjectManager();
 	}
 	
 	//metodos
@@ -46,6 +51,11 @@ public class Logica {
 			}
 		}
 		
+	}
+	public void actualizar(){
+		for(Objeto objeto:lista){
+			objeto.accept(om);
+		}
 	}
 	public int score(){
 		return score;

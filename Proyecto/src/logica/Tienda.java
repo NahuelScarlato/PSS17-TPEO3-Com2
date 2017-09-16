@@ -18,16 +18,16 @@ public class Tienda {
 		boolean posible=true;
 		Tile t=juego.getTile(f, c);
 		for(int i=0; i<a.getAncho() && posible; i++){
-			posible=t.getSiguiente().getComponente()==null;
-			t=t.getSiguiente();
+			posible=t.getRight().getComponente()==null;
+			t=t.getRight();
 		}
 		if(juego.getTile(f, c).getComponente()==null && posible){
 			juego.getTile(f, c).setComponente(a);
 			if(a.getAncho()!=1){
 				t=juego.getTile(f, c);
 				for(int i=0; i<a.getAncho(); i++){
-					t.getSiguiente().setComponente(a);
-					t=t.getSiguiente();
+					t.getRight().setComponente(a);
+					t=t.getRight();
 				}
 			}
 		}
