@@ -41,13 +41,13 @@ public class Logica {
 		for (int i = 0; i < filas ; i++){
 			for (int j = 0; j < columnas; j++){
 				r = random.nextInt(100);
-				if (r < 7) {
-					tablero[i][j].setComponenteAtravesable(new Agua(ImageLoader.agua));
+				if (r < 6) {
+					tablero[i][j].setComponenteAtravesable(new Agua());
 				}
-				else if ( r < 10) {
+				else if ( r < 9) {
 					tablero[i][j].setComponente(new Arbol());
 				}
-				else if (r < 13) {
+				else if (r < 12) {
 					tablero[i][j].setComponente(new Piedra());
 				}
 				
@@ -61,6 +61,9 @@ public class Logica {
 				g.drawImage(ImageLoader.tierra, j*64, i*64, 64, 64, null );
 				if ((tablero[i][j].getComponenteAtravesable())!=null){
 					g.drawImage(tablero[i][j].getComponenteAtravesable().getImage(), j*64, i*64, 64,64, null);
+				}
+				if ((tablero[i][j].getComponente())!=null){
+					g.drawImage(tablero[i][j].getComponente().getImage(), j*64, i*64, 64,64, null);
 				}
 			}
 		}

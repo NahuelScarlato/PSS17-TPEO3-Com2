@@ -8,8 +8,8 @@ public class Agua extends ObjetoAtravesable{
 	//atributos
 	protected int rall;
 	//constructor
-	public Agua(BufferedImage image){
-		this.image = image;
+	public Agua(){
+		image = ImageLoader.agua;
 	}
 	
 	//metodos
