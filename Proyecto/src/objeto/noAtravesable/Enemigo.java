@@ -35,4 +35,8 @@ public abstract class Enemigo extends Personaje{
 		miTile=sig;
 		sig.setComponente(this);
 	}
+	
+	public void accept(ObjectManager o){
+		o.visit(this);
+	}
 }

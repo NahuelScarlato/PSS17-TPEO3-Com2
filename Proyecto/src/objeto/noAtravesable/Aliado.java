@@ -1,5 +1,7 @@
 package objeto.noAtravesable;
 
+import logica.ObjectManager;
+
 public abstract class Aliado extends Personaje {
 	//atributos
 	protected int valor;
@@ -10,5 +12,9 @@ public abstract class Aliado extends Personaje {
 	}
 	public int getValor(){
 		return valor;
+	}
+	
+	public void accept(ObjectManager o){
+		o.visit(this);
 	}
 }

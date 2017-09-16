@@ -7,9 +7,7 @@ public abstract class Objeto {
 	
 	
 	//metodos
-	public void accept(ObjectManager o){
-		o.visit(this);
-	}
+	public void accept(ObjectManager o){}
 	
 
 }
