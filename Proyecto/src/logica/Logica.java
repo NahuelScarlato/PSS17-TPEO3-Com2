@@ -39,7 +39,7 @@ public class Logica {
 		}
 		
 		for (int i = 0; i < filas ; i++){
-			for (int j = 0; j < columnas; j++){
+			for (int j = 1; j < columnas; j++){
 				r = random.nextInt(100);
 				if (r < 6) {
 					tablero[i][j].setComponenteAtravesable(new Agua());
