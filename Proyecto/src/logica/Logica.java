@@ -61,7 +61,6 @@ public class Logica {
 				g.drawImage(ImageLoader.tierra, j*64, i*64, 64, 64, null );
 				if ((tablero[i][j].getComponenteAtravesable())!=null){
 					g.drawImage(tablero[i][j].getComponenteAtravesable().getImage(), j*64, i*64, 64,64, null);
-					System.out.println("dibuje");
 				}
 			}
 		}
