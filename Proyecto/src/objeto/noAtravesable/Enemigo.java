@@ -4,8 +4,8 @@ import logica.*;
 
 public abstract class Enemigo extends Personaje{
 	//atributos
-	protected int velocidad;
-	protected static int vel;
+	protected float velocidad;
+	protected static float vel;
 	protected int puntaje;
 	protected int maxCoins;
 	protected int minCoins;
