@@ -8,6 +8,5 @@ public abstract class Objeto {
 	
 	//metodos
 	public void accept(ObjectManager o){}
-	
 
 }
