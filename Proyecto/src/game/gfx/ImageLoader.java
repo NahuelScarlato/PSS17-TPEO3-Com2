@@ -10,6 +10,7 @@ public class ImageLoader {
 	private static int width = 32, height = 32;
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol;
+	public static BufferedImage mago, goblin;
 	
 	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet2x2.png");
@@ -17,6 +18,7 @@ public class ImageLoader {
 		agua = sheet.getSubimage(0, height, width, height);
 		piedra = sheet.getSubimage(width, 0, width, height);
 		arbol = sheet.getSubimage(width , height, width, height);
+		mago=loadImage("/Textures/mago.png");
 	}
 	
 	public static BufferedImage loadImage(String path){
