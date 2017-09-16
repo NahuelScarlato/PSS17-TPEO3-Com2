@@ -7,4 +7,7 @@ public abstract class Personaje extends ObjetoConVida{
 	
 	//metodos
 	public void atacar(ObjetoNoAtravesable o){}
+	public int getAlcance(){
+		return alcance;
+	}
 }

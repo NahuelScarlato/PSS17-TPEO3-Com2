@@ -39,7 +39,10 @@ public class Tile {
 	public int getColumna(){
 		return columna;
 	}
-	public Tile getSiguiente(){
+	public Tile getRight(){
 		return miJuego.getTile(fila, columna+1);
+	}
+	public Tile getLeft(){
+		return miJuego.getTile(fila, columna-1);
 	}
 }
