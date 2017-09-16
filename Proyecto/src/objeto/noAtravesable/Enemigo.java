@@ -1,5 +1,7 @@
 package objeto.noAtravesable;
 
+import logica.*;
+
 public abstract class Enemigo extends Personaje{
 	//atributos
 	protected int velocidad;
@@ -21,10 +23,16 @@ public abstract class Enemigo extends Personaje{
 	public void atacar(Premio p){
 		p.eliminar();
 	}
-	public void restarVelocidad(int v){
-		velocidad-=v;
+	public void modificarVelocidad(int v){
+		velocidad=vel*v;
 	}
 	public void normalizarVelocidad(){
 		velocidad=vel;
+	}
+	public void avanzar(){
+		Tile sig=miTile.getLeft();
+		miTile.setComponente(null);
+		miTile=sig;
+		sig.setComponente(this);
 	}
 }
