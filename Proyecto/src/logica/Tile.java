@@ -10,6 +10,7 @@ public class Tile {
 	protected Logica miJuego;
 	protected int fila, columna;
 	
+	
 	//constructor
 	public Tile(Logica j,int f, int c){
 		componente=null;

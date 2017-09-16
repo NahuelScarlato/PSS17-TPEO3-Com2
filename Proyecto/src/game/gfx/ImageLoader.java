@@ -7,6 +7,9 @@ import javax.imageio.ImageIO;
 
 public class ImageLoader {
 
+	
+	private BufferedImage spriteSheet = loadImage("/res/SpriteSheet2x2.png");
+	
 	public static BufferedImage loadImage(String path){
 		try {
 			return ImageIO.read(ImageLoader.class.getResource(path));
