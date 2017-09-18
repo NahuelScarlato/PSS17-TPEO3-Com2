@@ -1,5 +1,5 @@
 package objeto.noAtravesable;
-
+import game.gfx.ImageLoader;
 import logica.*;
 
 public class Goblin extends Enemigo {
