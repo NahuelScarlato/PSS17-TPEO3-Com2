@@ -35,7 +35,7 @@ public class Game implements Runnable{
 		myLogic = new Logica();
 		ImageLoader.init();
 		myLogic.generarMapa();
-		testImage = ImageLoader.loadImage("/Textures/mago.png");// Codigo temporal, maguito caminando.
+		testImage = ImageLoader.goblin;// Codigo temporal, goblin caminando.
 	}
 	
 	private void update(){

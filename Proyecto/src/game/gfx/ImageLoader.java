@@ -19,6 +19,7 @@ public class ImageLoader {
 		piedra = sheet.getSubimage(width, 0, width, height);
 		arbol = sheet.getSubimage(width , height, width, height);
 		mago=loadImage("/Textures/mago.png");
+		goblin=loadImage("/Textures/Goblin.png");
 	}
 	
 	public static BufferedImage loadImage(String path){
