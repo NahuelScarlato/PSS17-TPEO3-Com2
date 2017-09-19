@@ -17,7 +17,7 @@ public class ImageLoader {
 		tierra = sheet.getSubimage(0, 0, width, height);
 		agua = sheet.getSubimage(0, height, width, height);
 		piedra = sheet.getSubimage(width, 0, width, height);
-		arbol = sheet.getSubimage(width , height, width, height);
+		arbol = loadImage("/Textures/arbol.png");
 		mago=loadImage("/Textures/mago.png");
 		goblin=loadImage("/Textures/Goblin.png");
 	}
