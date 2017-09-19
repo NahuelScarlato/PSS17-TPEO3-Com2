@@ -72,7 +72,7 @@ public class Logica {
 					g.drawImage(tablero[i][j].getComponenteAtravesable().getImage(), j*64, i*64, 64,64, null);
 				}
 				if ((tablero[i][j].getComponente())!=null){
-					g.drawImage(tablero[i][j].getComponente().getImage(), j*64, i*64, 64,64, null);
+					g.drawImage(tablero[i][j].getComponente().getImage(), j*64, i*64, tablero[i][j].getComponente().getAncho()*64,tablero[i][j].getComponente().getAlto()*64, null);
 				}
 			}
 		}

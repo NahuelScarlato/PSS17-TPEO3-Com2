@@ -6,6 +6,8 @@ public abstract class Objeto {
 	//atributos
 	protected Tile miTile;
 	protected BufferedImage image;
+	protected int ancho;
+	protected int alto;
 	
 	//metodos
 	public BufferedImage getImage(){
@@ -19,4 +21,10 @@ public abstract class Objeto {
 	}
 	public void accept(ObjectManager o){}
 
+	public int getAncho(){
+		return ancho;
+	}
+	public int getAlto(){
+		return alto;
+	}
 }

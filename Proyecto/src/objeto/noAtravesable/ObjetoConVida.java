@@ -4,8 +4,6 @@ public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	//atributos
 	protected int vida;
 	protected static int maxVida;
-	protected int ancho;
-	protected int alto;
 	
 	//metodos
 	public void restarVida(int v){
@@ -16,8 +14,5 @@ public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	}
 	public boolean fullVida(){
 		return vida==maxVida;
-	}
-	public int getAncho(){
-		return ancho;
 	}
 }
