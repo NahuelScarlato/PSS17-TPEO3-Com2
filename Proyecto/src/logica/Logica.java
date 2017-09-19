@@ -42,13 +42,22 @@ public class Logica {
 			for (int j = 1; j < columnas; j++){
 				r = random.nextInt(100);
 				if (r < 6) {
-					tablero[i][j].setComponenteAtravesable(new Agua());
+					Agua a=new Agua();
+					tablero[i][j].setComponenteAtravesable(a);
+					a.setTile(tablero[i][j]);
+					lista.addLast(a);
 				}
 				else if ( r < 9) {
-					tablero[i][j].setComponente(new Arbol());
+					Arbol a= new Arbol();
+					tablero[i][j].setComponente(a);
+					a.setTile(tablero[i][j]);
+					lista.addLast(a);
 				}
 				else if (r < 12) {
-					tablero[i][j].setComponente(new Piedra());
+					Piedra p=new Piedra();
+					tablero[i][j].setComponente(p);
+					p.setTile(tablero[i][j]);
+					lista.addLast(p);
 				}
 				
 			}

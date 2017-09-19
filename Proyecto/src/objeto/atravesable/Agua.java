@@ -2,7 +2,6 @@ package objeto.atravesable;
 
 import game.gfx.ImageLoader;
 import objeto.noAtravesable.Enemigo;
-import java.awt.image.BufferedImage;
 
 public class Agua extends ObjetoAtravesable{
 	//atributos
