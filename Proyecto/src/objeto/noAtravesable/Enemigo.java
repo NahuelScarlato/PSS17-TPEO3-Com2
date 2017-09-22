@@ -6,7 +6,6 @@ public abstract class Enemigo extends Personaje{
 	//atributos
 	protected float velocidadMov;
 	protected static float velMovMaxima;
-	protected int reloj;
 	protected int puntaje;
 	protected int maxCoins;
 	protected int minCoins;
@@ -33,8 +32,9 @@ public abstract class Enemigo extends Personaje{
 	public void atacar(Premio p){
 		p.eliminar();
 	}
-	public void modificarVelocidad(int v){
-		velocidadMov=velMovMaxima*v;
+	public void modificarVelocidad(float rall){
+		velocidadAt=(int)(rall*velAtMaxima);
+		velocidadMov=(int)(velMovMaxima*rall);
 	}
 	public void normalizarVelocidad(){
 		velocidadMov=velMovMaxima;
