@@ -8,7 +8,9 @@ public abstract class Aliado extends Personaje {
 	
 	//metodos
 	public void atacar(Enemigo e){
-		e.restarVida(impacto);
+		if(reloj==0)
+			e.restarVida(impacto);
+		reloj=(reloj+1)%(int)(velocidadAt*60);
 	}
 	public int getValor(){
 		return valor;
@@ -16,7 +18,6 @@ public abstract class Aliado extends Personaje {
 	public void serAtacado(Enemigo e){
 		e.atacar(this);
 	}
-	
 	public void accept(ObjectManager o){
 		o.visit(this);
 	}
