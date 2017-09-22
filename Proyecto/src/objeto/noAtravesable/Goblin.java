@@ -8,6 +8,7 @@ public class Goblin extends Enemigo {
 		vida=35;
 		maxVida=35;
 		miTile=t;
+		t.setComponente(this);
 		image=ImageLoader.goblin;
 		ancho=1;
 		alto=1;
