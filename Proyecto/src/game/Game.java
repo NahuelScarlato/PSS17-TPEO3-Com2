@@ -47,7 +47,6 @@ public class Game implements Runnable{
 		mago= new Mago(myLogic.getTile(3, 6));
 		myLogic.agregarObjeto(mago);
 		myLogic.agregarObjeto(goblin);
-		testImage = goblin.getImage();// Codigo temporal, goblin caminando.
 		x = 0;
 	}
 	
