@@ -5,8 +5,8 @@ public abstract class Personaje extends ObjetoConVida{
 	protected int impacto;
 	protected int alcance;
 	protected int reloj;
-	protected int velocidadAt;
-	protected static int velAtMaxima;
+	protected float velocidadAt;
+	protected static float velAtMaxima;
 	
 	//metodos
 	public void atacar(ObjetoNoAtravesable o){}

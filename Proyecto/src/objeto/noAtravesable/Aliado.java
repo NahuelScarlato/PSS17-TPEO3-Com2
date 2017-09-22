@@ -8,8 +8,10 @@ public abstract class Aliado extends Personaje {
 	
 	//metodos
 	public void atacar(Enemigo e){
-		if(reloj==0)
+		if(reloj==0){
 			e.restarVida(impacto);
+			System.out.println("ataque:mago");
+		}
 		reloj=(reloj+1)%(int)(velocidadAt*60);
 	}
 	public int getValor(){
