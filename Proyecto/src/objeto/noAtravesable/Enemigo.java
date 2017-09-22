@@ -19,6 +19,7 @@ public abstract class Enemigo extends Personaje{
 	}
 	public void atacar(OMConVida omcv){
 		omcv.restarVida(impacto);
+		System.out.println("ataque");
 	}
 	public void atacar(Premio p){
 		p.eliminar();

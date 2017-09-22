@@ -26,13 +26,12 @@ public class ObjectManager {
 			actual=actual.getRight();
 			if(actual.getComponente()!=null){
 				encontre=true;
-				e.atacar(actual.getComponente());
+				actual.getComponente().serAtacado(e);
 			}
 		}
 		if(!encontre){
 			e.avanzar();
 		}
-		System.out.println("visite");
 	}
 	public void visit(ObjetoAtravesable oa){
 		oa.modificar(oa.getTile().getComponente());
