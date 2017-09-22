@@ -44,7 +44,7 @@ public class Game implements Runnable{
 		goblin=new Goblin(myLogic.getTile(ran, 0));
 		myLogic.agregarObjeto(goblin);
 		testImage = goblin.getImage();// Codigo temporal, goblin caminando.
-		int x = 0;
+		x = 0;
 	}
 	
 	private void update(){
@@ -78,7 +78,7 @@ public class Game implements Runnable{
 		
 		// Aca estabilizamos la cantidad de fps de la ejecucion del juego.
 		
-		int fps=1;
+		int fps=60;
 		double timePerTick = 1000000000/fps; 
 		double delta = 0;
 		long now;

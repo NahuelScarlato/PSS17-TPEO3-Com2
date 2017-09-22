@@ -16,6 +16,7 @@ public class Logica {
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int filas=6, columnas=12;
+	protected int reloj;
 	
 	//constructor
 	public Logica(){
@@ -23,6 +24,7 @@ public class Logica {
 		tablero=new Tile[filas][columnas];
 		lista=new LinkedList<Objeto>();
 		om=new ObjectManager();
+		reloj=0;
 	}
 	
 	//metodos
