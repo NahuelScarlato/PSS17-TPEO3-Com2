@@ -26,6 +26,9 @@ public class Logica {
 	}
 	
 	//metodos
+	public void agregarObjeto(Objeto o){
+		lista.addLast(o);
+	}
 	
 	public void generarMapa(){
 		

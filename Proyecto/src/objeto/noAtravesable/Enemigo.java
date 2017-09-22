@@ -30,10 +30,12 @@ public abstract class Enemigo extends Personaje{
 		velocidad=vel;
 	}
 	public void avanzar(){
-		Tile sig=miTile.getLeft();
+		Tile sig=miTile.getRight();
 		miTile.setComponente(null);
 		miTile=sig;
 		sig.setComponente(this);
+		this.setTile(sig);
+		System.out.println("avance");
 	}
 	
 	public void accept(ObjectManager o){

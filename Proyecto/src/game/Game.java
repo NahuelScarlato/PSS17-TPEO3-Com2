@@ -42,11 +42,12 @@ public class Game implements Runnable{
 		Random r = new Random();
 		int ran = r.nextInt(6);
 		goblin=new Goblin(myLogic.getTile(ran, 0));
+		myLogic.agregarObjeto(goblin);
 		testImage = goblin.getImage();// Codigo temporal, goblin caminando.
 	}
 	
 	private void update(){
-		
+		myLogic.actualizar();
 	}
 	
 	private void render(){
@@ -63,10 +64,7 @@ public class Game implements Runnable{
 		// Dibujos aca
 		
 		myLogic.dibujarMapa(g);
-		g.drawImage(testImage, x++, goblin.getTile().getFila()*64, 64, 64,  null);
-		if(x/64==goblin.getTile().getColumna()+1){
-			myLogic.actualizar();
-		}
+		g.drawImage(testImage, goblin.getTile().getColumna()*64, goblin.getTile().getFila()*64, 64, 64,  null);
 		
 		bs.show();
 		g.dispose();

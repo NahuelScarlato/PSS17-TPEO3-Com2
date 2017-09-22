@@ -18,17 +18,21 @@ public class ObjectManager {
 	}
 	public void visit(Enemigo e){
 		boolean encontre=false;
-		Tile actual=e.getTile().getRight();
+		Tile actual=e.getTile();
+		if (actual.getColumna()==11){
+			encontre=true;
+		}
 		for(int i=0; i<e.getAlcance() && !encontre; i++){
+			actual=actual.getRight();
 			if(actual.getComponente()!=null){
 				encontre=true;
 				e.atacar(actual.getComponente());
 			}
-			actual=actual.getRight();
 		}
 		if(!encontre){
 			e.avanzar();
 		}
+		System.out.println("visite");
 	}
 	public void visit(ObjetoAtravesable oa){
 		oa.modificar(oa.getTile().getComponente());
