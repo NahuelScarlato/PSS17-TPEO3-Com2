@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 
 import logica.*;
 import objeto.noAtravesable.Goblin;
+import objeto.noAtravesable.Mago;
 import game.display.Display;
 import game.gfx.ImageLoader;
 
@@ -27,6 +28,7 @@ public class Game implements Runnable{
 	private BufferedImage testImage; int x = 0;// Codigo temporal para el bichito moviendose.
 
 	private Goblin goblin;
+	private Mago mago;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -41,7 +43,9 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		Random r = new Random();
 		int ran = r.nextInt(6);
-		goblin=new Goblin(myLogic.getTile(ran, 0));
+		goblin=new Goblin(myLogic.getTile(3, 0));
+		mago= new Mago(myLogic.getTile(3, 6));
+		myLogic.agregarObjeto(mago);
 		myLogic.agregarObjeto(goblin);
 		testImage = goblin.getImage();// Codigo temporal, goblin caminando.
 		x = 0;
