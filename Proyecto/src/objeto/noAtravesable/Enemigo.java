@@ -12,10 +12,11 @@ public abstract class Enemigo extends Personaje{
 	
 	//metodos
 	public void atacar(Aliado a){
-		if(reloj==0)
+		if(reloj==0){
 			a.restarVida(impacto);
+			System.out.println("ataque");
+		}
 		reloj=(reloj+1)%(int)(velocidadMov*60);
-		System.out.println("ataque");
 		System.out.println(this.vida);
 	}
 	public void atacar(OTConVida otcv){
