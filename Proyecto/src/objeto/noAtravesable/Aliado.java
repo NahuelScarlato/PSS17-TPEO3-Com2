@@ -17,8 +17,9 @@ public abstract class Aliado extends Personaje {
 	public int getValor(){
 		return valor;
 	}
-	public void serAtacado(Enemigo e){
+	public boolean serAtacado(Enemigo e){
 		e.atacar(this);
+		return true;
 	}
 	public void accept(ObjectManager o){
 		o.visit(this);

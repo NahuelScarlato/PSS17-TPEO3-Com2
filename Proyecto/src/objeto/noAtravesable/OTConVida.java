@@ -8,7 +8,8 @@ public abstract class OTConVida extends ObjetoConVida {
 	public int getValor(){
 		return valor;
 	}
-	public void serAtacado(Enemigo e){
+	public boolean serAtacado(Enemigo e){
 		e.atacar(this);
+		return true;
 	}
 }

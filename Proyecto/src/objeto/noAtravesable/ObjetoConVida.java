@@ -9,7 +9,7 @@ public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	public void restarVida(int v){
 		vida-=v;
 		if(vida<=0){
-			miTile.setComponente(null);
+			miTile.matar(this);
 		}
 	}
 	public boolean vivo(){

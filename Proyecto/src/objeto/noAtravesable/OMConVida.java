@@ -1,7 +1,8 @@
 package objeto.noAtravesable;
 
 public abstract class OMConVida extends ObjetoConVida {
-	public void serAtacado(Enemigo e){
+	public boolean serAtacado(Enemigo e){
 		e.atacar(this);
+		return true;
 	}
 }

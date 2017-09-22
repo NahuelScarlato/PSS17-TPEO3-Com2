@@ -6,16 +6,15 @@ import objeto.noAtravesable.*;
 public class ObjectManager {
 	//metodos
 	public void visit(Aliado a){
-		boolean encontre=false;
+		boolean ataque=false;
 		Tile actual = a.getTile().getLeft();
-		for(int i=0; i<a.getAlcance() && !encontre; i++){
+		for(int i=0; i<a.getAlcance() && !ataque; i++){
 			if(actual.getComponente()!=null){
-				encontre=true;
-				a.atacar(actual.getComponente());
+				ataque=actual.getComponente().serAtacado(a);;
 			}
 			actual=actual.getLeft();
 		}
-		if(!encontre)
+		if(!ataque)
 			a.aumentarReloj();
 	}
 	public void visit(Enemigo e){

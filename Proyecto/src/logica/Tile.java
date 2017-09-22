@@ -1,6 +1,7 @@
 package logica;
 
 import objeto.atravesable.ObjetoAtravesable;
+import objeto.noAtravesable.ObjetoConVida;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Tile {
@@ -44,5 +45,9 @@ public class Tile {
 	}
 	public Tile getLeft(){
 		return miJuego.getTile(fila, columna-1);
+	}
+	public void matar(ObjetoConVida o){
+		componente = null;
+		miJuego.eliminarObjeto(o);
 	}
 }

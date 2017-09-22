@@ -15,7 +15,7 @@ public class Mago extends Aliado {
 		maxVida=40;
 		ancho=1;
 		alto=1;
-		impacto=40;
+		impacto=5;
 		alcance=4;
 		valor=70;
 	}

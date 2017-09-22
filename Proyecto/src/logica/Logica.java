@@ -32,6 +32,10 @@ public class Logica {
 		lista.addLast(o);
 	}
 	
+	public void eliminarObjeto(Objeto o){
+		lista.remove(o);
+	}
+	
 	public void generarMapa(){
 		
 		int r;
