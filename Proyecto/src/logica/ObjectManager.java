@@ -15,6 +15,8 @@ public class ObjectManager {
 			}
 			actual=actual.getLeft();
 		}
+		if(!encontre)
+			a.aumentarReloj();
 	}
 	public void visit(Enemigo e){
 		boolean encontre=false;
