@@ -19,6 +19,6 @@ public class Goblin extends Enemigo {
 		puntaje=20;
 		maxCoins=15;
 		minCoins=5;
-		reloj=0;
+		reloj=1;
 	}
 }
