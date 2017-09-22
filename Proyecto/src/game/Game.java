@@ -41,6 +41,8 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		Random r = new Random();
 		int ran = r.nextInt(6);
+		while(myLogic.getTile(ran, 0).getComponente()!=null)
+			ran = r.nextInt(6);
 		goblin=new Goblin(myLogic.getTile(ran, 0));
 		myLogic.agregarObjeto(goblin);
 		testImage = goblin.getImage();// Codigo temporal, goblin caminando.
