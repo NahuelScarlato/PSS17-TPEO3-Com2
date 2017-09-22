@@ -86,12 +86,15 @@ public class Logica {
 			objeto.accept(om);
 		}
 	}
+	
 	public int score(){
 		return score;
 	}
+	
 	public void setScore(int s){
 		score=s;
 	}
+	
 	public Tile getTile(int f, int c){
 		return tablero[f][c];
 	}

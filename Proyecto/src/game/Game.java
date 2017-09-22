@@ -44,6 +44,7 @@ public class Game implements Runnable{
 		goblin=new Goblin(myLogic.getTile(ran, 0));
 		myLogic.agregarObjeto(goblin);
 		testImage = goblin.getImage();// Codigo temporal, goblin caminando.
+		int x = 0;
 	}
 	
 	private void update(){
@@ -64,7 +65,8 @@ public class Game implements Runnable{
 		// Dibujos aca
 		
 		myLogic.dibujarMapa(g);
-		g.drawImage(testImage, goblin.getTile().getColumna()*64, goblin.getTile().getFila()*64, 64, 64,  null);
+		x++;
+		g.drawImage(testImage, x, 20, 64, 64,  null);
 		
 		bs.show();
 		g.dispose();
@@ -76,26 +78,42 @@ public class Game implements Runnable{
 		
 		// Aca estabilizamos la cantidad de fps de la ejecucion del juego.
 		
-		int fps=60;
+		int fps=1;
 		double timePerTick = 1000000000/fps; 
 		double delta = 0;
 		long now;
 		long lastTime = System.nanoTime();
 		
+		long timer = 0;
+		long ticks = 0;
+		
 		while(running){
 			
 			now = System.nanoTime();	
 			delta += (now - lastTime) / timePerTick; // delta va a ir aumentando lentamente por cada vuelta del ciclo while
+			
+			timer += now - lastTime;
+			
 			lastTime = now;   
+
 			
 			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
 				
 				update();
 				render();
 				
+				ticks++;
+				
 				delta--;
 				
 			}
+			
+			if (timer >= 1000000000){
+				System.out.println("Frames:" + ticks);
+				ticks = 0;
+				timer = 0;
+			}
+			
 			
 		}
 		

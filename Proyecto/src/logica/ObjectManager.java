@@ -7,7 +7,7 @@ public class ObjectManager {
 	//metodos
 	public void visit(Aliado a){
 		boolean encontre=false;
-		Tile actual=a.getTile().getLeft();
+		Tile actual = a.getTile().getLeft();
 		for(int i=0; i<a.getAlcance() && !encontre; i++){
 			if(actual.getComponente()!=null){
 				encontre=true;
