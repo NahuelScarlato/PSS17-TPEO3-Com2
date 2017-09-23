@@ -5,7 +5,7 @@ import logica.*;
 public abstract class Enemigo extends Personaje{
 	//atributos
 	protected float velocidadMov;
-	protected static float velMovMaxima;
+	protected float velMovMaxima;
 	protected int puntaje;
 	protected int maxCoins;
 	protected int minCoins;
@@ -16,19 +16,19 @@ public abstract class Enemigo extends Personaje{
 			a.restarVida(impacto);
 			//System.out.println("ataque");
 		}
-		reloj=(reloj+1)%(int)(velocidadMov*60);
+		reloj=(reloj+1)%(int)(velocidadAt*60);
 		//System.out.println(this.vida);
 	}
 	public void atacar(OTConVida otcv){
 		if(reloj==0)
 			otcv.restarVida(impacto);
-		reloj=(reloj+1)%(int)(velocidadMov*60);
+		reloj=(reloj+1)%(int)(velocidadAt*60);
 	}
 	public void atacar(OMConVida omcv){
 		if(reloj==0){
 			omcv.restarVida(impacto);
 		}
-		reloj=(reloj+1)%(int)(velocidadMov*60);
+		reloj=(reloj+1)%(int)(velocidadAt*60);
 	}
 	public void atacar(Premio p){
 		p.eliminar();
@@ -39,6 +39,7 @@ public abstract class Enemigo extends Personaje{
 	}
 	public void normalizarVelocidad(){
 		velocidadMov=velMovMaxima;
+		velocidadAt=velAtMaxima;
 	}
 	public void avanzar(){
 		if(reloj==0){

@@ -4,10 +4,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.awt.Graphics;
 import game.gfx.ImageLoader;
-import objeto.atravesable.Agua;
-import objeto.noAtravesable.Arbol;
-import objeto.noAtravesable.Piedra;
-import objeto.noAtravesable.ObjetoConVida;
+import objeto.atravesable.*;
+import objeto.noAtravesable.*;
 
 public class Logica {
 	//atributos
