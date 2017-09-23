@@ -9,8 +9,8 @@ public class ImageLoader {
 
 	private static int width = 32, height = 32;
 	private static BufferedImage sheet;
-	public static BufferedImage tierra, agua, piedra , arbol;
-	public static BufferedImage mago, goblin;
+	public static BufferedImage tierra, agua, piedra , arbol, mago, goblin;
+	public static BufferedImage[] vida = new BufferedImage[3];
 	
 	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet2x2.png");
@@ -18,8 +18,12 @@ public class ImageLoader {
 		agua = sheet.getSubimage(0, height, width, height);
 		piedra = sheet.getSubimage(width, 0, width, height);
 		arbol = loadImage("/Textures/arbol.png");
-		mago=loadImage("/Textures/mago.png");
-		goblin=loadImage("/Textures/Goblin.png");
+		mago=loadImage("/Textures/Personajes/mago.png");
+		goblin=loadImage("/Textures/Personajes/Goblin.png");
+		vida[0] =loadImage("/Textures/VidaVerde.png");
+		vida[1] =loadImage("/Textures/VidaRoja.png");
+		vida[2] =loadImage("/Textures/VidaAzul.png");
+		
 	}
 	
 	public static BufferedImage loadImage(String path){

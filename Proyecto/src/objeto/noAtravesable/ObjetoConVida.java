@@ -18,4 +18,12 @@ public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	public boolean fullVida(){
 		return vida==maxVida;
 	}
+	
+	public int getVida(){
+		return vida;
+	}
+	
+	public int getMaxVida(){
+		return maxVida;
+	}
 }
