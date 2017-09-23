@@ -34,7 +34,8 @@ public class ObjectManager {
 			e.avanzar();
 		}
 	}
-	public void visit(ObjetoAtravesable oa){
-		oa.modificar(oa.getTile().getComponente());
+	public void visit(Agua a){
+		if(a.getTile().getComponente()!=null)
+			a.getTile().getComponente().serModificado(a);
 	}
 }

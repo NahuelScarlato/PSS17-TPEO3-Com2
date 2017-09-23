@@ -34,8 +34,8 @@ public abstract class Enemigo extends Personaje{
 		p.eliminar();
 	}
 	public void modificarVelocidad(float rall){
-		velocidadAt=(int)(rall*velAtMaxima);
-		velocidadMov=(int)(velMovMaxima*rall);
+		velocidadAt=(rall*velAtMaxima);
+		velocidadMov=(velMovMaxima*rall);
 	}
 	public void normalizarVelocidad(){
 		velocidadMov=velMovMaxima;
@@ -48,6 +48,8 @@ public abstract class Enemigo extends Personaje{
 			miTile=sig;
 			sig.setComponente(this);
 			this.setTile(sig);
+			if(sig.getComponenteAtravesable()==null)
+				normalizarVelocidad();
 			//System.out.println("avance");
 			//System.out.println(this.vida);
 		}

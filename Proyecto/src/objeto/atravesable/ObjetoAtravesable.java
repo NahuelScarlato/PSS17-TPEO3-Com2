@@ -11,7 +11,4 @@ public abstract class ObjetoAtravesable extends Objeto{
 	//metodos
 	public void modificar(ObjetoNoAtravesable p){};
 	
-	public void accept(ObjectManager o){
-		o.visit(this);
-	}
 }
