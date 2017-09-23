@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import logica.*;
+import objeto.noAtravesable.Brujo;
 import objeto.noAtravesable.Goblin;
 import objeto.noAtravesable.Mago;
 import game.display.Display;
@@ -29,6 +30,7 @@ public class Game implements Runnable{
 
 	private Goblin goblin;
 	private Mago mago;
+	private Brujo brujo;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -43,10 +45,10 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		Random r = new Random();
 		int ran = r.nextInt(6);
-		goblin=new Goblin(myLogic.getTile(3, 0));
+		brujo=new Brujo(myLogic.getTile(3, 0));
 		mago= new Mago(myLogic.getTile(3, 10));
 		myLogic.agregarObjeto(mago);
-		myLogic.agregarObjeto(goblin);
+		myLogic.agregarObjeto(brujo);
 		x = 0;
 	}
 	
