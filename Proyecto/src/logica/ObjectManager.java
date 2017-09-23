@@ -23,7 +23,8 @@ public class ObjectManager {
 		if (actual.getColumna()==11){
 			encontre=true;
 		}
-		for(int i=0; i<e.getAlcance() && !encontre; i++){
+		int restantes = 12 - (actual.getColumna()+e.getAlcance());
+		for(int i=0; restantes > 0 && i<e.getAlcance() && !encontre; i++){
 			actual=actual.getRight();
 			if(actual.getComponente()!=null){
 				encontre=true;

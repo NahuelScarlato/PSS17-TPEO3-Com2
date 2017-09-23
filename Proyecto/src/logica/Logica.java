@@ -85,7 +85,7 @@ public class Logica {
 					int m = tablero[i][j].getComponente().getMaxVida();
 					g.drawImage(ImageLoader.vida[1], j*64, i*64, 40, 4, null);
 					g.drawImage(ImageLoader.vida[0], j*64, i*64, (40*v)/m, 4, null);
-					System.out.println("vida actual: " + v + " vida total: " + m + ".");
+					//System.out.println("vida actual: " + v + " vida total: " + m + ".");
 				}
 			}
 		}

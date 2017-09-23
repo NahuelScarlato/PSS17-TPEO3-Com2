@@ -11,8 +11,8 @@ public class Brujo extends Enemigo{
 		image=ImageLoader.brujo;
 		ancho=1;
 		alto=1;
-		impacto=30;
-		alcance=3;
+		impacto=20;
+		alcance=4;
 		velocidadMov=0.9f;
 		velMovMaxima=0.9f;
 		velocidadAt=0.7f;
