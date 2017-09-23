@@ -6,8 +6,8 @@ import logica.Tile;
 public class EnanoCazador extends Aliado {
 	public EnanoCazador(Tile t){
 		miTile=t;
-		velocidadAt=0.4f;
-		velAtMaxima=0.4f;
+		velocidadAt=1.3f;
+		velAtMaxima=1.3f;
 		t.setComponente(this);
 		image=ImageLoader.cazadorEnano;
 		vida=50;

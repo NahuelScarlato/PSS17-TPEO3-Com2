@@ -15,8 +15,8 @@ public class Brujo extends Enemigo{
 		alcance=4;
 		velocidadMov=0.9f;
 		velMovMaxima=0.9f;
-		velocidadAt=0.7f;
-		velAtMaxima=0.7f;
+		velocidadAt=1.2f;
+		velAtMaxima=1.2f;
 		puntaje=20;
 		maxCoins=15;
 		minCoins=5;
