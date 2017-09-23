@@ -1,4 +1,4 @@
-package objeto.noAtravesable;
+package objeto.noAtravesable.objetoConVida.personaje;
 
 public class Oso extends Aliado{
 	//constructor

@@ -1,4 +1,4 @@
-package objeto.noAtravesable;
+package objeto.noAtravesable.objetoConVida.OMConVida;
 
 import game.gfx.ImageLoader;
 

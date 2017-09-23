@@ -1,7 +1,5 @@
 package objeto.atravesable;
 
-
-import logica.ObjectManager;
 import logica.Objeto;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 

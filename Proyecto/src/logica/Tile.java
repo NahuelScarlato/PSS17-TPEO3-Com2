@@ -1,7 +1,7 @@
 package logica;
 
-import objeto.atravesable.ObjetoAtravesable;
-import objeto.noAtravesable.ObjetoConVida;
+import objeto.noAtravesable.objetoConVida.*;
+import objeto.atravesable.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Tile {

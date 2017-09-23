@@ -1,7 +1,7 @@
 package logica;
 
 import objeto.atravesable.*;
-import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.personaje.*;
 
 public class ObjectManager {
 	//metodos

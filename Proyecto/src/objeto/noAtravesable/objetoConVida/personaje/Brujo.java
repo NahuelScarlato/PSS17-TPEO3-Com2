@@ -1,4 +1,4 @@
-package objeto.noAtravesable;
+package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import game.gfx.ImageLoader;
 

@@ -1,6 +1,7 @@
 package logica;
 
-import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.OTConVida.*;
+import objeto.noAtravesable.objetoConVida.personaje.*;
 
 public class Tienda {
 	//atributos

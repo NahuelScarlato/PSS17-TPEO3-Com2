@@ -1,7 +1,7 @@
-package objeto.noAtravesable;
+package logica;
 
 
-import logica.Objeto;
+
 import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 

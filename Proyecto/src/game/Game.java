@@ -6,7 +6,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import logica.*;
-import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.personaje.*;
 import game.display.Display;
 import game.gfx.ImageLoader;
 

@@ -2,7 +2,7 @@ package objeto.atravesable;
 
 import game.gfx.ImageLoader;
 import logica.ObjectManager;
-import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.personaje.*;
 
 public class Agua extends ObjetoAtravesable{
 	//atributos

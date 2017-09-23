@@ -1,6 +1,9 @@
-package objeto.noAtravesable;
+package objeto.noAtravesable.objetoConVida.personaje;
 
 import logica.*;
+import objeto.noAtravesable.objetoConVida.OMConVida.*;
+import objeto.noAtravesable.objetoConVida.OTConVida.*;
+import objeto.noAtravesable.Premio;
 
 public abstract class Enemigo extends Personaje{
 	//atributos

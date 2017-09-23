@@ -1,4 +1,6 @@
-package objeto.noAtravesable;
+package objeto.noAtravesable.objetoConVida;
+
+import objeto.noAtravesable.*;
 
 public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	//atributos

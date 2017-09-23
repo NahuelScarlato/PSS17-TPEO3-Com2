@@ -5,7 +5,7 @@ import java.util.Random;
 import java.awt.Graphics;
 import game.gfx.ImageLoader;
 import objeto.atravesable.*;
-import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.OMConVida.*;
 
 public class Logica {
 	//atributos
