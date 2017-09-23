@@ -3,7 +3,7 @@ package objeto.noAtravesable;
 public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	//atributos
 	protected int vida;
-	protected static int maxVida;
+	protected int maxVida;
 	
 	//metodos
 	public void restarVida(int v){

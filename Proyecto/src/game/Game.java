@@ -44,7 +44,7 @@ public class Game implements Runnable{
 		Random r = new Random();
 		int ran = r.nextInt(6);
 		goblin=new Goblin(myLogic.getTile(3, 0));
-		mago= new Mago(myLogic.getTile(3, 6));
+		mago= new Mago(myLogic.getTile(3, 10));
 		myLogic.agregarObjeto(mago);
 		myLogic.agregarObjeto(goblin);
 		x = 0;
@@ -112,7 +112,7 @@ public class Game implements Runnable{
 			}
 			
 			if (timer >= 1000000000){
-				System.out.println("Frames:" + ticks);
+				//System.out.println("Frames:" + ticks);
 				ticks = 0;
 				timer = 0;
 			}

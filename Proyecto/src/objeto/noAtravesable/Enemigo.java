@@ -14,10 +14,10 @@ public abstract class Enemigo extends Personaje{
 	public void atacar(Aliado a){
 		if(reloj==0){
 			a.restarVida(impacto);
-			System.out.println("ataque");
+			//System.out.println("ataque");
 		}
 		reloj=(reloj+1)%(int)(velocidadMov*60);
-		System.out.println(this.vida);
+		//System.out.println(this.vida);
 	}
 	public void atacar(OTConVida otcv){
 		if(reloj==0)
@@ -47,8 +47,8 @@ public abstract class Enemigo extends Personaje{
 			miTile=sig;
 			sig.setComponente(this);
 			this.setTile(sig);
-			System.out.println("avance");
-			System.out.println(this.vida);
+			//System.out.println("avance");
+			//System.out.println(this.vida);
 		}
 		reloj=(reloj+1)%(int)(velocidadMov*60);
 	}

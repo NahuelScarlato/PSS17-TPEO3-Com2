@@ -14,7 +14,7 @@ public class Goblin extends Enemigo {
 		alto=1;
 		impacto=10;
 		alcance=1;
-		velocidadMov=0.7f;
+		velocidadMov=0.3f;
 		velMovMaxima=0.7f;
 		puntaje=20;
 		maxCoins=15;
