@@ -83,8 +83,10 @@ public class Logica {
 				}
 				if ((tablero[i][j].getComponente())!=null){
 					g.drawImage(tablero[i][j].getComponente().getImage(), j*64, i*64, tablero[i][j].getComponente().getAncho()*64,tablero[i][j].getComponente().getAlto()*64, null);
-					g.drawImage(ImageLoader.vida[1], j*64, i*64, 40, 4,null);
-					g.drawImage(ImageLoader.vida[0], j*64, i*64, (tablero[i][j].getComponente().getVida()*40)/(tablero[i][j].getComponente().getMaxVida()), 4 ,null);
+					int v = tablero[i][j].getComponente().getVida();
+					int m = tablero[i][j].getComponente().getMaxVida();
+					g.drawImage(ImageLoader.vida[1], j*64, i*64, 40, 4, null);
+					g.drawImage(ImageLoader.vida[0], j*64, i*64, v*40/m, 4, null);
 				}
 			}
 		}
