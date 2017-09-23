@@ -17,6 +17,9 @@ public class Agua extends ObjetoAtravesable{
 	public void modificar(Personaje e){
 		e.modificarVelocidad(rall);
 	}
+	public void normalizar(Personaje e){
+		e.normalizarVelocidad();
+	}
 
 	public void accept(ObjectManager o){
 		o.visit(this);

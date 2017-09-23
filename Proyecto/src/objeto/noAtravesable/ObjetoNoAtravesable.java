@@ -10,4 +10,5 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public int getVida(){return 0;}
 	public int getMaxVida(){return 0;}
 	public void serModificado(Agua a){}
+	public void serNormalizado(Agua a){}
 }

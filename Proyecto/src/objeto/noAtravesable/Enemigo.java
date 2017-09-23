@@ -48,8 +48,6 @@ public abstract class Enemigo extends Personaje{
 			miTile=sig;
 			sig.setComponente(this);
 			this.setTile(sig);
-			if(sig.getComponenteAtravesable()==null)
-				normalizarVelocidad();
 			//System.out.println("avance");
 			//System.out.println(this.vida);
 		}

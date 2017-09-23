@@ -38,5 +38,7 @@ public class ObjectManager {
 	public void visit(Agua a){
 		if(a.getTile().getComponente()!=null)
 			a.getTile().getComponente().serModificado(a);
+		if(a.getTile().getColumna()!=11 && a.getTile().getRight().getComponente()!=null)
+			a.getTile().getRight().getComponente().serNormalizado(a);
 	}
 }
