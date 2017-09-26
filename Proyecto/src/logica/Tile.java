@@ -46,8 +46,8 @@ public class Tile {
 	public Tile getLeft(){
 		return miJuego.getTile(fila, columna-1);
 	}
-	public void matar(ObjetoConVida o){
+	public void destruirObjeto(ObjetoConVida o){
 		componente = null;
-		miJuego.eliminarObjeto(o);
+		miJuego.agregarABorrar(o);
 	}
 }

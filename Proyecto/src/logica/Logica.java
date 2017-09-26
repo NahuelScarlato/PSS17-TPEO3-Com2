@@ -11,7 +11,7 @@ public class Logica {
 	//atributos
 	protected Tienda tienda;
 	protected ObjectManager om;
-	protected LinkedList<Objeto> lista;
+	protected LinkedList<Objeto> listaObjetos, objetosABorrar;
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int filas=6, columnas=12;
@@ -19,20 +19,27 @@ public class Logica {
 	
 	//constructor
 	public Logica(){
-		score=0;
-		tablero=new Tile[filas][columnas];
-		lista=new LinkedList<Objeto>();
-		om=new ObjectManager();
-		reloj=0;
+		score = 0;
+		tablero = new Tile[filas][columnas];
+		listaObjetos = new LinkedList<Objeto>();
+		objetosABorrar = new LinkedList<Objeto>();
+		om = new ObjectManager();
+		reloj = 0;
 	}
 	
 	//metodos
 	public void agregarObjeto(Objeto o){
-		lista.addLast(o);
+		listaObjetos.addLast(o);
 	}
 	
-	public void eliminarObjeto(Objeto o){
-		lista.remove(o);
+	public void agregarABorrar(Objeto o){
+		objetosABorrar.addLast(o);
+	}
+	
+	public void eliminarObjetos(){
+		for (Objeto o : objetosABorrar){
+			listaObjetos.remove(o);
+		}
 	}
 	
 	public void generarMapa(){
@@ -53,19 +60,17 @@ public class Logica {
 					Agua a=new Agua();
 					tablero[i][j].setComponenteAtravesable(a);
 					a.setTile(tablero[i][j]);
-					lista.addLast(a);
+					listaObjetos.addLast(a);
 				}
 				else if ( r < 9) {
 					Arbol a= new Arbol();
 					tablero[i][j].setComponente(a);
 					a.setTile(tablero[i][j]);
-					lista.addLast(a);
 				}
 				else if (r < 12) {
 					Piedra p=new Piedra();
 					tablero[i][j].setComponente(p);
 					p.setTile(tablero[i][j]);
-					lista.addLast(p);
 				}
 				
 			}
@@ -92,12 +97,15 @@ public class Logica {
 	}
 	
 	public void actualizar(){
-		for(Objeto objeto:lista){
+		for(Objeto objeto:listaObjetos){
 			objeto.accept(om);
 		}
+		eliminarObjetos();
+		objetosABorrar = new LinkedList<Objeto>();
+		
 	}
 	
-	public int score(){
+	public int getScore(){
 		return score;
 	}
 	

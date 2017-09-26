@@ -17,6 +17,7 @@ public class ObjectManager {
 		if(!ataque)
 			a.aumentarReloj();
 	}
+	
 	public void visit(Enemigo e){
 		boolean encontre=false;
 		Tile actual=e.getTile();

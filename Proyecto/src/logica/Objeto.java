@@ -19,7 +19,9 @@ public abstract class Objeto {
 	public void setTile(Tile t){
 		miTile=t;
 	}
-	public void accept(ObjectManager o){}
+	
+	public void accept(ObjectManager o){	
+	}
 
 	public int getAncho(){
 		return ancho;

@@ -60,6 +60,7 @@ public abstract class Enemigo extends Personaje{
 	public void accept(ObjectManager o){
 		o.visit(this);
 	}
+	
 	public boolean serAtacado(Aliado a){
 		a.atacar(this);
 		return true;

@@ -14,13 +14,16 @@ public abstract class Aliado extends Personaje {
 		}
 		reloj=(reloj+1)%(int)(velocidadAt*60);
 	}
+	
 	public int getValor(){
 		return valor;
 	}
+	
 	public boolean serAtacado(Enemigo e){
 		e.atacar(this);
 		return true;
 	}
+	
 	public void accept(ObjectManager o){
 		o.visit(this);
 	}

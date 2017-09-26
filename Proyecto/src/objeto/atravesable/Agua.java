@@ -10,7 +10,7 @@ public class Agua extends ObjetoAtravesable{
 	//constructor
 	public Agua(){
 		image = ImageLoader.agua;
-		rall=5.0f;
+		rall=1.5f;
 	}
 	
 	//metodos
