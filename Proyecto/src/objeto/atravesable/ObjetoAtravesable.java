@@ -7,6 +7,5 @@ public abstract class ObjetoAtravesable extends Objeto{
 	//atributos
 	
 	//metodos
-	public void modificar(ObjetoNoAtravesable p){};
-	
+	public abstract void modificar(ObjetoNoAtravesable p);
 }

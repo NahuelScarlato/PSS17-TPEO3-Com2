@@ -1,6 +1,7 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 import game.gfx.ImageLoader;
 import logica.*;
+import logica.visitor.VisitorEnemigo;
 
 public class Goblin extends Enemigo {
 	//constructor
@@ -22,5 +23,6 @@ public class Goblin extends Enemigo {
 		maxCoins=15;
 		minCoins=5;
 		reloj=1;
+		v=new VisitorEnemigo(this);
 	}
 }

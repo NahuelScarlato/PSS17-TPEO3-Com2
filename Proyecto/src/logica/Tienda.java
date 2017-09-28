@@ -31,20 +31,20 @@ public class Tienda {
 					t=t.getRight();
 				}
 			}
+			monedas-=a.getValor();
 		}
-		monedas-=a.getValor();
 	}
 	public void comprar(EnanoCazador ec, int f, int c){
 		boolean posible=juego.getTile(f, c).getComponente()==null;
-		if(juego.getTile(f, c).getComponente()==null && posible){
+		if(posible){
 			juego.getTile(f, c).setComponente(ec);
 			if(juego.getTile(f+1, c).getComponente()==null){
 				Oso o=new Oso();
 				juego.getTile(f+1, c).setComponente(o);
 				o.setTile(juego.getTile(f+1, c));
 			}
+			monedas-=ec.getValor();
 		}
-		monedas-=ec.getValor();
 	}
 	public void comprar(OTConVida otcv, int f, int c){
 		boolean posible=true;

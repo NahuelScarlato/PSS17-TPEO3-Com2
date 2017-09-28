@@ -1,6 +1,6 @@
 package objeto.noAtravesable.objetoConVida.OTConVida;
 
-import objeto.noAtravesable.objetoConVida.personaje.*;
+import logica.visitor.Visitor;
 import objeto.noAtravesable.objetoConVida.*;
 
 public abstract class OTConVida extends ObjetoConVida {
@@ -11,8 +11,7 @@ public abstract class OTConVida extends ObjetoConVida {
 	public int getValor(){
 		return valor;
 	}
-	public boolean serAtacado(Enemigo e){
-		e.atacar(this);
-		return true;
+	public void accept(Visitor v){
+		v.afectar(this);
 	}
 }

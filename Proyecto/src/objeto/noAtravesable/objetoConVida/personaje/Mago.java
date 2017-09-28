@@ -2,6 +2,7 @@ package objeto.noAtravesable.objetoConVida.personaje;
 
 import game.gfx.*;
 import logica.*;
+import logica.visitor.*;
 
 public class Mago extends Aliado {
 	//constructor
@@ -18,5 +19,6 @@ public class Mago extends Aliado {
 		impacto=10;
 		alcance=4;
 		valor=70;
+		v=new VisitorAliado(this);
 	}
 }

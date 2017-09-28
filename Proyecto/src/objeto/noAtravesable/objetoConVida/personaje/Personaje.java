@@ -13,9 +13,12 @@ public abstract class Personaje extends ObjetoConVida{
 	protected float velAtMaxima;
 	
 	//metodos
-	public void atacar(ObjetoNoAtravesable o){}
+	public abstract void atacar(ObjetoNoAtravesable o);
 	public int getAlcance(){
 		return alcance;
+	}
+	public int getImpacto(){
+		return impacto;
 	}
 	public void modificarVelocidad(float rall){
 		velocidadAt=(rall*velAtMaxima);

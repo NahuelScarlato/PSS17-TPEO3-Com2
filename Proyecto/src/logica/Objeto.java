@@ -1,6 +1,7 @@
 package logica;
 
 import java.awt.image.BufferedImage;
+import logica.visitor.*;
 
 public abstract class Objeto {
 	//atributos

@@ -1,11 +1,10 @@
 package objeto.noAtravesable.objetoConVida.OMConVida;
 
-import objeto.noAtravesable.objetoConVida.personaje.*;
+import logica.visitor.Visitor;
 import objeto.noAtravesable.objetoConVida.*;
 
 public abstract class OMConVida extends ObjetoConVida {
-	public boolean serAtacado(Enemigo e){
-		e.atacar(this);
-		return true;
+	public void accept(Visitor v){
+		v.afectar(this);
 	}
 }

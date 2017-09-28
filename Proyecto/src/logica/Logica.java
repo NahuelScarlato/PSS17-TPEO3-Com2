@@ -6,12 +6,16 @@ import java.awt.Graphics;
 import game.gfx.ImageLoader;
 import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
+import objeto.noAtravesable.objetoConVida.personaje.*;
+import logica.visitor.*;
 
 public class Logica {
 	//atributos
 	protected Tienda tienda;
 	protected ObjectManager om;
-	protected LinkedList<Objeto> listaObjetos, objetosABorrar;
+	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar;
+	protected LinkedList<Aliado> listaAliados, aliadosABorrar;
+	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int filas=6, columnas=12;
@@ -21,25 +25,50 @@ public class Logica {
 	public Logica(){
 		score = 0;
 		tablero = new Tile[filas][columnas];
-		listaObjetos = new LinkedList<Objeto>();
-		objetosABorrar = new LinkedList<Objeto>();
+		listaEnemigos = new LinkedList<Enemigo>();
+		enemigosABorrar = new LinkedList<Enemigo>();
+		listaAliados = new LinkedList<Aliado>();
+		aliadosABorrar = new LinkedList<Aliado>();
+		listaAtravesables = new LinkedList<ObjetoAtravesable>();
+		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
 		om = new ObjectManager();
 		reloj = 0;
 	}
 	
 	//metodos
-	public void agregarObjeto(Objeto o){
-		listaObjetos.addLast(o);
+	public void agregarAliado(Aliado a){
+		listaAliados.addLast(a);
 	}
-	
-	public void agregarABorrar(Objeto o){
-		objetosABorrar.addLast(o);
+	public void agregarEnemigo(Enemigo e){
+		listaEnemigos.addLast(e);
+	}
+	public void agregarAtravesable(ObjetoAtravesable oa){
+		listaAtravesables.addLast(oa);
+	}
+
+	public void agregarAliadoABorrar(Aliado a){
+		aliadosABorrar.addLast(a);
+	}
+	public void agregarEnemigoABorrar(Enemigo e){
+		enemigosABorrar.addLast(e);
+	}
+	public void agregarAtravesableABorrar(ObjetoAtravesable oa){
+		atravesablesABorrar.addLast(oa);
 	}
 	
 	public void eliminarObjetos(){
-		for (Objeto o : objetosABorrar){
-			listaObjetos.remove(o);
+		for (Aliado a : aliadosABorrar){
+			listaAliados.remove(a);
 		}
+		aliadosABorrar=new LinkedList<Aliado>();
+		for (Enemigo e : enemigosABorrar){
+			listaEnemigos.remove(e);
+		}
+		enemigosABorrar=new LinkedList<Enemigo>();
+		for (ObjetoAtravesable oa : atravesablesABorrar){
+			listaAtravesables.remove(oa);
+		}
+		atravesablesABorrar=new LinkedList<ObjetoAtravesable>();
 	}
 	
 	public void generarMapa(){
@@ -60,7 +89,7 @@ public class Logica {
 					Agua a=new Agua();
 					tablero[i][j].setComponenteAtravesable(a);
 					a.setTile(tablero[i][j]);
-					listaObjetos.addLast(a);
+					listaAtravesables.addLast(a);
 				}
 				else if ( r < 9) {
 					Arbol a= new Arbol();
@@ -90,19 +119,49 @@ public class Logica {
 					int m = tablero[i][j].getComponente().getMaxVida();
 					g.drawImage(ImageLoader.vida[1], j*64, i*64, 40, 4, null);
 					g.drawImage(ImageLoader.vida[0], j*64, i*64, (40*v)/m, 4, null);
-					//System.out.println("vida actual: " + v + " vida total: " + m + ".");
 				}
 			}
 		}
 	}
 	
 	public void actualizar(){
-		for(Objeto objeto:listaObjetos){
-			objeto.accept(om);
+		for(Aliado a:listaAliados){
+			boolean ataque=false;
+			Tile actual = a.getTile().getLeft();
+			for(int i=0; i<a.getAlcance() && !ataque; i++){
+				if(actual.getComponente()!=null){
+					a.atacar(actual.getComponente());
+				}
+				actual=actual.getLeft();
+			}
+			if(!ataque)
+				a.aumentarReloj();
 		}
 		eliminarObjetos();
-		objetosABorrar = new LinkedList<Objeto>();
-		
+		for(Enemigo e:listaEnemigos){
+			boolean encontre=false;
+			Tile actual=e.getTile();
+			if (actual.getColumna()==11){
+				encontre=true;
+			}
+			int restantes = 12 - (actual.getColumna()+e.getAlcance());
+			for(int i=0; restantes > 0 && i<e.getAlcance() && !encontre; i++){
+				actual=actual.getRight();
+				if(actual.getComponente()!=null){
+					encontre=true;
+					e.atacar(actual.getComponente());
+				}
+			}
+			if(!encontre){
+				e.avanzar();
+			}
+		}
+		eliminarObjetos();
+		for(ObjetoAtravesable oa: listaAtravesables){
+			if(oa.getTile().getComponente()!=null)
+				oa.modificar(oa.getTile().getComponente());
+		}
+		eliminarObjetos();
 	}
 	
 	public int getScore(){

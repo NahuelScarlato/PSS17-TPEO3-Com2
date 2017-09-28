@@ -48,10 +48,10 @@ public class Game implements Runnable{
 		enano= new EnanoCazador(myLogic.getTile(3, 10));
 		goblin = new Goblin(myLogic.getTile(5, 0));
 		mago = new Mago(myLogic.getTile(5, 9));
-		myLogic.agregarObjeto(goblin);
-		myLogic.agregarObjeto(mago);
-		myLogic.agregarObjeto(enano);
-		myLogic.agregarObjeto(brujo);
+		myLogic.agregarEnemigo(goblin);
+		myLogic.agregarAliado(mago);
+		myLogic.agregarAliado(enano);
+		myLogic.agregarEnemigo(brujo);
 		
 		x = 0;
 	}

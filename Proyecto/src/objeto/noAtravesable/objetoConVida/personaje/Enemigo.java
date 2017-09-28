@@ -1,9 +1,8 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
 import logica.*;
-import objeto.noAtravesable.objetoConVida.OMConVida.*;
-import objeto.noAtravesable.objetoConVida.OTConVida.*;
-import objeto.noAtravesable.Premio;
+import logica.visitor.*;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public abstract class Enemigo extends Personaje{
 	//atributos
@@ -12,29 +11,15 @@ public abstract class Enemigo extends Personaje{
 	protected int puntaje;
 	protected int maxCoins;
 	protected int minCoins;
+	protected VisitorEnemigo v;
 	
 	//metodos
-	public void atacar(Aliado a){
+	public void atacar(ObjetoNoAtravesable ona){
 		if(reloj==0){
-			a.restarVida(impacto);
-			//System.out.println("ataque");
+			ona.accept(v);
 		}
 		reloj=(reloj+1)%(int)(velocidadAt*60);
 		//System.out.println(this.vida);
-	}
-	public void atacar(OTConVida otcv){
-		if(reloj==0)
-			otcv.restarVida(impacto);
-		reloj=(reloj+1)%(int)(velocidadAt*60);
-	}
-	public void atacar(OMConVida omcv){
-		if(reloj==0){
-			omcv.restarVida(impacto);
-		}
-		reloj=(reloj+1)%(int)(velocidadAt*60);
-	}
-	public void atacar(Premio p){
-		p.eliminar();
 	}
 	public void modificarVelocidad(float rall){
 		velocidadAt=(rall*velAtMaxima);
@@ -51,18 +36,18 @@ public abstract class Enemigo extends Personaje{
 			miTile=sig;
 			sig.setComponente(this);
 			this.setTile(sig);
-			//System.out.println("avance");
-			//System.out.println(this.vida);
 		}
 		reloj=(reloj+1)%(int)(velocidadMov*60);
 	}
-	
-	public void accept(ObjectManager o){
-		o.visit(this);
+	public void restarVida(int v){
+		vida-=v;
+		if(vida<=0){
+			miTile.destruirEnemigo(this);
+			miTile = null;
+		}
 	}
 	
-	public boolean serAtacado(Aliado a){
-		a.atacar(this);
-		return true;
+	public void accept(Visitor o){
+		o.afectar(this);
 	}
 }

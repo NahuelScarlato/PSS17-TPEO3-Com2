@@ -1,6 +1,7 @@
 package logica;
 
 import objeto.noAtravesable.objetoConVida.*;
+import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.atravesable.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
@@ -46,8 +47,15 @@ public class Tile {
 	public Tile getLeft(){
 		return miJuego.getTile(fila, columna-1);
 	}
-	public void destruirObjeto(ObjetoConVida o){
+	public void destruirAliado(Aliado a){
 		componente = null;
-		miJuego.agregarABorrar(o);
+		miJuego.agregarAliadoABorrar(a);
+	}
+	public void destruirEnemigo(Enemigo e){
+		componente = null;
+		miJuego.agregarEnemigoABorrar(e);
+	}
+	public void destruirObjeto(ObjetoConVida ocv){
+		componente=null;
 	}
 }
