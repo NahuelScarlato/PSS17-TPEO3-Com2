@@ -7,12 +7,10 @@ import game.gfx.ImageLoader;
 import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.*;
-import logica.visitor.*;
 
 public class Logica {
 	//atributos
 	protected Tienda tienda;
-	protected ObjectManager om;
 	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar;
 	protected LinkedList<Aliado> listaAliados, aliadosABorrar;
 	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
@@ -31,7 +29,6 @@ public class Logica {
 		aliadosABorrar = new LinkedList<Aliado>();
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
-		om = new ObjectManager();
 		reloj = 0;
 	}
 	
