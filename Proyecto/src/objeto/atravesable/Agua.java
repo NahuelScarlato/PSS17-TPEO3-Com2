@@ -9,6 +9,7 @@ public class Agua extends ObjetoAtravesable{
 	//atributos
 	protected float rall;
 	protected VisitorAgua v;
+	
 	//constructor
 	public Agua(){
 		image = ImageLoader.agua;

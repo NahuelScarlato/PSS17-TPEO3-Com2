@@ -14,7 +14,7 @@ public class Brujo extends Enemigo{
 		alto=1;
 		impacto=20;
 		alcance=4;
-		velocidadMov=0.9f;
+		velocidadMov=0.5f;
 		velMovMaxima=0.9f;
 		velocidadAt=1.2f;
 		velAtMaxima=1.2f;
