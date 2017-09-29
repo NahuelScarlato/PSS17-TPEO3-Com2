@@ -1,16 +1,17 @@
 package objeto.atravesable;
 
+import logica.visitor.VisitorLava;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 
 public class Lava extends ObjetoAtravesable{
-	public void modificar(Personaje p){
-		p.restarVida(5);
+	//atributos
+	protected VisitorLava v;
+	protected int impacto;
+	
+	public void modificar(ObjetoNoAtravesable o){
+		o.accept(v);
 	}
-
-	@Override
-	public void modificar(ObjetoNoAtravesable p) {
-		// TODO Auto-generated method stub
-		
+	public int getImpacto(){
+		return impacto;
 	}
 }
