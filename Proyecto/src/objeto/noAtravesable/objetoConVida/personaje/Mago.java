@@ -8,8 +8,8 @@ public class Mago extends Aliado {
 	//constructor
 	public Mago(Tile t){
 		miTile=t;
-		velocidadAt=0.5f;
-		velAtMaxima=0.5f;
+		velocidadAt=2.0f;
+		velAtMaxima=2.0f;
 		t.setComponente(this);
 		image=ImageLoader.mago;
 		vida=40;
