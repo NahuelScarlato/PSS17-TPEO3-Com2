@@ -36,6 +36,7 @@ public abstract class Enemigo extends Personaje{
 			miTile=sig;
 			sig.setComponente(this);
 			this.setTile(sig);
+			normalizarVelocidad();
 		}
 		reloj=(reloj+1)%(int)(velocidadMov*60);
 	}

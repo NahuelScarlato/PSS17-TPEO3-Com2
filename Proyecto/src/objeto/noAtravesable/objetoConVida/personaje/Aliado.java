@@ -12,9 +12,8 @@ public abstract class Aliado extends Personaje {
 	public void atacar(ObjetoNoAtravesable e){
 		if(reloj==0){
 			e.accept(v);
-			//v.afectar(e);
 		}
-		reloj=(reloj+1)%(int)(velocidadAt*60);
+		aumentarReloj();
 	}
 	
 	public int getValor(){

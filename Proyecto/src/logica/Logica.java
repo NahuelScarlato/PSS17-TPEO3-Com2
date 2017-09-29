@@ -17,7 +17,6 @@ public class Logica {
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int filas=6, columnas=12;
-	protected int reloj;
 	
 	//constructor
 	public Logica(){
@@ -29,7 +28,6 @@ public class Logica {
 		aliadosABorrar = new LinkedList<Aliado>();
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
-		reloj = 0;
 	}
 	
 	//metodos
@@ -123,16 +121,14 @@ public class Logica {
 	
 	public void actualizar(){
 		for(Aliado a:listaAliados){
-			boolean ataque=false;
 			Tile actual = a.getTile().getLeft();
-			for(int i=0; i<a.getAlcance() && !ataque; i++){
+			for(int i=0; i<a.getAlcance(); i++){
 				if(actual.getComponente()!=null){
 					a.atacar(actual.getComponente());
 				}
 				actual=actual.getLeft();
 			}
-			if(!ataque)
-				a.aumentarReloj();
+			a.aumentarReloj();
 		}
 		eliminarObjetos();
 		for(Enemigo e:listaEnemigos){
