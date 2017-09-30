@@ -66,9 +66,7 @@ public class Display {
 		c.fill=GridBagConstraints.BOTH;
 		frame.add(canvas,c);
 		c.gridx=1;
-		
-		c.ipadx=width/3;
-		c.ipady=height;
+		c.ipadx=width/4;
 		frame.add(panel,c);
 		frame.pack();
 	}
