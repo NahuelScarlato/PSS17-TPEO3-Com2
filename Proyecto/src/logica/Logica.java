@@ -120,6 +120,7 @@ public class Logica {
 	}
 	
 	public void actualizar(){
+		eliminarObjetos();
 		for(Aliado a:listaAliados){
 			Tile actual = a.getTile().getLeft();
 			for(int i=0; i<a.getAlcance(); i++){

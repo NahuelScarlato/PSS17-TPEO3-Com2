@@ -1,6 +1,5 @@
 package logica;
 
-import objeto.noAtravesable.objetoConVida.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;

@@ -1,6 +1,5 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
-import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
