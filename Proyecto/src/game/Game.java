@@ -153,7 +153,8 @@ public class Game implements Runnable{
 	}
 	
 	public void interaccion(int x, int y){
-		Tile tile = myLogic.getTile(x/64, y/64);
+		Tile tile = myLogic.getTile(y/64, x/64);
+		System.out.println("Orden de atacar en "+ x/64+", "+y/64);
 		tile.destruirObjeto((ObjetoConVida)tile.getComponente());
 	}
 	
