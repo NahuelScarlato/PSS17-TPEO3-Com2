@@ -1,5 +1,6 @@
 package game.display;
 
+import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
@@ -8,11 +9,13 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import game.Game;
+
 public class Display {
 
 	private JFrame frame;
 	private Canvas canvas;
-	
+	private Game myGame;
 	private String title;
 	private int width, height;
 	
@@ -33,8 +36,10 @@ public class Display {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-
+		frame.setLayout(new BorderLayout());
+		
 		JLabel label = new JLabel();
+		label.setPreferredSize(new Dimension(200,200));
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
@@ -48,8 +53,8 @@ public class Display {
 			}
 		}
 		);
+		frame.add(label,-1);
 		frame.add(canvas);
-		frame.add(label);
 		frame.pack();
 	}
 	
@@ -59,5 +64,6 @@ public class Display {
 	
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
+		myGame.interaccion(e.getX(),e.getY());
 	}
 }
