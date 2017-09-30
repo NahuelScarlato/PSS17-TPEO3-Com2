@@ -2,12 +2,11 @@ package game.display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Display {
 
@@ -16,6 +15,7 @@ public class Display {
 	
 	private String title;
 	private int width, height;
+	
 	
 	public Display(String title, int width, int height){
 		this.title = title;
@@ -34,12 +34,14 @@ public class Display {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 
+		JLabel label = new JLabel();
+		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
 		canvas.setMaximumSize(new Dimension(width,height));
 		canvas.setMinimumSize(new Dimension(width,height));
+		
 		canvas.addMouseListener(new MouseAdapter(){
-			
 			@Override
 			public void mouseClicked(MouseEvent e){
 				click(e);
@@ -47,6 +49,7 @@ public class Display {
 		}
 		);
 		frame.add(canvas);
+		frame.add(label);
 		frame.pack();
 	}
 	
@@ -55,6 +58,6 @@ public class Display {
 	}
 	
 	public void click(MouseEvent e){
-		System.out.println(e.getX()+" "+e.getY());
+		System.out.println(e.getX() + " " + e.getY());
 	}
 }
