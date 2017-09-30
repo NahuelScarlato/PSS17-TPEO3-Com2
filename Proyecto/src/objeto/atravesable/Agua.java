@@ -3,6 +3,7 @@ package objeto.atravesable;
 import game.gfx.ImageLoader;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
 public class Agua extends ObjetoAtravesable{
 	//atributos
@@ -22,5 +23,9 @@ public class Agua extends ObjetoAtravesable{
 	}
 	public float getRall(){
 		return rall;
+	}
+
+	public void normalizar(Personaje p) {
+		p.normalizarVelocidad();
 	}
 }
