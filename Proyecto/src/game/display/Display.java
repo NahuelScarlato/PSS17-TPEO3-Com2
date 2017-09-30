@@ -2,6 +2,10 @@ package game.display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 
@@ -29,12 +33,19 @@ public class Display {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		
+
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
 		canvas.setMaximumSize(new Dimension(width,height));
 		canvas.setMinimumSize(new Dimension(width,height));
-		
+		canvas.addMouseListener(new MouseAdapter(){
+			
+			@Override
+			public void mouseClicked(MouseEvent e){
+				click(e);
+			}
+		}
+		);
 		frame.add(canvas);
 		frame.pack();
 	}
@@ -43,4 +54,7 @@ public class Display {
 		return canvas;
 	}
 	
+	public void click(MouseEvent e){
+		System.out.println(e.getX()+" "+e.getY());
+	}
 }
