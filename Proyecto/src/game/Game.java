@@ -43,11 +43,6 @@ public class Game implements Runnable{
 		myLogic = new Logica();
 		ImageLoader.init();
 		myLogic.generarMapa();
-		brujo=new Brujo(myLogic.getTile(3, 0));
-		goblin = new Goblin(myLogic.getTile(5, 0));
-		myLogic.agregarEnemigo(goblin);
-		myLogic.agregarEnemigo(brujo);
-		
 		x = 0;
 	}
 	
@@ -168,6 +163,22 @@ public class Game implements Runnable{
 			} else if (ran == 1){
 				EnanoCazador cazador = new EnanoCazador(myLogic.getTile(y, x));
 				myLogic.agregarAliado(cazador);
+			}
+		}
+	}
+	
+	public void crearEnemigo(){
+		Random r = new Random();
+		int ran = r.nextInt(2);
+		int y = r.nextInt(6);
+		
+		if (myLogic.getTile(y, 0).getComponente() == null){
+			if (ran == 0){
+				Brujo brujo = new Brujo(myLogic.getTile(y, 0));
+				myLogic.agregarEnemigo(brujo);
+			} else if (ran == 1){
+				Goblin gob = new Goblin(myLogic.getTile(y, 0));
+				myLogic.agregarEnemigo(gob);
 			}
 		}
 	}

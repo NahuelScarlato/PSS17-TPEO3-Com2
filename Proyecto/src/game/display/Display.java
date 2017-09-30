@@ -5,6 +5,7 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -44,14 +45,23 @@ public class Display {
 		frame.setVisible(true);
 		frame.setLayout(new GridBagLayout());
 
-		JPanel panel = new JPanel();
+		JPanel panel = new JPanel(new GridLayout(2,1));
 		
-		JButton boton = new JButton("Agregar aliado");
-		boton.setVisible(true);
-		panel.add(boton);
-		boton.addActionListener(new ActionListener() {
+		JButton botonAliados = new JButton("Agregar aliado");
+		panel.add(botonAliados);
+		botonAliados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				myGame.crearAliado();
+			}
+		});
+		
+		JButton botonEnemigos = new JButton("Agregar enemigos");
+		panel.add(botonEnemigos);
+		botonEnemigos.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				myGame.crearEnemigo();
 			}
 		});
 		
