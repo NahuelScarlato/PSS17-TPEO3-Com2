@@ -1,6 +1,8 @@
 package logica;
 
 import objeto.noAtravesable.objetoConVida.*;
+import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
+import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.atravesable.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -55,7 +57,10 @@ public class Tile {
 		componente = null;
 		miJuego.agregarEnemigoABorrar(e);
 	}
-	public void destruirObjeto(ObjetoConVida ocv){
+	public void destruirObjeto(OMConVida ocv){
+		componente=null;
+	}
+	public void destruirObjeto(OTConVida ocv){
 		componente=null;
 	}
 }

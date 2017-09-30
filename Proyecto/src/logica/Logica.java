@@ -129,8 +129,8 @@ public class Logica {
 				actual=actual.getLeft();
 			}
 			a.aumentarReloj();
+			eliminarObjetos();
 		}
-		eliminarObjetos();
 		for(Enemigo e:listaEnemigos){
 			boolean encontre=false;
 			Tile actual=e.getTile();
@@ -148,13 +148,13 @@ public class Logica {
 			if(!encontre){
 				e.avanzar();
 			}
+			eliminarObjetos();
 		}
-		eliminarObjetos();
 		for(ObjetoAtravesable oa: listaAtravesables){
 			if(oa.getTile().getComponente()!=null)
 				oa.modificar(oa.getTile().getComponente());
+			eliminarObjetos();
 		}
-		eliminarObjetos();
 	}
 	
 	public int getScore(){

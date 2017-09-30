@@ -159,7 +159,6 @@ public class Game implements Runnable{
 			ObjetoConVida o=(ObjetoConVida)tile.getComponente();
 			o.restarVida(1000);
 		}
-		tile.destruirObjeto((ObjetoConVida)tile.getComponente());
 	}
 	
 }

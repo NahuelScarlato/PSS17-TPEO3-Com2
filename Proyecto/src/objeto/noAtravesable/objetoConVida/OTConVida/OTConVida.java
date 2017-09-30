@@ -14,4 +14,11 @@ public abstract class OTConVida extends ObjetoConVida {
 	public void accept(Visitor v){
 		v.afectar(this);
 	}
+	public void restarVida(int v){
+		vida-=v;
+		if(vida<=0){
+			miTile.destruirObjeto(this);
+			miTile = null;
+		}
+	}
 }

@@ -8,13 +8,7 @@ public abstract class ObjetoConVida extends ObjetoNoAtravesable{
 	protected int maxVida;
 	
 	//metodos
-	public void restarVida(int v){
-		vida-=v;
-		if(vida<=0){
-			miTile.destruirObjeto(this);
-			miTile = null;
-		}
-	}
+	public abstract void restarVida(int v);
 	public boolean vivo(){
 		return vida>0;
 	}
