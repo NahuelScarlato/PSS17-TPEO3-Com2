@@ -5,6 +5,8 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -44,9 +46,14 @@ public class Display {
 
 		JPanel panel = new JPanel();
 		
-		JButton boton = new JButton("hola");
+		JButton boton = new JButton("Agregar aliado");
 		boton.setVisible(true);
 		panel.add(boton);
+		boton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				myGame.crearAliado();
+			}
+		});
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));

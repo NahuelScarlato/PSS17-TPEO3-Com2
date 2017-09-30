@@ -7,6 +7,7 @@ import game.gfx.ImageLoader;
 import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.*;
+import java.util.Random;
 
 public class Logica {
 	//atributos
@@ -168,5 +169,13 @@ public class Logica {
 	
 	public Tile getTile(int f, int c){
 		return tablero[f][c];
+	}
+	
+	public int getFilas(){
+		return filas;
+	}
+	
+	public int getColumnas(){
+		return columnas;
 	}
 }
