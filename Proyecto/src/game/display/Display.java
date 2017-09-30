@@ -13,20 +13,22 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import game.Game;
+
 public class Display {
 
 	private JFrame frame;
 	private Canvas canvas;
-	
+	private Game myGame;
 	private String title;
 	private int width, height;
 	
 	
-	public Display(String title, int width, int height){
+	public Display(String title, int width, int height, Game g){
 		this.title = title;
 		this.width = width;
 		this.height = height;
-		
+		myGame = g;
 		createDisplay();
 	}
 	
@@ -77,5 +79,6 @@ public class Display {
 	
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
+		myGame.interaccion(e.getX(),e.getY());
 	}
 }
