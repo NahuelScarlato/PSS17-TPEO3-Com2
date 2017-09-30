@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import logica.*;
+import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import game.display.Display;
 import game.gfx.ImageLoader;
@@ -151,6 +152,9 @@ public class Game implements Runnable{
 		}
 	}
 	
-	
+	public void interaccion(int x, int y){
+		Tile tile = myLogic.getTile(x/64, y/64);
+		tile.destruirObjeto((ObjetoConVida)tile.getComponente());
+	}
 	
 }
