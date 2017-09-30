@@ -2,6 +2,8 @@ package game.display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -33,6 +35,7 @@ public class Display {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		frame.setLayout(new GridBagLayout());
 
 		JLabel label = new JLabel();
 		
@@ -48,8 +51,15 @@ public class Display {
 			}
 		}
 		);
-		frame.add(canvas);
-		frame.add(label);
+		GridBagConstraints c=new GridBagConstraints();
+		c.gridx=0;
+		c.gridy=0;
+		frame.add(canvas,c);
+		c.gridx=1;
+		c.fill=GridBagConstraints.BOTH;
+		c.ipadx=width/3;
+		c.ipady=height;
+		frame.add(label,c);
 		frame.pack();
 	}
 	

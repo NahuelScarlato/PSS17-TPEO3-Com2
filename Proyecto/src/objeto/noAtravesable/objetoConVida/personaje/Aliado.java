@@ -13,7 +13,6 @@ public abstract class Aliado extends Personaje {
 		if(reloj==0){
 			e.accept(v);
 		}
-		aumentarReloj();
 	}
 	
 	public int getValor(){
