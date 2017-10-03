@@ -143,8 +143,8 @@ public class Logica {
 			for(int i=0; restantes > 0 && i<e.getAlcance() && !encontre; i++){
 				actual=actual.getRight();
 				if(actual.getComponente()!=null){
-					encontre=true;
 					e.atacar(actual.getComponente());
+					encontre=true;
 				}
 			}
 			if(!encontre){
