@@ -26,11 +26,6 @@ public class Game implements Runnable{
 	private Graphics g;
 	
 	private BufferedImage testImage; int x = 0;// Codigo temporal para el bichito moviendose.
-
-	private Goblin goblin;
-	private Mago mago;
-	private Brujo brujo;
-	private EnanoCazador enano;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
