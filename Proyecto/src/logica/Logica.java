@@ -122,9 +122,11 @@ public class Logica {
 		eliminarObjetos();
 		for(Aliado a:listaAliados){
 			Tile actual = a.getTile().getLeft();
-			for(int i=0; i<a.getAlcance(); i++){
+			boolean encontre = false;
+			for(int i=0; !encontre && i<a.getAlcance(); i++){
 				if(actual.getComponente()!=null){
 					a.atacar(actual.getComponente());
+					encontre = true;
 				}
 				actual=actual.getLeft();
 			}
