@@ -30,7 +30,7 @@ public abstract class Enemigo extends Personaje{
 		velocidadAt=velAtMaxima;
 	}
 	public void avanzar(){
-		if(reloj==0){
+		if(reloj==0 && miTile.getRight().getComponente()==null){
 			Tile sig=miTile.getRight();
 			miTile.setComponente(null);
 			miTile=sig;

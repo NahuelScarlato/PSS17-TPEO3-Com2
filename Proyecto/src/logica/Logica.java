@@ -143,7 +143,7 @@ public class Logica {
 				if(actual.getComponente()!=null){
 					e.atacar(actual.getComponente());
 					encontre=true;
-				}
+				} 
 			}
 			if(!encontre){
 				e.avanzar();
