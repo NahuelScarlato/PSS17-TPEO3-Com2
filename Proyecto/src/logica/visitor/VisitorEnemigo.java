@@ -18,7 +18,10 @@ public class VisitorEnemigo extends Visitor {
 	public void afectar(Aliado a){
 		a.restarVida(enemigo.getImpacto());
 	}
-	public void afectar(Enemigo e){enemigo.avanzar();}
+	public void afectar(Enemigo e){
+		if(enemigo.getTile().getRight()!=e.getTile())
+			enemigo.avanzar();
+	}
 	public void afectar(OMConVida omcv){
 		omcv.restarVida(enemigo.getImpacto());
 	}

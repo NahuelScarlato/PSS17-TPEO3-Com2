@@ -7,8 +7,6 @@ import game.gfx.ImageLoader;
 import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.*;
-import java.util.Random;
-
 public class Logica {
 	//atributos
 	protected Tienda tienda;
