@@ -45,6 +45,7 @@ public class Logica {
 	}
 	public void agregarEnemigoABorrar(Enemigo e){
 		enemigosABorrar.addLast(e);
+		score+=e.getPuntaje();
 	}
 	public void agregarAtravesableABorrar(ObjetoAtravesable oa){
 		atravesablesABorrar.addLast(oa);

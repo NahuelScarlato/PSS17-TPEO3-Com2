@@ -14,6 +14,9 @@ public abstract class Enemigo extends Personaje{
 	protected VisitorEnemigo v;
 	
 	//metodos
+	public int getPuntaje(){
+		return puntaje;
+	}
 	public void atacar(ObjetoNoAtravesable ona){
 		if(reloj==0){
 			ona.accept(v);

@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import game.Game;
@@ -22,6 +23,7 @@ public class Display {
 	private Game myGame;
 	private String title;
 	private int width, height;
+	JLabel labelPuntaje=new JLabel();
 	
 	
 	public Display(String title, int width, int height, Game g){
@@ -46,6 +48,11 @@ public class Display {
 		GridBagConstraints cs=new GridBagConstraints();
 		cs.gridx=0;
 		cs.gridy=0;
+		
+		labelPuntaje.setText("Score: 0");
+		panel.add(labelPuntaje, cs);
+		
+		cs.gridy=1;
 		cs.anchor=GridBagConstraints.CENTER;
 		cs.fill=GridBagConstraints.BOTH;
 		
@@ -57,7 +64,7 @@ public class Display {
 			}
 		});
 		
-		cs.gridy=1;
+		cs.gridy=2;
 		JButton botonEnemigos = new JButton("Agregar enemigos");
 		panel.add(botonEnemigos, cs);
 		botonEnemigos.addActionListener(new ActionListener() {
@@ -98,5 +105,8 @@ public class Display {
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
 		myGame.interaccion(e.getX(),e.getY());
+	}
+	public void actualizarPuntaje(int p){
+		labelPuntaje.setText("Score: "+p);
 	}
 }
