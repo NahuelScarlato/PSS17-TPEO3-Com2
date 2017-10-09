@@ -34,14 +34,14 @@ public abstract class Enemigo extends Personaje{
 	}
 	public void avanzar(){
 		if(reloj==0 && miTile.getRight().getComponente()==null){
-			Tile sig=miTile.getRight();
+			Tile sig = miTile.getRight();
 			miTile.setComponente(null);
 			miTile=sig;
 			sig.setComponente(this);
 			this.setTile(sig);
 			normalizarVelocidad();
 		}
-		reloj=(reloj+1)%(int)(velocidadMov*60);
+		reloj = (reloj+1)%(int)(velocidadMov*60);
 	}
 	public void restarVida(int v){
 		vida-=v;
