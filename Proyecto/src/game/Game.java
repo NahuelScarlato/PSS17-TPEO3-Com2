@@ -20,7 +20,8 @@ public class Game implements Runnable{
 	
 	private Logica myLogic;
 	// Atributo para manejar los graficos del juego.
-	//private GameGraphics myGraphics;
+	//
+	private GameGraphics myGraphics;
 	
 	private boolean running=false;
 	private Thread thread;
@@ -40,7 +41,8 @@ public class Game implements Runnable{
 		myLogic = new Logica();
 		ImageLoader.init();
 		myLogic.generarMapa();
-		//myGraphics = new GameGraphics(this);
+		//
+		myGraphics = new GameGraphics(this, myLogic);
 	}
 	
 	private void update(){
@@ -55,11 +57,12 @@ public class Game implements Runnable{
 			return;
 		}
 		g = bs.getDrawGraphics();
-
+		myGraphics.setGraphics(g);
 		//Le pasamos a myGraphics el objeto g asi, lo puede usar para todos sus metodos.
-		//habria que usar myGraphics.dibujarMapa();
+		//habria que usar
+		myGraphics.dibujarMapa();
 		
-		myLogic.dibujarMapa(g);
+		//myLogic.dibujarMapa(g);
 		
 		bs.show();
 		g.dispose();
