@@ -19,7 +19,8 @@ public class Game implements Runnable{
 	public String title;
 	
 	private Logica myLogic;
-	private GameGraphics myGraphics;
+	// Atributo para manejar los graficos del juego.
+	//private GameGraphics myGraphics;
 	
 	private boolean running=false;
 	private Thread thread;
