@@ -2,11 +2,11 @@ package logica;
 
 import java.util.LinkedList;
 import java.util.Random;
-import java.awt.Graphics;
-import game.gfx.ImageLoader;
 import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.*;
+
+
 public class Logica {
 	//atributos
 	protected Tienda tienda;
@@ -97,24 +97,6 @@ public class Logica {
 					p.setTile(tablero[i][j]);
 				}
 				
-			}
-		}
-	}
-	
-	public void dibujarMapa(Graphics g){
-		for (int i = 0; i < filas ; i++){
-			for (int j = 0; j < columnas; j++){
-				g.drawImage(ImageLoader.tierra, j*64, i*64, 64, 64, null );
-				if ((tablero[i][j].getComponenteAtravesable())!=null){
-					g.drawImage(tablero[i][j].getComponenteAtravesable().getImage(), j*64, i*64, 64,64, null);
-				}
-				if ((tablero[i][j].getComponente())!=null){
-					g.drawImage(tablero[i][j].getComponente().getImage(), j*64, i*64, tablero[i][j].getComponente().getAncho()*64,tablero[i][j].getComponente().getAlto()*64, null);
-					int v = tablero[i][j].getComponente().getVida();
-					int m = tablero[i][j].getComponente().getMaxVida();
-					g.drawImage(ImageLoader.vida[1], j*64, i*64, 40, 4, null);
-					g.drawImage(ImageLoader.vida[0], j*64, i*64, (40*v)/m, 4, null);
-				}
 			}
 		}
 	}

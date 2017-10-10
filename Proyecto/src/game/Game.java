@@ -42,7 +42,7 @@ public class Game implements Runnable{
 		ImageLoader.init();
 		myLogic.generarMapa();
 		//
-		myGraphics = new GameGraphics(this, myLogic);
+		myGraphics = new GameGraphics(myLogic);
 	}
 	
 	private void update(){
@@ -61,8 +61,6 @@ public class Game implements Runnable{
 		//Le pasamos a myGraphics el objeto g asi, lo puede usar para todos sus metodos.
 		//habria que usar
 		myGraphics.dibujarMapa();
-		
-		//myLogic.dibujarMapa(g);
 		
 		bs.show();
 		g.dispose();

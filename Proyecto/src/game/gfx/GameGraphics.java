@@ -1,21 +1,16 @@
 package game.gfx;
 
 import java.awt.Graphics;
-
-import game.Game;
 import logica.Logica;
 
 
 	
 public class GameGraphics {
 	
-
-	private Game game;
 	private Logica logic;
 	private Graphics g;
 	
-	public GameGraphics(Game game, Logica logic){
-		this.game = game;
+	public GameGraphics(Logica logic){
 		this.logic = logic;
 	}
 	
