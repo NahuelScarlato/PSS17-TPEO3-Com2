@@ -92,5 +92,6 @@ public class Tienda {
 			monedas+=otcv.getValor()/2;
 		}
 	}
+	
 	//agregar vender para temporales
 }

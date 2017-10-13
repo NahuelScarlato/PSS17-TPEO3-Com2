@@ -3,14 +3,14 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import java.util.Random;
 
 public abstract class Enemigo extends Personaje{
 	//atributos
 	protected float velocidadMov;
 	protected float velMovMaxima;
 	protected int puntaje;
-	protected int maxCoins;
-	protected int minCoins;
+	protected int Coins;
 	protected VisitorEnemigo v;
 	
 	//metodos
@@ -48,6 +48,18 @@ public abstract class Enemigo extends Personaje{
 		if(vida<=0){
 			miTile.destruirEnemigo(this);
 			miTile = null;
+		}
+	}
+	
+	public int getCoins(){
+		Random r = new Random();
+		int ran = r.nextInt(4);
+		if  ( ran == 3 ){
+			return Coins;
+		}
+		else{
+			double n = (r.nextInt(3) + 9)*0.1;
+			return (int) (Coins*n);
 		}
 	}
 	

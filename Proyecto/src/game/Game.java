@@ -17,8 +17,9 @@ public class Game implements Runnable{
 	private Display display;
 	public int width,height;
 	public String title;
-	
 	private Logica myLogic;
+	private Brujo brujo;
+
 	// Atributo para manejar los graficos del juego.
 	//
 	private GameGraphics myGraphics;
@@ -41,8 +42,9 @@ public class Game implements Runnable{
 		myLogic = new Logica();
 		ImageLoader.init();
 		myLogic.generarMapa();
-		//
 		myGraphics = new GameGraphics(myLogic);
+		brujo = new Brujo(myLogic.getTile(0,0));
+		myLogic.agregarEnemigo(brujo);
 	}
 	
 	private void update(){
@@ -88,6 +90,7 @@ public class Game implements Runnable{
 				update();
 				render();
 				delta--;
+				System.out.println(brujo.getCoins());
 			}
 		}
 		

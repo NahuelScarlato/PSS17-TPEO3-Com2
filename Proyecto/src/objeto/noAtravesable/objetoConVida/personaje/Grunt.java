@@ -20,8 +20,7 @@ public class Grunt extends Enemigo{
 		velocidadAt=0.7f;
 		velAtMaxima=0.7f;
 		puntaje=20;
-		maxCoins=15;
-		minCoins=5;
+		Coins=15;
 		reloj=1;
 		v=new VisitorEnemigo(this);
 	}

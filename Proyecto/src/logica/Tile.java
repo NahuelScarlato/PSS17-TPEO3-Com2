@@ -55,6 +55,7 @@ public class Tile {
 	public void destruirEnemigo(Enemigo e){
 		componente = null;
 		miJuego.agregarEnemigoABorrar(e);
+		miJuego.agregarMonedas(e.getCoins());
 	}
 	public void destruirObjeto(OMConVida ocv){
 		componente=null;

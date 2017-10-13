@@ -19,8 +19,7 @@ public class Brujo extends Enemigo{
 		velocidadAt=1.2f;
 		velAtMaxima=1.2f;
 		puntaje=20;
-		maxCoins=15;
-		minCoins=5;
+		Coins=200;
 		reloj=1;
 		v=new VisitorEnemigo(this);
 	}

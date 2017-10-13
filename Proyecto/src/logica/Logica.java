@@ -166,4 +166,8 @@ public class Logica {
 	public Tienda getTienda(){
 		return tienda;
 	}
+	
+	public void agregarMonedas(int c){
+		tienda.sumarMonedas(c);
+	}
 }
