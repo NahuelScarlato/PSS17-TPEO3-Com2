@@ -7,10 +7,17 @@ public class Tienda {
 	//atributos
 	protected int monedas;
 	protected Logica juego;
-	
+	protected static Tienda instance = null;
 	//constructor
-	public Tienda(){
+	private Tienda(){
 		monedas=0;
+	}
+	
+	public static Tienda getTienda(){
+		if (instance == null)
+			instance = new Tienda();
+		
+		return instance;
 	}
 	public void sumarMonedas(int m){
 		monedas+=m;
