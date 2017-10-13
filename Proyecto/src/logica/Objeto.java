@@ -26,4 +26,8 @@ public abstract class Objeto {
 	public int getAlto(){
 		return alto;
 	}
+	
+	public void dibujar(Graphics g){
+		
+	}
 }

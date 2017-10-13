@@ -1,13 +1,22 @@
 package game.gfx;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public class AnimationEnemy extends Animation {
 
-	protected BufferedImage movimiento[];
+	protected BufferedImage movement[];
 	
-	public AnimationEnemy(int n1, int n2, int x, int y){
-		super(n1,x,y);
-		movimiento = new BufferedImage[n2];
+	public AnimationEnemy(int x, int y, BufferedImage[] att, BufferedImage[] mov){
+		super(x,y,att);
+		movement = mov;
+	}
+	
+	public void setMovementImage(BufferedImage img, int n){
+		movement[n] = img;
+	}
+	
+	public void drawMove(Graphics g){
+		g.drawImage(movement[index], x, y, 64,64, null);
 	}
 }

@@ -11,7 +11,8 @@ public class ImageLoader {
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol, mago, goblin, brujo, cazadorEnano, grunt;
 	public static BufferedImage[] vida = new BufferedImage[3];
-	
+	public static BufferedImage[] goblinMove = new BufferedImage[4];
+	public static BufferedImage[] goblinAtk = new BufferedImage[4];
 	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet2x2.png");
 		tierra = sheet.getSubimage(0, 0, width, height);
@@ -26,6 +27,16 @@ public class ImageLoader {
 		vida[0] =loadImage("/Textures/VidaVerde.png");
 		vida[1] =loadImage("/Textures/VidaRoja.png");
 		vida[2] =loadImage("/Textures/VidaAzul.png");
+		sheet = loadImage("/Textures/Animations/Goblin walk.png");
+		goblinMove[0] = sheet.getSubimage(0, 0, 60, 60);
+		goblinMove[1] = sheet.getSubimage(60, 0, 60, 60);
+		goblinMove[2] = sheet.getSubimage(120, 0, 60, 60);
+		goblinMove[3] = sheet.getSubimage(180, 0, 60, 60);
+		sheet = loadImage("/Textures/Animations/Goblin attack.png");
+		goblinAtk[0] = sheet.getSubimage(0, 0, 60, 60);
+		goblinAtk[1] = sheet.getSubimage(60, 0, 60, 60);
+		goblinAtk[2] = sheet.getSubimage(120, 0, 60, 60);
+		goblinAtk[3] = sheet.getSubimage(180, 0, 60, 60);
 		
 	}
 	

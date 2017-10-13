@@ -3,6 +3,8 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+
+import java.awt.Graphics;
 import java.util.Random;
 
 import game.gfx.Animation;
@@ -63,5 +65,9 @@ public abstract class Enemigo extends Personaje{
 	
 	public void accept(Visitor o){
 		o.afectar(this);
+	}
+	
+	public void dibujar (Graphics g){
+		
 	}
 }

@@ -1,4 +1,5 @@
 package objeto.noAtravesable.objetoConVida.personaje;
+import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
@@ -23,5 +24,6 @@ public class Goblin extends Enemigo {
 		Coins=15;
 		reloj=1;
 		v=new VisitorEnemigo(this);
+		animation = new AnimationEnemy(this.miTile.getFila() * 64, this.miTile.getColumna() * 64, ImageLoader.goblinAtk, ImageLoader.goblinMove);
 	}
 }

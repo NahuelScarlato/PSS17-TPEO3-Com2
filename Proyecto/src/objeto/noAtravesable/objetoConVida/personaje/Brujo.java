@@ -22,8 +22,6 @@ public class Brujo extends Enemigo{
 		puntaje=20;
 		Coins=200;
 		reloj=1;
-		v=new VisitorEnemigo(this);
-		animation = new AnimationEnemy(4, 4, this.miTile.getFila() * 64, this.miTile.getColumna() * 64);
-		
+		v = new VisitorEnemigo(this);
 	}
 }

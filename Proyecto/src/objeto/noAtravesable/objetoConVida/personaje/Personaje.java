@@ -11,7 +11,6 @@ public abstract class Personaje extends ObjetoConVida{
 	protected int reloj;
 	protected float velocidadAt;
 	protected float velAtMaxima;
-	protected Animation animation;
 	
 	//metodos
 	public abstract void atacar(ObjetoNoAtravesable o);
