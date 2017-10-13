@@ -1,6 +1,7 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
+import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 
 public class Brujo extends Enemigo{
@@ -22,5 +23,7 @@ public class Brujo extends Enemigo{
 		Coins=200;
 		reloj=1;
 		v=new VisitorEnemigo(this);
+		animation = new AnimationEnemy(4, 4, this.miTile.getFila() * 64, this.miTile.getColumna() * 64);
+		
 	}
 }

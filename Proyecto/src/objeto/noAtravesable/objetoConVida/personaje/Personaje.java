@@ -1,6 +1,7 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
 import objeto.noAtravesable.objetoConVida.*;
+import game.gfx.Animation;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public abstract class Personaje extends ObjetoConVida{
@@ -10,6 +11,7 @@ public abstract class Personaje extends ObjetoConVida{
 	protected int reloj;
 	protected float velocidadAt;
 	protected float velAtMaxima;
+	protected Animation animation;
 	
 	//metodos
 	public abstract void atacar(ObjetoNoAtravesable o);

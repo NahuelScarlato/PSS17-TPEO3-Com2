@@ -5,6 +5,9 @@ import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import java.util.Random;
 
+import game.gfx.Animation;
+import game.gfx.AnimationEnemy;
+
 public abstract class Enemigo extends Personaje{
 	//atributos
 	protected float velocidadMov;
@@ -12,6 +15,7 @@ public abstract class Enemigo extends Personaje{
 	protected int puntaje;
 	protected int Coins;
 	protected VisitorEnemigo v;
+	protected AnimationEnemy animation;
 	
 	//metodos
 	public int getPuntaje(){
