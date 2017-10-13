@@ -7,17 +7,21 @@ import javax.swing.ScrollPaneConstants;
 import game.Game;
 
 import javax.swing.JLabel;
+
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
 import javax.swing.JButton;
 
 public class PanelTienda extends JPanel {
 	
 	protected Game myGame;
+	protected JLabel labelPuntaje;
 
 	/**
 	 * Create the panel.
@@ -35,9 +39,9 @@ public class PanelTienda extends JPanel {
 		c.weighty=1;
 		c.fill=GridBagConstraints.BOTH;
 
-		JLabel lblScore = new JLabel("Score: 0");
-		lblScore.setHorizontalAlignment(JLabel.CENTER);
-		add(lblScore, c);
+		labelPuntaje = new JLabel("Score: 0");
+		labelPuntaje.setHorizontalAlignment(JLabel.CENTER);
+		add(labelPuntaje, c);
 		
 		c.gridy=1;
 		c.ipady=325;
@@ -46,12 +50,8 @@ public class PanelTienda extends JPanel {
 		
 		JPanel pScroll=new JPanel(new GridLayout(2,1));
 		
-		JScrollPane scrollPane = new JScrollPane(pScroll);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-		
 		JButton botonAliados = new JButton("Agregar aliado");
-		pScroll.add(botonAliados);
+		pScroll.add(botonAliados, null);
 		botonAliados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				myGame.crearAliado();
@@ -59,7 +59,7 @@ public class PanelTienda extends JPanel {
 		});
 		
 		JButton botonEnemigos = new JButton("Agregar enemigos");
-		pScroll.add(botonEnemigos);
+		pScroll.add(botonEnemigos, null);
 		botonEnemigos.addActionListener(new ActionListener() {
 			
 			@Override
@@ -68,9 +68,16 @@ public class PanelTienda extends JPanel {
 			}
 		});
 		
-
+		JScrollPane scrollPane = new JScrollPane(pScroll);
+		scrollPane.setPreferredSize(new Dimension(100, 100));
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		add(scrollPane, c);
 		
+	}
+
+	public void actualizarPuntaje(int p){
+		labelPuntaje.setText("Score: "+p);
 	}
 
 }

@@ -27,7 +27,7 @@ public class Logica {
 		aliadosABorrar = new LinkedList<Aliado>();
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
-		tienda = tienda.getTienda();
+		tienda = Tienda.getTienda();
 	}
 	
 	//metodos

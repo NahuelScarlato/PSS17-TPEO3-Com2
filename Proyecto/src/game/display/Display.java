@@ -23,7 +23,7 @@ public class Display {
 	private Game myGame;
 	private String title;
 	private int width, height;
-	JLabel labelPuntaje=new JLabel();
+	private PanelTienda panel;
 	
 	
 	public Display(String title, int width, int height, Game g){
@@ -44,9 +44,7 @@ public class Display {
 		frame.setVisible(true);
 		frame.setLayout(new GridBagLayout());
 
-		PanelTienda panel = new PanelTienda(myGame);
-		
-		
+		panel = new PanelTienda(myGame);
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
@@ -79,7 +77,9 @@ public class Display {
 		System.out.println(e.getX() + " " + e.getY());
 		myGame.interaccion(e.getX(),e.getY());
 	}
+	
+
 	public void actualizarPuntaje(int p){
-		labelPuntaje.setText("Score: "+p);
+		panel.actualizarPuntaje(p);
 	}
 }
