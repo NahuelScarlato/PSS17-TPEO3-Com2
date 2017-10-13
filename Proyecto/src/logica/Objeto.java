@@ -1,5 +1,6 @@
 package logica;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public abstract class Objeto {
@@ -27,7 +28,5 @@ public abstract class Objeto {
 		return alto;
 	}
 	
-	public void dibujar(Graphics g){
-		
-	}
+	public void dibujar(Graphics g){}
 }
