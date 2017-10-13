@@ -44,36 +44,9 @@ public class Display {
 		frame.setVisible(true);
 		frame.setLayout(new GridBagLayout());
 
-		JPanel panel = new JPanel(new GridBagLayout());
-		GridBagConstraints cs=new GridBagConstraints();
-		cs.gridx=0;
-		cs.gridy=0;
+		PanelTienda panel = new PanelTienda(myGame);
 		
-		labelPuntaje.setText("Score: 0");
-		panel.add(labelPuntaje, cs);
 		
-		cs.gridy=1;
-		cs.anchor=GridBagConstraints.CENTER;
-		cs.fill=GridBagConstraints.BOTH;
-		
-		JButton botonAliados = new JButton("Agregar aliado");
-		panel.add(botonAliados, cs);
-		botonAliados.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				myGame.crearAliado();
-			}
-		});
-		
-		cs.gridy=2;
-		JButton botonEnemigos = new JButton("Agregar enemigos");
-		panel.add(botonEnemigos, cs);
-		botonEnemigos.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				myGame.crearEnemigo();
-			}
-		});
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
