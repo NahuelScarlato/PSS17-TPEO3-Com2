@@ -53,14 +53,8 @@ public abstract class Enemigo extends Personaje{
 	
 	public int getCoins(){
 		Random r = new Random();
-		int ran = r.nextInt(4);
-		if  ( ran == 3 ){
-			return Coins;
-		}
-		else{
-			double n = (r.nextInt(3) + 9)*0.1;
-			return (int) (Coins*n);
-		}
+		double ran = (r.nextInt((int) (0.2 * Coins)) - (0.1 * Coins));
+		return (int) ran + Coins;
 	}
 	
 	public void accept(Visitor o){
