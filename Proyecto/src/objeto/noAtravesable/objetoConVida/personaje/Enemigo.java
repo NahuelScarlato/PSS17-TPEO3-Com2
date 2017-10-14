@@ -19,25 +19,29 @@ public abstract class Enemigo extends Personaje{
 	protected VisitorEnemigo v;
 	protected AnimationEnemy animation;
 	
+	
 	//metodos
 	public int getPuntaje(){
 		return puntaje;
 	}
+	
 	public void atacar(ObjetoNoAtravesable ona){
 		if(reloj==0){
 			ona.accept(v);
 		}
 		reloj=(reloj+1)%(int)(velocidadAt*60);
-		//System.out.println(this.vida);
 	}
+	
 	public void modificarVelocidad(float rall){
 		velocidadAt=(rall*velAtMaxima);
 		velocidadMov=(velMovMaxima*rall);
 	}
+	
 	public void normalizarVelocidad(){
 		velocidadMov=velMovMaxima;
 		velocidadAt=velAtMaxima;
 	}
+	
 	public void avanzar(){
 		if(reloj==0 && miTile.getRight().getComponente()==null){
 			Tile sig = miTile.getRight();
@@ -49,6 +53,7 @@ public abstract class Enemigo extends Personaje{
 		}
 		reloj = (reloj+1)%(int)(velocidadMov*60);
 	}
+	
 	public void restarVida(int v){
 		vida-=v;
 		if(vida<=0){
@@ -67,7 +72,7 @@ public abstract class Enemigo extends Personaje{
 		o.afectar(this);
 	}
 	
-	public void dibujar (Graphics g){
-		drawMove
+	public void dibujar(Graphics g){
+		state.draw(g, this);
 	}
 }
