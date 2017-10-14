@@ -11,7 +11,7 @@ public class Brujo extends Enemigo{
 		maxVida=50;
 		miTile=t;
 		t.setComponente(this);
-		image=new AnimationEnemy(64, 64, ImageLoader.goblinAtk, ImageLoader.goblinMove);
+		image=new AnimationEnemy(0,0 , ImageLoader.goblinAtk, ImageLoader.goblinMove);
 		ancho=1;
 		alto=1;
 		impacto=20;

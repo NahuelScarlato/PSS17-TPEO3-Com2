@@ -3,6 +3,7 @@ import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
+import objeto.noAtravesable.ObjectStateMoving;
 
 public class Goblin extends Enemigo {
 	//constructor
@@ -11,7 +12,7 @@ public class Goblin extends Enemigo {
 		maxVida=35;
 		miTile=t;
 		t.setComponente(this);
-		image=ImageLoader.goblin;
+		image=new AnimationEnemy(this.miTile.getFila() * 64, this.miTile.getColumna() * 64, ImageLoader.goblinAtk, ImageLoader.goblinMove);
 		ancho=1;
 		alto=1;
 		impacto=10;
@@ -24,6 +25,6 @@ public class Goblin extends Enemigo {
 		Coins=15;
 		reloj=1;
 		v=new VisitorEnemigo(this);
-		animation = new AnimationEnemy(this.miTile.getFila() * 64, this.miTile.getColumna() * 64, ImageLoader.goblinAtk, ImageLoader.goblinMove);
+		state=new ObjectStateMoving();
 	}
 }
