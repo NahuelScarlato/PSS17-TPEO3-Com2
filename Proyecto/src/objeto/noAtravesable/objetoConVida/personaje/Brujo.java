@@ -2,22 +2,24 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.*;
+import game.gfx.Animation;
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 
 public class Brujo extends Enemigo{
 	public Brujo(Tile t){
+		super();
 		vida=50;
 		maxVida=50;
 		miTile=t;
 		t.setComponente(this);
-		image=new AnimationEnemy(0,0 , ImageLoader.goblinAtk, ImageLoader.goblinMove);
+		image = ImageLoader.brujo;
 		ancho=1;
 		alto=1;
 		impacto=20;
 		alcance=4;
-		velocidadMov=0.5f;
-		velMovMaxima=0.9f;
+		velocidadMov=2.3f;
+		velMovMaxima=2.3f;
 		velocidadAt=1.2f;
 		velAtMaxima=1.2f;
 		puntaje=20;
@@ -25,5 +27,6 @@ public class Brujo extends Enemigo{
 		reloj=1;
 		v = new VisitorEnemigo(this);
 		setState(new ObjectStateMoving());
+		animation = new AnimationEnemy(0 , t.getFila()*64, velocidadMov ,ImageLoader.warlockAtk, ImageLoader.warlockMove);
 	}
 }

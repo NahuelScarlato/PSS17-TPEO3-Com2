@@ -2,6 +2,8 @@ package objeto.noAtravesable.objetoConVida.personaje;
 
 import logica.*;
 import logica.visitor.*;
+import objeto.noAtravesable.ObjectState;
+import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 import java.awt.Graphics;
@@ -17,11 +19,22 @@ public abstract class Enemigo extends Personaje{
 	protected int puntaje;
 	protected int Coins;
 	protected VisitorEnemigo v;
+	protected ObjectState stateMoving;
+	protected AnimationEnemy animation;
 	
+	public Enemigo(){
+		super();
+		stateMoving = new ObjectStateMoving();
+		state = stateMoving;
+	}
 	
 	//metodos
 	public int getPuntaje(){
 		return puntaje;
+	}
+	
+	public ObjectState getMovingState(){
+		return stateMoving;
 	}
 	
 	public void atacar(ObjetoNoAtravesable ona){
@@ -65,6 +78,10 @@ public abstract class Enemigo extends Personaje{
 		Random r = new Random();
 		double ran = (r.nextInt((int) (0.2 * Coins)) - (0.1 * Coins));
 		return (int) ran + Coins;
+	}
+	
+	public AnimationEnemy getAnimation(){
+		return animation;
 	}
 	
 	public void accept(Visitor o){

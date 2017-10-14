@@ -6,6 +6,7 @@ import logica.visitor.VisitorAliado;
 
 public class EnanoCazador extends Aliado {
 	public EnanoCazador(Tile t){
+		super();
 		miTile=t;
 		velocidadAt=1.3f;
 		velAtMaxima=1.3f;

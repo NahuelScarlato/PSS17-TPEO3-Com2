@@ -10,7 +10,7 @@ public class Piedra extends OMConVida{
 		maxVida=100;
 		ancho=1;
 		alto=1;
-		image = new Animation(64,64, ImageLoader.piedra);
+		image = ImageLoader.piedra;
 	}
 	
 }

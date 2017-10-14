@@ -133,6 +133,7 @@ public class Logica {
 			}
 			if(!encontre){
 				e.avanzar();
+				e.setState(e.getMovingState());
 			}
 			eliminarObjetos();
 		}

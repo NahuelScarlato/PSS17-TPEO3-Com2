@@ -5,6 +5,7 @@ import logica.visitor.VisitorAliado;
 public class Oso extends Aliado{
 	//constructor
 	public Oso(){
+		super();
 		vida=60;
 		impacto=30;
 		valor=75;

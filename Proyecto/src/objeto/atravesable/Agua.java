@@ -15,7 +15,7 @@ public class Agua extends ObjetoAtravesable{
 	
 	//constructor
 	public Agua(){
-		image = new Animation(64, 64, ImageLoader.agua);
+		image = ImageLoader.agua;
 		rall=1.5f;
 		v=new VisitorAgua(this);
 	}

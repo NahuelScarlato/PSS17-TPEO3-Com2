@@ -8,12 +8,12 @@ import game.gfx.Animation;
 public abstract class Objeto {
 	//atributos
 	protected Tile miTile;
-	protected Animation image;
+	protected BufferedImage image;
 	protected int ancho;
 	protected int alto;
 	
 	//metodos
-	public Animation getImage(){
+	public BufferedImage getImage(){
 		return image;
 	}
 	public Tile getTile(){

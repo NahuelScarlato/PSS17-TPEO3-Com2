@@ -57,8 +57,6 @@ public class Game implements Runnable{
 		}
 		g = bs.getDrawGraphics();
 		myGraphics.setGraphics(g);
-		//Le pasamos a myGraphics el objeto g asi, lo puede usar para todos sus metodos.
-		//habria que usar
 		myGraphics.dibujarMapa();
 		
 		bs.show();
