@@ -9,21 +9,25 @@ public class ImageLoader {
 
 	private static int width = 32, height = 32;
 	private static BufferedImage sheet;
-	public static BufferedImage tierra, agua, piedra , arbol, mago, goblin, brujo, cazadorEnano, grunt;
+	public static BufferedImage[] tierra, agua, piedra , arbol, mago, goblin, brujo, cazadorEnano, grunt;
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
 	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet2x2.png");
-		tierra = sheet.getSubimage(0, 0, width, height);
-		agua = sheet.getSubimage(0, height, width, height);
-		piedra = sheet.getSubimage(width, 0, width, height);
-		arbol = loadImage("/Textures/arbol.png");
-		mago=loadImage("/Textures/Personajes/mago.png");
+		tierra = new BufferedImage[1]; 
+		tierra[0] = sheet.getSubimage(0, 0, width, height);
+		agua = new BufferedImage[1];
+		agua[0] = sheet.getSubimage(0, height, width, height);
+		piedra = new BufferedImage[1]; 
+		piedra[0] =	sheet.getSubimage(width, 0, width, height);
+		arbol = new BufferedImage[1];
+		arbol[0] = loadImage("/Textures/arbol.png");
+		/*mago=loadImage("/Textures/Personajes/mago.png");
 		goblin=loadImage("/Textures/Personajes/Goblin.png");
 		brujo=loadImage("/Textures/Personajes/OrcoBrujo.png");
 		cazadorEnano=loadImage("/Textures/Personajes/Cazador Enano.png");
-		grunt=loadImage("/Textures/Personajes/Grunt.png");
+		grunt=loadImage("/Textures/Personajes/Grunt.png");*/
 		vida[0] =loadImage("/Textures/VidaVerde.png");
 		vida[1] =loadImage("/Textures/VidaRoja.png");
 		vida[2] =loadImage("/Textures/VidaAzul.png");
@@ -49,9 +53,5 @@ public class ImageLoader {
 		}
 		return null;
 	}
-	
-	/*public BufferedImage crop(int x, int y, int width, int height){
-		return sheet.getSubimage(x, y, width, height);
-	}*/
 	
 }

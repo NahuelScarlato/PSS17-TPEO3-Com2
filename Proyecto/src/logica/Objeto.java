@@ -3,15 +3,17 @@ package logica;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import game.gfx.Animation;
+
 public abstract class Objeto {
 	//atributos
 	protected Tile miTile;
-	protected BufferedImage image;
+	protected Animation image;
 	protected int ancho;
 	protected int alto;
 	
 	//metodos
-	public BufferedImage getImage(){
+	public Animation getImage(){
 		return image;
 	}
 	public Tile getTile(){

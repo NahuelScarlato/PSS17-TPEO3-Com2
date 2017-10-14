@@ -2,6 +2,7 @@ package objeto.atravesable;
 
 import java.awt.Graphics;
 
+import game.gfx.Animation;
 import game.gfx.ImageLoader;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -14,7 +15,7 @@ public class Agua extends ObjetoAtravesable{
 	
 	//constructor
 	public Agua(){
-		image = ImageLoader.agua;
+		image = new Animation(64, 64, ImageLoader.agua);
 		rall=1.5f;
 		v=new VisitorAgua(this);
 	}

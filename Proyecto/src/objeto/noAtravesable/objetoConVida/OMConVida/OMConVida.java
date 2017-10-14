@@ -21,7 +21,8 @@ public abstract class OMConVida extends ObjetoConVida {
 	public void dibujar(Graphics g){
 		int c = getTile().getColumna() * 64;
 		int f = getTile().getFila() * 64; 
-		g.drawImage(image, c, f, 64,64, null);
+		//g.drawImage(image, c, f, 64,64, null);
+		image.drawrAtk(g);
 		g.drawImage(ImageLoader.vida[1], c, f, 40, 4, null);
 		g.drawImage(ImageLoader.vida[0], c, f, (40*getVida())/getMaxVida(), 4, null);
 	}

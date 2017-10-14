@@ -1,5 +1,6 @@
 package objeto.noAtravesable.objetoConVida.OMConVida;
 
+import game.gfx.Animation;
 import game.gfx.ImageLoader;
 
 public class Piedra extends OMConVida{
@@ -9,7 +10,7 @@ public class Piedra extends OMConVida{
 		maxVida=100;
 		ancho=1;
 		alto=1;
-		image = ImageLoader.piedra;
+		image = new Animation(64,64, ImageLoader.piedra);
 	}
 	
 }
