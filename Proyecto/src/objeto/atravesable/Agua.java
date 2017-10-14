@@ -1,5 +1,7 @@
 package objeto.atravesable;
 
+import java.awt.Graphics;
+
 import game.gfx.ImageLoader;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -28,4 +30,5 @@ public class Agua extends ObjetoAtravesable{
 	public void normalizar(Personaje p) {
 		p.normalizarVelocidad();
 	}
+
 }
