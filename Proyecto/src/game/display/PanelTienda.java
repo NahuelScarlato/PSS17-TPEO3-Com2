@@ -35,8 +35,9 @@ public class PanelTienda extends JPanel {
 		GridBagConstraints c= new GridBagConstraints();
 		c.gridx=0;
 		c.gridy=0;
-		c.weightx=1;
-		c.weighty=1;
+		c.weightx=0;
+		c.weighty=0;
+		c.ipady=30;
 		c.fill=GridBagConstraints.BOTH;
 
 		labelPuntaje = new JLabel("Score: 0");
@@ -44,11 +45,16 @@ public class PanelTienda extends JPanel {
 		add(labelPuntaje, c);
 		
 		c.gridy=1;
-		c.ipady=325;
-		c.weightx=0;
-		c.weighty=0;
+		//c.ipady=325;
+		c.weightx=0.5;
+		c.weighty=0.5;
 		
 		JPanel pScroll=new JPanel(new GridLayout(2,1));
+
+		JScrollPane scrollPane = new JScrollPane(pScroll);
+		scrollPane.setPreferredSize(new Dimension(100, 100));
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		
 		JButton botonAliados = new JButton("Agregar aliado");
 		pScroll.add(botonAliados, null);
@@ -68,10 +74,6 @@ public class PanelTienda extends JPanel {
 			}
 		});
 		
-		JScrollPane scrollPane = new JScrollPane(pScroll);
-		scrollPane.setPreferredSize(new Dimension(100, 100));
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		add(scrollPane, c);
 		
 	}
