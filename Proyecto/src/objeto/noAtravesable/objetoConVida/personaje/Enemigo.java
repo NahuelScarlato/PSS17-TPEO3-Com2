@@ -17,7 +17,6 @@ public abstract class Enemigo extends Personaje{
 	protected int puntaje;
 	protected int Coins;
 	protected VisitorEnemigo v;
-	protected AnimationEnemy animation;
 	
 	
 	//metodos
