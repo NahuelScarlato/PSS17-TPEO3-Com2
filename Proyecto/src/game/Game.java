@@ -38,8 +38,8 @@ public class Game implements Runnable{
 	
 	private void init(){
 		ImageLoader.init();
-		display = new Display(title , width , height, this);
 		myLogic = new Logica();
+		display = new Display(title , width , height, this);
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 	}
@@ -115,11 +115,15 @@ public class Game implements Runnable{
 	
 	public void interaccion(int x, int y){
 		Tile tile = myLogic.getTile(y/64, x/64);
-		System.out.println("Orden de atacar en "+ y/64+", "+x/64);
+		if(display.stratActual()!=null){
+			display.stratActual().comprar(y/64, x/64);
+			display.setStrat(null);
+		}
+		/*System.out.println("Orden de atacar en "+ y/64+", "+x/64);
 		if(tile.getComponente()!=null){
 			ObjetoConVida o=(ObjetoConVida)tile.getComponente();
 			o.restarVida(1000);
-		}
+		}*/
 	}
 	
 	public void crearAliado(){
@@ -156,5 +160,9 @@ public class Game implements Runnable{
 				myLogic.agregarEnemigo(grunt);
 			}
 		}
+	}
+	
+	public Logica getLogica(){
+		return myLogic;
 	}
 }

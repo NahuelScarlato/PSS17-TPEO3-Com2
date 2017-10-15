@@ -8,14 +8,16 @@ public class Tienda {
 	protected int monedas;
 	protected Logica juego;
 	protected static Tienda instance = null;
+
 	//constructor
-	private Tienda(){
+	private Tienda(Logica l){
 		monedas=0;
+		juego=l;
 	}
 	
-	public static Tienda getTienda(){
+	public static Tienda getTienda(Logica l){
 		if (instance == null)
-			instance = new Tienda();
+			instance = new Tienda(l);
 		
 		return instance;
 	}
@@ -25,7 +27,7 @@ public class Tienda {
 	public void comprar(Aliado a, int f, int c){
 		boolean posible=true;
 		Tile t=juego.getTile(f, c);
-		for(int i=0; i<a.getAncho() && posible; i++){
+		for(int i=0; i<a.getAncho() && t.getColumna()!=11 && posible; i++){
 			posible=t.getRight().getComponente()==null;
 			t=t.getRight();
 		}
@@ -39,6 +41,7 @@ public class Tienda {
 				}
 			}
 			monedas-=a.getValor();
+			juego.agregarAliado(a);
 		}
 	}
 	public void comprar(EnanoCazador ec, int f, int c){
@@ -51,6 +54,7 @@ public class Tienda {
 				o.setTile(juego.getTile(f+1, c));
 			}
 			monedas-=ec.getValor();
+			juego.agregarAliado(ec);
 		}
 	}
 	public void comprar(OTConVida otcv, int f, int c){

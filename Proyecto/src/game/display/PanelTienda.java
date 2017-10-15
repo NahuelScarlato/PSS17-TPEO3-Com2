@@ -27,12 +27,14 @@ public class PanelTienda extends JPanel {
 	
 	protected Game myGame;
 	protected JLabel labelPuntaje;
+	protected Strategy stratActual;
 
 	/**
 	 * Create the panel.
 	 */
 	public PanelTienda(Game g) {
 		
+		stratActual=null;
 		myGame=g;
 		
 		this.setLayout(new GridBagLayout());
@@ -85,26 +87,12 @@ public class PanelTienda extends JPanel {
 		JPanel panelPersonajesHumanos= new JPanel(new GridLayout(3, 2));
 		JLabel[] personajesHumanos = new JLabel[5];
 		
-		JLabel cazador = new JLabel(new ImageIcon(ImageLoader.cazadorEnano));
-		cazador.setOpaque(true);
-		JLabel mago = new JLabel(new ImageIcon(ImageLoader.mago));
-		mago.setOpaque(true);
-		JLabel espadachin = new JLabel(new ImageIcon(ImageLoader.espadachin));
-		espadachin.setOpaque(true);
-		JLabel paladin = new JLabel(new ImageIcon(ImageLoader.paladin));
-		paladin.setOpaque(true);
-		JLabel arquero = new JLabel(new ImageIcon(ImageLoader.arquero));
-		arquero.setOpaque(true);
-		JLabel monje = new JLabel(new ImageIcon(ImageLoader.monje));
-		monje.setOpaque(true);
-		
-		OyenteCompra o = new OyenteCompra();
-		paladin.addMouseListener(o);
-		espadachin.addMouseListener(o);
-		arquero.addMouseListener(o);
-		monje.addMouseListener(o);
-		cazador.addMouseListener(o);
-		mago.addMouseListener(o);
+		BotonCompra cazador = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.cazadorEnano);
+		BotonCompra mago = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.mago);
+		BotonCompra espadachin = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.espadachin);
+		BotonCompra paladin = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.paladin);
+		BotonCompra arquero = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.arquero);
+		BotonCompra monje = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.monje);
 		
 		personajesHumanos[0] = espadachin;
 		personajesHumanos[1] = paladin;
@@ -148,23 +136,12 @@ public class PanelTienda extends JPanel {
 		labelPuntaje.setText("Score: "+p);
 	}
 	
-	private class OyenteCompra implements MouseListener{
-		public void mouseClicked(MouseEvent arg0) {
-			((JLabel)arg0.getSource()).setBackground(Color.LIGHT_GRAY);
-		}
-		public void mouseEntered(MouseEvent arg0) {
-			((JLabel)arg0.getSource()).setBackground(Color.LIGHT_GRAY);
-		}
-		public void mouseExited(MouseEvent arg0) {
-			((JLabel)arg0.getSource()).setBackground(Color.WHITE);
-		}
-		public void mousePressed(MouseEvent arg0) {
-			((JLabel)arg0.getSource()).setBackground(Color.GRAY);
-		}
-		public void mouseReleased(MouseEvent arg0) {
-			((JLabel)arg0.getSource()).setBackground(Color.LIGHT_GRAY);
-			
-		}
+	public Strategy stratActual(){
+		return stratActual;
+	}
+	
+	public void setStrat(Strategy s){
+		stratActual=s;
 	}
 	
 }

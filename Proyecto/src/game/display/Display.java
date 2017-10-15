@@ -76,11 +76,19 @@ public class Display {
 	
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
+		
 		myGame.interaccion(e.getX(),e.getY());
 	}
 	
 
 	public void actualizarPuntaje(int p){
 		panel.actualizarPuntaje(p);
+	}
+	
+	public Strategy stratActual(){
+		return panel.stratActual();
+	}
+	public void setStrat(Strategy s){
+		panel.setStrat(s);
 	}
 }
