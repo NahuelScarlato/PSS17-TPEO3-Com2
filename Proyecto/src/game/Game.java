@@ -46,7 +46,7 @@ public class Game implements Runnable{
 	
 	private void update(){
 		myLogic.actualizar();
-		display.actualizarPuntaje(myLogic.getScore());
+		display.actualizarPuntaje(myLogic.getScore(), myLogic.getTienda().getMonedas());
 	}
 	
 	private void render(){
@@ -119,11 +119,13 @@ public class Game implements Runnable{
 			display.stratActual().comprar(y/64, x/64);
 			display.setStrat(null);
 		}
-		/*System.out.println("Orden de atacar en "+ y/64+", "+x/64);
-		if(tile.getComponente()!=null){
-			ObjetoConVida o=(ObjetoConVida)tile.getComponente();
-			o.restarVida(1000);
-		}*/
+		else{
+			System.out.println("Orden de atacar en "+ y/64+", "+x/64);
+			if(tile.getComponente()!=null){
+				ObjetoConVida o=(ObjetoConVida)tile.getComponente();
+				o.restarVida(1000);
+			}
+		}
 	}
 	
 	public void crearAliado(){

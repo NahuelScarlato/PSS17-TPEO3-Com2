@@ -47,7 +47,7 @@ public class PanelTienda extends JPanel {
 		c.ipady=30;
 		c.fill=GridBagConstraints.BOTH;
 
-		labelPuntaje = new JLabel("Score: 0");
+		labelPuntaje = new JLabel("Score: 0    Monedas:0");
 		labelPuntaje.setHorizontalAlignment(JLabel.CENTER);
 		add(labelPuntaje, c);
 		
@@ -132,8 +132,8 @@ public class PanelTienda extends JPanel {
 		
 	}
 
-	public void actualizarPuntaje(int p){
-		labelPuntaje.setText("Score: "+p);
+	public void actualizarPuntaje(int p, int m){
+		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
 	}
 	
 	public Strategy stratActual(){

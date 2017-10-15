@@ -81,8 +81,8 @@ public class Display {
 	}
 	
 
-	public void actualizarPuntaje(int p){
-		panel.actualizarPuntaje(p);
+	public void actualizarPuntaje(int p, int m){
+		panel.actualizarPuntaje(p, m);
 	}
 	
 	public Strategy stratActual(){

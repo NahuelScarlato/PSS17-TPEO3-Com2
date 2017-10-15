@@ -24,6 +24,9 @@ public class Tienda {
 	public void sumarMonedas(int m){
 		monedas+=m;
 	}
+	public int getMonedas(){
+		return monedas;
+	}
 	public void comprar(Aliado a, int f, int c){
 		boolean posible=true;
 		Tile t=juego.getTile(f, c);
