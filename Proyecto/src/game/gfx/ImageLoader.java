@@ -9,7 +9,9 @@ public class ImageLoader {
 
 	private static int width = 32, height = 32;
 	private static BufferedImage sheet;
-	public static BufferedImage tierra, agua, piedra , arbol, mago, goblin, brujo, cazadorEnano, grunt;
+	public static BufferedImage tierra, agua, piedra , arbol;
+	public static BufferedImage mago, espadachin, paladin, arquero, monje, cazadorEnano;
+	public static BufferedImage goblin, brujo, grunt;
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
@@ -30,6 +32,10 @@ public class ImageLoader {
 		piedra =	sheet.getSubimage(width, 0, width, height);
 		//arbol = new BufferedImage[1];
 		arbol = loadImage("/Textures/arbol.png");
+		espadachin = loadImage("/Textures/Personajes/Soldado.png");
+		paladin = loadImage("/Textures/Personajes/Paladin.png");
+		arquero = loadImage("/Textures/Personajes/Arquero.png");
+		monje = loadImage("/Textures/Personajes/Clerigo.png");
 		mago=loadImage("/Textures/Personajes/mago.png");
 		goblin=loadImage("/Textures/Personajes/Goblin.png");
 		brujo=loadImage("/Textures/Personajes/OrcoBrujo.png");

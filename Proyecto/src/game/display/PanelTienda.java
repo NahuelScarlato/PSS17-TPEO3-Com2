@@ -89,21 +89,32 @@ public class PanelTienda extends JPanel {
 		cazador.setOpaque(true);
 		JLabel mago = new JLabel(new ImageIcon(ImageLoader.mago));
 		mago.setOpaque(true);
+		JLabel espadachin = new JLabel(new ImageIcon(ImageLoader.espadachin));
+		espadachin.setOpaque(true);
+		JLabel paladin = new JLabel(new ImageIcon(ImageLoader.paladin));
+		paladin.setOpaque(true);
+		JLabel arquero = new JLabel(new ImageIcon(ImageLoader.arquero));
+		arquero.setOpaque(true);
+		JLabel monje = new JLabel(new ImageIcon(ImageLoader.monje));
+		monje.setOpaque(true);
 		
 		OyenteCompra o = new OyenteCompra();
+		paladin.addMouseListener(o);
+		espadachin.addMouseListener(o);
+		arquero.addMouseListener(o);
+		monje.addMouseListener(o);
 		cazador.addMouseListener(o);
 		mago.addMouseListener(o);
 		
-		personajesHumanos[0] = mago;
-		personajesHumanos[1] = cazador;
+		personajesHumanos[0] = espadachin;
+		personajesHumanos[1] = paladin;
+		personajesHumanos[2] = arquero;
+		personajesHumanos[3] = mago;
+		personajesHumanos[4] = monje;
 		
-		panelPersonajesHumanos.add(mago);
-		panelPersonajesHumanos.add(cazador);
-		
-		
-		/*for(int i=0; i<personajesHumanos.length; i++){
+		for(int i=0; i<personajesHumanos.length; i++){
 			panelPersonajesHumanos.add(personajesHumanos[i]);
-		}*/
+		}
 		
 		panelHumanos.add(panelPersonajesHumanos, cs);
 		
