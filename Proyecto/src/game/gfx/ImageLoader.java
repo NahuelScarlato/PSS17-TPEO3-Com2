@@ -23,7 +23,7 @@ public class ImageLoader {
 	public static BufferedImage[] gruntMove = new BufferedImage[4];
 	
  	public static void init(){
-		sheet = loadImage("/Textures/SpriteSheet2x2.png");
+		sheet = loadImage("/Textures/SpriteSheet3x2.png");
 		//tierra = new BufferedImage[1]; 
 		tierra = sheet.getSubimage(0, 0, width, height);
 		//agua = new BufferedImage[1];
