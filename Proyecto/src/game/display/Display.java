@@ -67,6 +67,7 @@ public class Display {
 		c.ipadx=width/4;
 		frame.add(panel,c);
 		frame.pack();
+		
 	}
 	
 	public Canvas getCanvas(){

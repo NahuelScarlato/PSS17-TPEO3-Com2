@@ -37,9 +37,9 @@ public class Game implements Runnable{
 	}
 	
 	private void init(){
+		ImageLoader.init();
 		display = new Display(title , width , height, this);
 		myLogic = new Logica();
-		ImageLoader.init();
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 	}
