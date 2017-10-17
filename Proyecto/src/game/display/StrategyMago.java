@@ -10,12 +10,12 @@ public class StrategyMago extends Strategy{
 	
 	//constructor
 	public StrategyMago(Game ga){
-		g=ga;
+		g = ga;
 	}
 	
 	//metodos
 	public void comprar(int x, int y){
-		Mago m=new Mago(g.getLogica().getTile(x, y));
+		Mago m = new Mago(g.getLogica().getTile(x, y));
 		g.getLogica().getTienda().comprar(m, x, y);
 	}
 }
