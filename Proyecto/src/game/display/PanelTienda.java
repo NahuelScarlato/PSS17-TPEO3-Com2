@@ -9,20 +9,15 @@ import game.gfx.ImageLoader;
 
 import javax.swing.JLabel;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.Box;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+@SuppressWarnings("serial")
 public class PanelTienda extends JPanel {
 	
 	protected Game myGame;

@@ -1,7 +1,6 @@
 package game.display;
 
 import game.Game;
-import logica.Logica;
 import objeto.noAtravesable.objetoConVida.personaje.Mago;
 
 public class StrategyMago extends Strategy{

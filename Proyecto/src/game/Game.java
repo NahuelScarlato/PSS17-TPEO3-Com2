@@ -115,17 +115,12 @@ public class Game implements Runnable{
 	
 	public void interaccion(int x, int y){
 		Tile tile = myLogic.getTile(y/64, x/64);
-		if(display.stratActual()!=null){
-			display.stratActual().comprar(y/64, x/64);
-			display.setStrat(null);
-		}
-		else{
 			System.out.println("Orden de atacar en "+ y/64+", "+x/64);
 			if(tile.getComponente()!=null){
 				ObjetoConVida o=(ObjetoConVida)tile.getComponente();
 				o.restarVida(1000);
 			}
-		}
+		
 	}
 	
 	public void crearAliado(){

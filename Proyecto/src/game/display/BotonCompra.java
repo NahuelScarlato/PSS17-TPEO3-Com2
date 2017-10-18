@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+@SuppressWarnings("serial")
 public class BotonCompra extends JLabel{
 	//atributos
 	protected Strategy s;

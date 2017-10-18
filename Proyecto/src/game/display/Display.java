@@ -4,16 +4,10 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import game.Game;
 
 public class Display {
@@ -76,19 +70,18 @@ public class Display {
 	
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
-		
-		myGame.interaccion(e.getX(),e.getY());
+
+		if(panel.stratActual()!=null){
+			panel.stratActual().comprar(e.getY()/64, e.getX()/64);
+			panel.setStrat(null);
+		}
+		else{
+			myGame.interaccion(e.getX(),e.getY());
+		}
 	}
 	
 
 	public void actualizarPuntaje(int p, int m){
 		panel.actualizarPuntaje(p, m);
-	}
-	
-	public Strategy stratActual(){
-		return panel.stratActual();
-	}
-	public void setStrat(Strategy s){
-		panel.setStrat(s);
 	}
 }

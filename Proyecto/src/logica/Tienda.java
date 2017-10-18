@@ -28,37 +28,9 @@ public class Tienda {
 		return monedas;
 	}
 	public void comprar(Aliado a, int f, int c){
-		boolean posible=true;
-		Tile t=juego.getTile(f, c);
-		for(int i=0; i<a.getAncho() && t.getColumna()!=11 && posible; i++){
-			posible=t.getRight().getComponente()==null;
-			t=t.getRight();
-		}
-		if(juego.getTile(f, c).getComponente()==null && posible){
-			juego.getTile(f, c).setComponente(a);
-			if(a.getAncho()!=1){
-				t=juego.getTile(f, c);
-				for(int i=0; i<a.getAncho(); i++){
-					t.getRight().setComponente(a);
-					t=t.getRight();
-				}
-			}
-			monedas-=a.getValor();
-			juego.agregarAliado(a);
-		}
-	}
-	public void comprar(EnanoCazador ec, int f, int c){
-		boolean posible=juego.getTile(f, c).getComponente()==null;
-		if(posible){
-			juego.getTile(f, c).setComponente(ec);
-			if(juego.getTile(f+1, c).getComponente()==null){
-				Oso o=new Oso();
-				juego.getTile(f+1, c).setComponente(o);
-				o.setTile(juego.getTile(f+1, c));
-			}
-			monedas-=ec.getValor();
-			juego.agregarAliado(ec);
-		}
+		monedas-=a.getValor();
+		juego.agregarAliado(a);
+		
 	}
 	public void comprar(OTConVida otcv, int f, int c){
 		boolean posible=true;
