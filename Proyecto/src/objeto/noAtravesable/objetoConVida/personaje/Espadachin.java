@@ -6,6 +6,7 @@ import logica.Tile;
 import logica.visitor.VisitorAliado;
 
 public class Espadachin extends Aliado{
+	//constructor
 	public Espadachin(Tile t){
 		super();
 		miTile=t;
@@ -21,6 +22,6 @@ public class Espadachin extends Aliado{
 		alcance=1;
 		valor=20;
 		v=new VisitorAliado(this);
-		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.warriorAtk);
 	}
 }

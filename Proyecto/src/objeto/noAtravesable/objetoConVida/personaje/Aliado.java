@@ -48,4 +48,5 @@ public abstract class Aliado extends Personaje {
 	public void dibujar(Graphics g){
 		state.draw(g, this);
 	}
+	
 }

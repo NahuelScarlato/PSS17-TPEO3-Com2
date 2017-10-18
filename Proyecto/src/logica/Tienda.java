@@ -33,20 +33,6 @@ public class Tienda {
 		
 	}
 	public void comprar(OTConVida otcv, int f, int c){
-		boolean posible=true;
-		for(int i=0; i<otcv.getAncho() && posible; i++){
-			posible=juego.getTile(f, c).getComponente()==null;
-			f++;
-		}
-		if(juego.getTile(f, c).getComponente()==null && posible){
-			juego.getTile(f, c).setComponente(otcv);
-			if(otcv.getAncho()!=1){
-				for(int i=0; i<otcv.getAncho(); i++){
-					juego.getTile(f+1, c).setComponente(otcv);
-					f++;
-				}
-			}
-		}
 		monedas-=otcv.getValor();
 	}
 	//agregar comprar para temporales
