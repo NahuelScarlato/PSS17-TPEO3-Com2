@@ -4,6 +4,7 @@ import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 import logica.*;
 
 public class Grunt extends Enemigo{
@@ -28,5 +29,8 @@ public class Grunt extends Enemigo{
 		v=new VisitorEnemigo(this);
 		state=new ObjectStateMoving();
 		animation = new AnimationEnemy(0, t.getFila() * 64, velocidadMov, ImageLoader.gruntAtk, ImageLoader.gruntMove);
+	}
+	public ObjetoNoAtravesable clone(){
+		return new Grunt(new Tile(null,0,0));
 	}
 }

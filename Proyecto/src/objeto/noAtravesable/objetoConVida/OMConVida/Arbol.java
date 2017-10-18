@@ -2,6 +2,7 @@ package objeto.noAtravesable.objetoConVida.OMConVida;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Arbol extends OMConVida{
 
@@ -12,5 +13,7 @@ public class Arbol extends OMConVida{
 		alto=1;
 		image = ImageLoader.arbol;
 	}
-	
+	public ObjetoNoAtravesable clone(){
+		return new Arbol();
+	}
 }

@@ -3,6 +3,7 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import game.gfx.ImageLoader;
 import logica.Tile;
 import logica.visitor.VisitorAliado;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class EnanoCazador extends Aliado {
 	public EnanoCazador(Tile t){
@@ -20,5 +21,9 @@ public class EnanoCazador extends Aliado {
 		alcance=4;
 		valor=70;
 		v=new VisitorAliado(this);
+	}
+	
+	public ObjetoNoAtravesable clone(){
+		return new EnanoCazador(new Tile(null, 0, 0));
 	}
 }

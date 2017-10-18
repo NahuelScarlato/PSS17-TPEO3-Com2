@@ -71,9 +71,9 @@ public class Display {
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
 
-		if(panel.stratActual()!=null){
-			panel.stratActual().comprar(e.getY()/64, e.getX()/64);
-			panel.setStrat(null);
+		if(panel.getPrototype()!=null){
+			panel.getPrototype().agregar(myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
+			panel.setPrototype(null);
 		}
 		else
 			myGame.interaccion(e.getX(), e.getY());

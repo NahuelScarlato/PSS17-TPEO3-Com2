@@ -4,6 +4,7 @@ import game.gfx.ImageLoader;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Goblin extends Enemigo {
 	//constructor
@@ -28,5 +29,8 @@ public class Goblin extends Enemigo {
 		v=new VisitorEnemigo(this);
 		state=new ObjectStateMoving();
 		animation = new AnimationEnemy(0, t.getFila() * 64, velocidadMov, ImageLoader.goblinAtk, ImageLoader.goblinMove);
+	}
+	public ObjetoNoAtravesable clone(){
+		return new Goblin(new Tile(null,0,0));
 	}
 }

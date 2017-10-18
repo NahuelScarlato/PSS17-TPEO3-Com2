@@ -4,6 +4,7 @@ import game.gfx.Animation;
 import game.gfx.ImageLoader;
 import logica.Tile;
 import logica.visitor.VisitorAliado;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Espadachin extends Aliado{
 	//constructor
@@ -23,5 +24,8 @@ public class Espadachin extends Aliado{
 		valor=20;
 		v=new VisitorAliado(this);
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.warriorAtk);
+	}
+	public ObjetoNoAtravesable clone(){
+		return new Espadachin(new Tile(null,0,0));
 	}
 }

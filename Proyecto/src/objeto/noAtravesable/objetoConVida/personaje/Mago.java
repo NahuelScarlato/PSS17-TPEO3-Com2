@@ -3,6 +3,7 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import game.gfx.*;
 import logica.*;
 import logica.visitor.*;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Mago extends Aliado {
 	//constructor
@@ -22,5 +23,8 @@ public class Mago extends Aliado {
 		valor=70;
 		v=new VisitorAliado(this);
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
+	}
+	public ObjetoNoAtravesable clone(){
+		return new Mago(new Tile(null, 0, 0));
 	}
 }

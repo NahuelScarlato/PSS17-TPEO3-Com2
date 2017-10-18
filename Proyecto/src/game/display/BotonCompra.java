@@ -1,7 +1,6 @@
 package game.display;
 
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -10,18 +9,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import game.gfx.ImageLoader;
-import objeto.noAtravesable.objetoConVida.personaje.Aliado;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 @SuppressWarnings("serial")
 public class BotonCompra extends JLabel{
 	//atributos
-	protected Strategy s;
+	protected ObjetoNoAtravesable o;
 	protected PanelTienda p;
 	
-	public BotonCompra(Strategy str, PanelTienda pan, BufferedImage i){
+	public BotonCompra(PanelTienda pan, BufferedImage i, ObjetoNoAtravesable ob){
+		o=ob;
 		setLayout(new CardLayout());
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
-		s=str;
 		p=pan;
 		OyenteCompra o=new OyenteCompra();
 		addMouseListener(o);
@@ -29,9 +28,6 @@ public class BotonCompra extends JLabel{
 		JLabel per=new JLabel(new ImageIcon(i));
 		add(per);
 		setHorizontalAlignment(JLabel.CENTER);
-	}
-	public Strategy getStrat(){
-		return s;
 	}
 	
 	private class OyenteCompra implements MouseListener{
@@ -45,9 +41,9 @@ public class BotonCompra extends JLabel{
 			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
 		}
 		public void mouseReleased(MouseEvent arg0) {
-			BotonCompra b=(BotonCompra)arg0.getSource();
 			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
-			p.setStrat(s);
+			ObjetoNoAtravesable aux=o.clone();
+			p.setPrototype(aux);
 		}
 	}
 }

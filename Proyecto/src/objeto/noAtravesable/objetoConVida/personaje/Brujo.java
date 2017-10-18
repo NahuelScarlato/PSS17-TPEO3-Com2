@@ -29,4 +29,7 @@ public class Brujo extends Enemigo{
 		setState(new ObjectStateMoving());
 		animation = new AnimationEnemy(0 , t.getFila()*64, velocidadMov ,ImageLoader.warlockAtk, ImageLoader.warlockMove);
 	}
+	public ObjetoNoAtravesable clone(){
+		return new Brujo(new Tile(null, 0, 0));
+	}
 }

@@ -6,6 +6,10 @@ import javax.swing.ScrollPaneConstants;
 
 import game.Game;
 import game.gfx.ImageLoader;
+import logica.Tile;
+import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.personaje.Espadachin;
+import objeto.noAtravesable.objetoConVida.personaje.Mago;
 
 import javax.swing.JLabel;
 
@@ -22,14 +26,12 @@ public class PanelTienda extends JPanel {
 	
 	protected Game myGame;
 	protected JLabel labelPuntaje;
-	protected Strategy stratActual;
+	protected ObjetoNoAtravesable prototipo;
 
 	/**
 	 * Create the panel.
 	 */
 	public PanelTienda(Game g) {
-		
-		stratActual=null;
 		myGame=g;
 		
 		this.setLayout(new GridBagLayout());
@@ -84,11 +86,11 @@ public class PanelTienda extends JPanel {
 		JPanel panelPersonajesHumanos= new JPanel(new GridLayout(3, 2));
 		JLabel[] personajesHumanos = new JLabel[5];
 		
-		BotonCompra mago = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.mago);
-		BotonCompra espadachin = new BotonCompra(new StrategyEspadachin(myGame), this, ImageLoader.espadachin);
-		BotonCompra paladin = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.paladin);
-		BotonCompra arquero = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.arquero);
-		BotonCompra monje = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.monje);
+		BotonCompra mago = new BotonCompra(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
+		BotonCompra espadachin = new BotonCompra(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
+		BotonCompra paladin = new BotonCompra(this, ImageLoader.paladin, new Mago(new Tile(null, 0, 0)));
+		BotonCompra arquero = new BotonCompra(this, ImageLoader.arquero, new Mago(new Tile(null, 0, 0)));
+		BotonCompra monje = new BotonCompra(this, ImageLoader.monje, new Mago(new Tile(null, 0, 0)));
 		
 		personajesHumanos[0] = espadachin;
 		personajesHumanos[1] = paladin;
@@ -131,13 +133,10 @@ public class PanelTienda extends JPanel {
 	public void actualizarPuntaje(int p, int m){
 		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
 	}
-	
-	public Strategy stratActual(){
-		return stratActual;
+	public void setPrototype(ObjetoNoAtravesable ob){
+		prototipo=ob;
 	}
-	
-	public void setStrat(Strategy s){
-		stratActual=s;
+	public ObjetoNoAtravesable getPrototype(){
+		return prototipo;
 	}
-	
 }

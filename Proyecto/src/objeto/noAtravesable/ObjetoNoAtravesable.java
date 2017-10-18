@@ -29,8 +29,9 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public void setState(ObjectState newState){
 		state = newState;
 	}
-	public void setTile(Tile t){
+	public void agregar(Tile t){
 		miTile=t;
 		t.setComponente(this);
 	}
+	public abstract ObjetoNoAtravesable clone();
 }

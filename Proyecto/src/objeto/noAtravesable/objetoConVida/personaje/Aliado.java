@@ -4,6 +4,8 @@ import java.awt.Graphics;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import logica.Tienda;
+import logica.Tile;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
@@ -48,5 +50,9 @@ public abstract class Aliado extends Personaje {
 	public void dibujar(Graphics g){
 		state.draw(g, this);
 	}
-	
+	public void agregar(Tile t){
+		miTile=t;
+		t.setComponente(this);
+		Tienda.getTienda(null).comprar(this, t.getFila(), t.getColumna());
+	}
 }
