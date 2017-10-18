@@ -47,6 +47,8 @@ public class PanelTienda extends JPanel {
 		add(labelPuntaje, c);
 		
 		c.gridy=1;
+		c.ipady=0;
+		c.ipadx=40;
 		c.weightx=0.5;
 		c.weighty=0.5;
 		
