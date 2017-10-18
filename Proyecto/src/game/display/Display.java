@@ -76,7 +76,7 @@ public class Display {
 			panel.setStrat(null);
 		}
 		else
-			myGame.interaccion(e.getY()/64, e.getX()/64);
+			myGame.interaccion(e.getX(), e.getY());
 	}
 	
 
