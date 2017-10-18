@@ -82,9 +82,8 @@ public class PanelTienda extends JPanel {
 		JPanel panelPersonajesHumanos= new JPanel(new GridLayout(3, 2));
 		JLabel[] personajesHumanos = new JLabel[5];
 		
-		BotonCompra cazador = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.cazadorEnano);
 		BotonCompra mago = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.mago);
-		BotonCompra espadachin = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.espadachin);
+		BotonCompra espadachin = new BotonCompra(new StrategyEspadachin(myGame), this, ImageLoader.espadachin);
 		BotonCompra paladin = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.paladin);
 		BotonCompra arquero = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.arquero);
 		BotonCompra monje = new BotonCompra(new StrategyMago(myGame), this, ImageLoader.monje);

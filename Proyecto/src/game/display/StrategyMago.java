@@ -14,7 +14,9 @@ public class StrategyMago extends Strategy{
 	
 	//metodos
 	public void comprar(int x, int y){
-		Mago m = new Mago(g.getLogica().getTile(x, y));
-		g.getLogica().getTienda().comprar(m, x, y);
+		if(g.getLogica().getTile(x,y)!=null){
+			Mago m = new Mago(g.getLogica().getTile(x, y));
+			g.getLogica().getTienda().comprar(m, x, y);
+		}
 	}
 }

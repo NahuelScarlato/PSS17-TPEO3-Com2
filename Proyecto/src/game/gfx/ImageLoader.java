@@ -16,6 +16,7 @@ public class ImageLoader {
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
 	public static BufferedImage[] mageAtk = new BufferedImage[4];
+	public static BufferedImage[] warriorAtk = new BufferedImage[4];
 	public static BufferedImage[] dwarfHunterAtk = new BufferedImage[4];
 	public static BufferedImage[] warlockAtk = new BufferedImage[4];
 	public static BufferedImage[] warlockMove = new BufferedImage[4];
@@ -54,6 +55,10 @@ public class ImageLoader {
 		goblinAtk[1] = sheet.getSubimage(60, 0, 60, 60);
 		goblinAtk[2] = sheet.getSubimage(120, 0, 60, 60);
 		goblinAtk[3] = sheet.getSubimage(180, 0, 60, 60);
+		warriorAtk[0] = espadachin;
+		warriorAtk[1] = espadachin;
+		warriorAtk[2] = espadachin;
+		warriorAtk[3] = espadachin;
 		mageAtk[0] = mago;
 		mageAtk[1] = mago;
 		mageAtk[2] = mago;
