@@ -11,7 +11,6 @@ import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public abstract class Aliado extends Personaje {
 	//atributos
-	protected int valor;
 	protected VisitorAliado v;
 	protected Animation animation;
 	
@@ -25,10 +24,6 @@ public abstract class Aliado extends Personaje {
 		if(reloj==0){
 			e.accept(v);
 		}
-	}
-	
-	public int getValor(){
-		return valor;
 	}
 	
 	public Animation getAnimation(){

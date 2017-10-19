@@ -8,6 +8,7 @@ import objeto.atravesable.Agua;
 
 public abstract class ObjetoNoAtravesable extends Objeto{
 	
+	protected int valor;
 	protected ObjectState state;
 	protected ObjectState stateStatic;
 
@@ -32,6 +33,10 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public void agregar(Tile t){
 		miTile=t;
 		t.setComponente(this);
+	}
+
+	public int getValor(){
+		return valor;
 	}
 	public abstract ObjetoNoAtravesable clone();
 }
