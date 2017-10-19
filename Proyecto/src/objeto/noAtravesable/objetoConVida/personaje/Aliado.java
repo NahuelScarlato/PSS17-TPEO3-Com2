@@ -37,6 +37,11 @@ public abstract class Aliado extends Personaje {
 			miTile = null;
 		}
 	}
+	public void sumarVida(int v){
+		vida+=v;
+		if(vida>maxVida)
+			vida=maxVida;
+	}
 	
 	public void accept(Visitor o){
 		o.afectar(this);

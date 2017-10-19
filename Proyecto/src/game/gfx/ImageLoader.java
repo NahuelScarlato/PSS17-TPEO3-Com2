@@ -17,6 +17,8 @@ public class ImageLoader {
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
 	public static BufferedImage[] mageAtk = new BufferedImage[4];
 	public static BufferedImage[] warriorAtk = new BufferedImage[4];
+	public static BufferedImage[] monkAtk = new BufferedImage[4];
+	public static BufferedImage[] arqueroAtk = new BufferedImage[4];
 	public static BufferedImage[] dwarfHunterAtk = new BufferedImage[4];
 	public static BufferedImage[] warlockAtk = new BufferedImage[4];
 	public static BufferedImage[] warlockMove = new BufferedImage[4];
@@ -59,6 +61,14 @@ public class ImageLoader {
 		warriorAtk[1] = espadachin;
 		warriorAtk[2] = espadachin;
 		warriorAtk[3] = espadachin;
+		monkAtk[0] = monje;
+		monkAtk[1] = monje;
+		monkAtk[2] = monje;
+		monkAtk[3] = monje;
+		arqueroAtk[0] = arquero;
+		arqueroAtk[1] = arquero;
+		arqueroAtk[2] = arquero;
+		arqueroAtk[3] = arquero;
 		mageAtk[0] = mago;
 		mageAtk[1] = mago;
 		mageAtk[2] = mago;

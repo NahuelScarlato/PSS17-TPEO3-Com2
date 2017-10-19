@@ -8,6 +8,8 @@ import game.Game;
 import game.gfx.ImageLoader;
 import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.personaje.Arquero;
+import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
 import objeto.noAtravesable.objetoConVida.personaje.Espadachin;
 import objeto.noAtravesable.objetoConVida.personaje.Mago;
 
@@ -89,8 +91,8 @@ public class PanelTienda extends JPanel {
 		BotonCompra mago = new BotonCompra(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
 		BotonCompra espadachin = new BotonCompra(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
 		BotonCompra paladin = new BotonCompra(this, ImageLoader.paladin, new Mago(new Tile(null, 0, 0)));
-		BotonCompra arquero = new BotonCompra(this, ImageLoader.arquero, new Mago(new Tile(null, 0, 0)));
-		BotonCompra monje = new BotonCompra(this, ImageLoader.monje, new Mago(new Tile(null, 0, 0)));
+		BotonCompra arquero = new BotonCompra(this, ImageLoader.arquero, new Arquero(new Tile(null, 0, 0)));
+		BotonCompra monje = new BotonCompra(this, ImageLoader.monje, new Clerigo(new Tile(null, 0, 0)));
 		
 		personajesHumanos[0] = espadachin;
 		personajesHumanos[1] = paladin;
