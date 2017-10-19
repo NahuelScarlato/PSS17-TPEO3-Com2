@@ -21,11 +21,13 @@ public abstract class Enemigo extends Personaje{
 	protected VisitorEnemigo v;
 	protected ObjectState stateMoving;
 	protected AnimationEnemy animation;
+	protected boolean detenido;
 	
 	public Enemigo(){
 		super();
 		stateMoving = new ObjectStateMoving();
 		state = stateMoving;
+		detenido = false;
 	}
 	
 	//metodos
@@ -55,7 +57,7 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void avanzar(){
-		if(reloj==0 && miTile.getRight().getComponente()==null){
+		if(!detenido && reloj==0 && miTile.getRight().getComponente()==null){
 			Tile sig = miTile.getRight();
 			miTile.setComponente(null);
 			miTile=sig;
@@ -90,5 +92,9 @@ public abstract class Enemigo extends Personaje{
 	
 	public void dibujar(Graphics g){
 		state.draw(g, this);
+	}
+	
+	public void switchMovementState(){
+		detenido = !detenido;
 	}
 }

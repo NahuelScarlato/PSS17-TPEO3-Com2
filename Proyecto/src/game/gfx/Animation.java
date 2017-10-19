@@ -6,30 +6,28 @@ import java.awt.image.BufferedImage;
 public class Animation {
 	
 	protected BufferedImage ataque[];
-	protected int x, y, index, totalImages, speed, attackIndex;
-	protected long timer, lastTime, now;
+	protected int x, y, index, totalImages, indexTime;
+	protected long lastTime, now, timer;
 	
 	//Hacer los constructores sin los arreglos por parametro, y hacer seters para los arreglos.
 	
-	public Animation (int x, int y, float spd , BufferedImage[] anim){
+	public Animation (int x, int y, float atkSpeed , BufferedImage[] anim){
 		ataque = anim;
 		this.x = x;
 		this.y = y;
-		timer = 0;
+		totalImages = anim.length;
 		index = 0;
-		attackIndex = 0;
+		indexTime = (int) (1000 * atkSpeed / totalImages);
+		timer = 0;
 		lastTime = System.currentTimeMillis();
-		speed = (int) (spd * 1000 / 64);
-		System.out.println("Velocidad: "+ spd+ " * 100 = "+ speed);
 	}
 	
 	public void drawrAtk(Graphics g){
-		g.drawImage(ataque[index], x, y, 64,64, null);
-		now = System.currentTimeMillis();
-		timer += now - lastTime;
-		lastTime =	now;
-		if(timer > speed){
-			index = (index + 1) % ataque.length;
+		g.drawImage(ataque[index], x, y, ataque[index].getWidth(),ataque[index].getHeight() , null);
+		timer += System.currentTimeMillis() - lastTime;
+		lastTime = System.currentTimeMillis();
+		if (timer > indexTime){
+			index = (index + 1) % totalImages;
 			timer = 0;
 		}
 	}

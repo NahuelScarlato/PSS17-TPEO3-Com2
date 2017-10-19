@@ -9,7 +9,12 @@ import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
 
 public class ObjectStateMoving extends ObjectState{
 	
-	public void draw(Graphics g, Enemigo e){e.getAnimation().drawMove(g);}
+	public void draw(Graphics g, Enemigo e){
+		/*if(e.getAnimation() == null){
+			System.out.println("animacion nula");
+		}*/
+		e.getAnimation().drawMove(g);
+		}
 	public void draw(Graphics g, Aliado a){}
 	public void draw(Graphics g, OTConVida otcv){}
 	public void draw(Graphics g, OMConVida omcv){}
