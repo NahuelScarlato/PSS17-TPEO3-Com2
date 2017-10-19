@@ -26,6 +26,15 @@ public class BotonCompra extends JLabel{
 		addMouseListener(o);
 		setOpaque(true);
 		JLabel per=new JLabel(new ImageIcon(i));
+		per.setLayout(new CardLayout());
+		JLabel val=new JLabel();
+		val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
+		val.setText("20");
+		val.setHorizontalAlignment(JLabel.RIGHT);
+		val.setVerticalAlignment(JLabel.BOTTOM);
+		val.setLocation(100, 50);
+		per.add(val);
+		per.setVerticalTextPosition(BOTTOM);
 		add(per);
 		setHorizontalAlignment(JLabel.CENTER);
 	}

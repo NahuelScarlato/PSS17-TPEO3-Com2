@@ -71,7 +71,7 @@ public class Display {
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
 
-		if(panel.getPrototype()!=null){
+		if(panel.getPrototype()!=null && myGame.getLogica().getTile(e.getY()/64, e.getX()/64).getComponente()==null){
 			panel.getPrototype().agregar(myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
 			panel.setPrototype(null);
 		}
