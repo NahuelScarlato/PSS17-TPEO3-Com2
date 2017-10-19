@@ -57,11 +57,16 @@ public class PanelTienda extends JPanel {
 		c.weightx=0.5;
 		c.weighty=0.5;
 		
-		JPanel pScroll=new JPanel(new GridLayout(3,1));
+		JPanel pScroll=new JPanel(new GridBagLayout());
+		
+		GridBagConstraints conScroll = new GridBagConstraints();
+		conScroll.gridx=0;
+		conScroll.gridy=0;
+		conScroll.fill=GridBagConstraints.BOTH;
 		
 		JScrollPane scrollPane = new JScrollPane(pScroll);
 		scrollPane.setPreferredSize(new Dimension(100, 100));
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		
 		JPanel panelHumanos = new JPanel(new GridBagLayout());
@@ -107,11 +112,55 @@ public class PanelTienda extends JPanel {
 		
 		panelHumanos.add(panelPersonajesHumanos, cs);
 		
-		pScroll.add(panelHumanos);
+		pScroll.add(panelHumanos, conScroll);
 		
+		conScroll.gridy=1;
+		
+		
+		JPanel panelElfos = new JPanel(new GridBagLayout());
+		
+		GridBagConstraints c1 = new GridBagConstraints();
+		c1.gridx=0;
+		c1.gridy=0;
+		c1.gridx=0;
+		c1.gridy=0;
+		c1.weightx=0;
+		c1.weighty=0;
+		c1.ipadx=0;
+		c1.ipady=10;
+		c1.fill=GridBagConstraints.BOTH;
+		
+		JLabel labelElfos = new JLabel("Elfos", JLabel.CENTER);
+		
+		panelElfos.add(labelElfos, c1);
+		
+		c1.gridy=1;
+		c1.weightx=0.5;
+		c1.weighty=0.5;
+		c1.ipady=0;
+		
+		JPanel panelPersonajesElfos= new JPanel(new GridLayout(1, 1));
+		JLabel[] personajesElfos = new JLabel[1];
+		
+		BotonCompra druida = new BotonCompra(this, ImageLoader.druida, new Mago(new Tile(null, 0, 0)));
+		
+		personajesElfos[0] = druida;
+		
+		for(int i=0; i<personajesElfos.length; i++){
+			panelPersonajesElfos.add(personajesElfos[i]);
+		}
+		
+		panelElfos.add(panelPersonajesElfos, c1);
+		
+		pScroll.add(panelElfos, conScroll);
+		
+		conScroll.gridy=2;
 
 		JButton botonAliados = new JButton("Agregar aliado");
-		pScroll.add(botonAliados, null);
+		pScroll.add(botonAliados, conScroll);
+		
+		conScroll.gridy=3;
+		
 		botonAliados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				myGame.crearAliado();
@@ -119,7 +168,7 @@ public class PanelTienda extends JPanel {
 		});
 		
 		JButton botonEnemigos = new JButton("Agregar enemigos");
-		pScroll.add(botonEnemigos, null);
+		pScroll.add(botonEnemigos, conScroll);
 		botonEnemigos.addActionListener(new ActionListener() {
 			
 			@Override
