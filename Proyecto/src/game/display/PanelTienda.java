@@ -12,6 +12,7 @@ import objeto.noAtravesable.objetoConVida.personaje.Arquero;
 import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
 import objeto.noAtravesable.objetoConVida.personaje.Espadachin;
 import objeto.noAtravesable.objetoConVida.personaje.Mago;
+import objeto.noAtravesable.objetoConVida.personaje.Paladin;
 
 import javax.swing.JLabel;
 

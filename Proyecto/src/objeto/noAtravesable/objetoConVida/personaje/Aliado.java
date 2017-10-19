@@ -3,7 +3,6 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import java.awt.Graphics;
 
 import game.gfx.Animation;
-import game.gfx.ImageLoader;
 import logica.Tienda;
 import logica.Tile;
 import logica.visitor.*;
