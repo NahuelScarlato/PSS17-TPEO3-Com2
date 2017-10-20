@@ -10,6 +10,7 @@ import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.Arquero;
 import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
+import objeto.noAtravesable.objetoConVida.personaje.EnanoCazador;
 import objeto.noAtravesable.objetoConVida.personaje.Espadachin;
 import objeto.noAtravesable.objetoConVida.personaje.Mago;
 import objeto.noAtravesable.objetoConVida.personaje.Paladin;
@@ -31,10 +32,10 @@ public class PanelTienda extends JPanel {
 	protected Game myGame;
 	protected JLabel labelPuntaje;
 	protected ObjetoNoAtravesable prototipo;
-	protected JPanel panelPersonajesElfos;
-	protected JPanel panelCompraElfos;
-	protected JLabel[] personajesElfos;
-	protected JPanel panelElves;
+	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
+	protected JPanel panelCompraElfos, panelCompraEnanos;
+	protected JLabel[] personajesElfos, personajesEnanos;
+	protected JPanel panelElves, panelDwarves;
 
 	/**
 	 * Create the panel.
@@ -173,11 +174,67 @@ public class PanelTienda extends JPanel {
 		pScroll.add(panelElfos, conScroll);
 		
 		conScroll.gridy=2;
+		
+		JPanel panelEnanos = new JPanel(new GridBagLayout());
+		
+		GridBagConstraints c2 = new GridBagConstraints();
+		c2.gridx=0;
+		c2.gridy=0;
+		c2.gridx=0;
+		c2.gridy=0;
+		c2.weightx=0;
+		c2.weighty=0;
+		c2.ipadx=0;
+		c2.ipady=10;
+		c2.fill=GridBagConstraints.BOTH;
+		
+		JLabel labelEnanos = new JLabel("Enanos", JLabel.CENTER);
+		
+		panelEnanos.add(labelEnanos, c2);
+		
+		c2.gridy=1;
+		c2.weightx=0.5;
+		c2.weighty=0.5;
+		c2.ipady=0;
+		
+		panelDwarves = new JPanel(new CardLayout());
+		
+			panelPersonajesEnanos= new JPanel(new GridLayout(1, 2));
+			personajesEnanos = new JLabel[2];
+		
+			BotonCompra champ = new BotonCompra(this, ImageLoader.campeonEnano, new Mago(new Tile(null, 0, 0)));
+			BotonCompra cazador = new BotonCompra(this, ImageLoader.cazadorEnano, new EnanoCazador(new Tile(null, 0, 0)));
+		
+			personajesEnanos[0] = champ;
+			personajesEnanos[1] = cazador;
+		
+			for(int i=0; i<personajesEnanos.length; i++){
+				panelPersonajesEnanos.add(personajesEnanos[i]);
+				personajesEnanos[i].setEnabled(false);
+				personajesEnanos[i].setVisible(false);
+			}
+			
+			panelCompraEnanos = new JPanel(new GridLayout(1,1));
+			BotonCompraAlianza b1 = new BotonCompraAlianza(this, 100, "enanos");
+			panelCompraEnanos.add(b1);
+		
+		panelDwarves.add(panelCompraEnanos);
+		
+			panelCompraEnanos.setVisible(true);
+			
+		
+		panelEnanos.add(panelDwarves, c1);
+		
+		pScroll.add(panelEnanos, conScroll);
+		
+		
+		
+		conScroll.gridy=3;
 
 		JButton botonAliados = new JButton("Agregar aliado");
 		pScroll.add(botonAliados, conScroll);
 		
-		conScroll.gridy=3;
+		conScroll.gridy=4;
 		
 		botonAliados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -216,6 +273,15 @@ public class PanelTienda extends JPanel {
 			panelCompraElfos.setVisible(false);
 			panelElves.remove(panelCompraElfos);
 			panelElves.add(panelPersonajesElfos);
+		}
+		else if(al.equals("enanos")){
+			for(JLabel b: personajesEnanos){
+				b.setVisible(true);
+				b.setEnabled(true);
+			}
+			panelCompraEnanos.setVisible(false);
+			panelDwarves.remove(panelCompraEnanos);
+			panelDwarves.add(panelPersonajesEnanos);
 		}
 		myGame.getLogica().getTienda().comprarAlianza(val);
 	}

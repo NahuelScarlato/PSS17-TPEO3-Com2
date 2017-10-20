@@ -3,8 +3,6 @@ package logica;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import game.gfx.Animation;
-
 public abstract class Objeto {
 	//atributos
 	protected Tile miTile;

@@ -9,7 +9,6 @@ import objeto.noAtravesable.ObjetoNoAtravesable;
 import java.awt.Graphics;
 import java.util.Random;
 
-import game.gfx.Animation;
 import game.gfx.AnimationEnemy;
 
 public abstract class Enemigo extends Personaje{

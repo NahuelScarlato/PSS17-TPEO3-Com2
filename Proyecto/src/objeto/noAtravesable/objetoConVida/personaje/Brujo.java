@@ -2,7 +2,6 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.*;
-import game.gfx.Animation;
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 

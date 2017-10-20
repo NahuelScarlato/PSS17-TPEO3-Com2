@@ -1,7 +1,6 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
 import objeto.noAtravesable.objetoConVida.*;
-import game.gfx.Animation;
 import objeto.noAtravesable.ObjectState;
 import objeto.noAtravesable.ObjectStateAttacking;
 import objeto.noAtravesable.ObjetoNoAtravesable;
