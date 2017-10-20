@@ -16,6 +16,7 @@ import objeto.noAtravesable.objetoConVida.personaje.Paladin;
 
 import javax.swing.JLabel;
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -30,6 +31,10 @@ public class PanelTienda extends JPanel {
 	protected Game myGame;
 	protected JLabel labelPuntaje;
 	protected ObjetoNoAtravesable prototipo;
+	protected JPanel panelPersonajesElfos;
+	protected JPanel panelCompraElfos;
+	protected JLabel[] personajesElfos;
+	protected JPanel panelElves;
 
 	/**
 	 * Create the panel.
@@ -139,18 +144,31 @@ public class PanelTienda extends JPanel {
 		c1.weighty=0.5;
 		c1.ipady=0;
 		
-		JPanel panelPersonajesElfos= new JPanel(new GridLayout(1, 1));
-		JLabel[] personajesElfos = new JLabel[1];
+		panelElves = new JPanel(new CardLayout());
 		
-		BotonCompra druida = new BotonCompra(this, ImageLoader.druida, new Mago(new Tile(null, 0, 0)));
+			panelPersonajesElfos= new JPanel(new GridLayout(1, 1));
+			personajesElfos = new JLabel[1];
 		
-		personajesElfos[0] = druida;
+			BotonCompra druida = new BotonCompra(this, ImageLoader.druida, new Mago(new Tile(null, 0, 0)));
 		
-		for(int i=0; i<personajesElfos.length; i++){
-			panelPersonajesElfos.add(personajesElfos[i]);
-		}
+			personajesElfos[0] = druida;
 		
-		panelElfos.add(panelPersonajesElfos, c1);
+			for(int i=0; i<personajesElfos.length; i++){
+				panelPersonajesElfos.add(personajesElfos[i]);
+				personajesElfos[i].setEnabled(false);
+				personajesElfos[i].setVisible(false);
+			}
+			
+			panelCompraElfos = new JPanel(new GridLayout(1,1));
+			BotonCompraAlianza b = new BotonCompraAlianza(this, 100, "elfos");
+			panelCompraElfos.add(b);
+		
+		panelElves.add(panelCompraElfos);
+		
+			panelCompraElfos.setVisible(true);
+			
+		
+		panelElfos.add(panelElves, c1);
 		
 		pScroll.add(panelElfos, conScroll);
 		
@@ -190,5 +208,15 @@ public class PanelTienda extends JPanel {
 	}
 	public ObjetoNoAtravesable getPrototype(){
 		return prototipo;
+	}
+	public void comprarAlianza(String al, int val){
+		if(al.equals("elfos")){
+			personajesElfos[0].setVisible(true);
+			personajesElfos[0].setEnabled(true);
+			panelCompraElfos.setVisible(false);
+			panelElves.remove(panelCompraElfos);
+			panelElves.add(panelPersonajesElfos);
+		}
+		myGame.getLogica().getTienda().comprarAlianza(val);
 	}
 }

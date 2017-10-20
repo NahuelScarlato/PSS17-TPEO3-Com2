@@ -27,6 +27,10 @@ public class Tienda {
 	public int getMonedas(){
 		return monedas;
 	}
+	public void comprarAlianza(int val){
+		//asumo que no se puede comprar la alianza si no se tiene el dinero
+		monedas-=val;
+	}
 	public void comprar(Aliado a, int f, int c){
 		monedas-=a.getValor();
 		juego.agregarAliado(a);
