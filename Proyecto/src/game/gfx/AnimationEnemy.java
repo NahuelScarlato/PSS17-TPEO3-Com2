@@ -37,9 +37,11 @@ public class AnimationEnemy extends Animation {
 				x++;
 				if (pixelCounter == 0){
 					myEnemy.switchMovementState();
+					//stopped = !stopped;
 				}
 				if (pixelCounter == 63){
 					myEnemy.switchMovementState();
+					myEnemy.avanzar();
 					stopped = !stopped;
 				}
 				pixelCounter = (pixelCounter + 1) % 64;

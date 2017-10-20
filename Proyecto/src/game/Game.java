@@ -10,6 +10,7 @@ import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import game.display.Display;
 import game.gfx.GameGraphics;
+import game.gfx.GraphicsManager;
 import game.gfx.ImageLoader;
 
 public class Game implements Runnable{
@@ -18,6 +19,7 @@ public class Game implements Runnable{
 	public int width,height;
 	public String title;
 	private Logica myLogic;
+	private GraphicsManager graphicsManager;
 
 	// Atributo para manejar los graficos del juego.
 	//
@@ -38,10 +40,11 @@ public class Game implements Runnable{
 	
 	private void init(){
 		ImageLoader.init();
-		myLogic = new Logica();
+		myLogic = Logica.getLogica();
 		display = new Display(title , width , height, this);
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
+		graphicsManager = new GraphicsManager(display);
 	}
 	
 	private void update(){
@@ -66,7 +69,7 @@ public class Game implements Runnable{
 	public void run(){
 		
 		init();
-		
+		graphicsManager.start();
 		// Aca estabilizamos la cantidad de fps de la ejecucion del juego.
 		
 		int fps=60;
@@ -83,7 +86,7 @@ public class Game implements Runnable{
 
 			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
 				update();
-				render();
+				//render();
 				delta--;
 			}
 		}
@@ -99,6 +102,7 @@ public class Game implements Runnable{
 		running = true;
 		thread = new Thread(this);
 		thread.start();
+		
 	}
 	
 	public synchronized void stop(){
