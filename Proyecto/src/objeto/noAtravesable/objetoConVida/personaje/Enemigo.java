@@ -49,11 +49,15 @@ public abstract class Enemigo extends Personaje{
 	public void modificarVelocidad(float rall){
 		velocidadAt=(rall*velAtMaxima);
 		velocidadMov=(velMovMaxima*rall);
+		animation.setAtkSpeed(velocidadAt);
+		animation.setMovSpeed(velocidadMov);
 	}
 	
 	public void normalizarVelocidad(){
 		velocidadMov=velMovMaxima;
 		velocidadAt=velAtMaxima;
+		animation.setAtkSpeed(velocidadAt);
+		animation.setMovSpeed(velocidadMov);
 	}
 	
 	public void avanzar(){
@@ -64,6 +68,7 @@ public abstract class Enemigo extends Personaje{
 			sig.setComponente(this);
 			this.setTile(sig);
 			normalizarVelocidad();
+			animation.switchMovementState();
 		}
 		reloj = (reloj+1)%(int)(velocidadMov*60);
 	}

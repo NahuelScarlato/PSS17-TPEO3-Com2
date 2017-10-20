@@ -23,13 +23,17 @@ public class Animation {
 	}
 	
 	public void drawrAtk(Graphics g){
-		g.drawImage(ataque[index], x, y, ataque[index].getWidth(),ataque[index].getHeight() , null);
+		g.drawImage(ataque[index], x, y, 64 , 64 , null);
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		if (timer > indexTime){
 			index = (index + 1) % totalImages;
 			timer = 0;
 		}
+	}
+	
+	public void setAtkSpeed(float value){
+		indexTime = (int) (1000 * value / totalImages);
 	}
 	
 }
