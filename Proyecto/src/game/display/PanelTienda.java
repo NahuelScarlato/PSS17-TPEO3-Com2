@@ -10,6 +10,7 @@ import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.Arquero;
 import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
+import objeto.noAtravesable.objetoConVida.personaje.EnanoCampeon;
 import objeto.noAtravesable.objetoConVida.personaje.EnanoCazador;
 import objeto.noAtravesable.objetoConVida.personaje.Espadachin;
 import objeto.noAtravesable.objetoConVida.personaje.Mago;
@@ -202,7 +203,7 @@ public class PanelTienda extends JPanel {
 			panelPersonajesEnanos= new JPanel(new GridLayout(1, 2));
 			personajesEnanos = new JLabel[2];
 		
-			BotonCompra champ = new BotonCompra(this, ImageLoader.campeonEnano, new Mago(new Tile(null, 0, 0)));
+			BotonCompra champ = new BotonCompra(this, ImageLoader.campeonEnano, new EnanoCampeon(new Tile(null, 0, 0)));
 			BotonCompra cazador = new BotonCompra(this, ImageLoader.cazadorEnano, new EnanoCazador(new Tile(null, 0, 0)));
 		
 			personajesEnanos[0] = champ;
