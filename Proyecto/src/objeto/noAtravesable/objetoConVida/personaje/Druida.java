@@ -22,8 +22,8 @@ public class Druida extends Aliado{
 		miTile=t;
 		velocidadAt=1.4f;
 		velAtMaxima=1.4f;
-		velocidadSummon=5f;
-		velocidadMaximaSummon=5f;
+		velocidadSummon=10f;
+		velocidadMaximaSummon=10f;
 		t.setComponente(this);
 		image=ImageLoader.druida;
 		vida=60;
@@ -41,14 +41,17 @@ public class Druida extends Aliado{
 	}
 	public void aumentarReloj(){
 		reloj=(reloj+1)%(int)(velocidadAt*60);
-		relojSummon=(reloj+1)%(int)(velocidadAt*60);
+		relojSummon=(relojSummon+1)%(int)(velocidadSummon*60);
 		if(relojSummon==0){
 			Random r=new Random();
 			int f=r.nextInt(6);
-			int c=r.nextInt(12);
+			Random r1=new Random();
+			int c=r1.nextInt(12);
 			Tile ti=miTile.getLogica().getTile(f, c);
-			Treant t=new Treant(ti);
-			Tienda.getTienda(null).comprar(t);
+			if(ti.getComponente()==null){
+				Treant t=new Treant(ti);
+				Tienda.getTienda(null).comprar(t);
+			}
 		}
 	}
 }

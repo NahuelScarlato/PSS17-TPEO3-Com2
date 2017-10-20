@@ -11,7 +11,7 @@ public class Logica {
 	//atributos
 	protected Tienda tienda;
 	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar;
-	protected LinkedList<Aliado> listaAliados, aliadosABorrar;
+	protected LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
 	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
 	protected int score;
 	protected Tile[][] tablero;
@@ -26,6 +26,7 @@ public class Logica {
 		enemigosABorrar = new LinkedList<Enemigo>();
 		listaAliados = new LinkedList<Aliado>();
 		aliadosABorrar = new LinkedList<Aliado>();
+		aliadosAAgregar = new LinkedList<Aliado>();
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
 		tienda = Tienda.getTienda(this);
@@ -37,7 +38,7 @@ public class Logica {
 	
 	//metodos
 	public void agregarAliado(Aliado a){
-		listaAliados.addLast(a);
+		aliadosAAgregar.addLast(a);
 	}
 	public void agregarEnemigo(Enemigo e){
 		listaEnemigos.addLast(e);
@@ -56,7 +57,12 @@ public class Logica {
 	public void agregarAtravesableABorrar(ObjetoAtravesable oa){
 		atravesablesABorrar.addLast(oa);
 	}
-	
+	private void agregarObjetos(){
+		for(Aliado a : aliadosAAgregar){
+			listaAliados.addLast(a);
+		}
+		aliadosAAgregar = new LinkedList<Aliado>();
+	}
 	public void eliminarObjetos(){
 		for (Aliado a : aliadosABorrar){
 			listaAliados.remove(a);
@@ -110,18 +116,21 @@ public class Logica {
 	public void actualizar(){
 		eliminarObjetos();
 		for(Aliado a:listaAliados){
-			Tile actual = a.getTile().getLeft();
-			boolean encontre = false;
-			for(int i=0; !encontre && actual.getColumna()!=0 && i<a.getAlcance(); i++){
-				if(actual.getComponente()!=null){
-					a.atacar(actual.getComponente());
-					encontre = true;
+			if(a.getTile().getColumna()!=0){
+				Tile actual = a.getTile().getLeft();
+				boolean encontre = false;
+				for(int i=0; !encontre && actual.getColumna()!=0 && i<a.getAlcance(); i++){
+					if(actual.getComponente()!=null){
+						a.atacar(actual.getComponente());
+						encontre = true;
+					}
+					actual=actual.getLeft();
 				}
-				actual=actual.getLeft();
 			}
 			a.aumentarReloj();
 			eliminarObjetos();
 		}
+		agregarObjetos();
 		for(Enemigo e:listaEnemigos){
 			boolean encontre=false;
 			Tile actual=e.getTile();
