@@ -101,4 +101,9 @@ public abstract class Enemigo extends Personaje{
 	public void switchMovementState(){
 		detenido = !detenido;
 	}
+	
+	public void setTile(Tile t){
+		super.setTile(t);
+		animation.setPos(t.getColumna(), t.getFila());
+	}
 }

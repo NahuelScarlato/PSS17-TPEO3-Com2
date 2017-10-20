@@ -36,4 +36,8 @@ public class Animation {
 		indexTime = (int) (1000 * value / totalImages);
 	}
 	
+	public void setPos(int a, int b){
+		x = a*64;
+		y = b*64;
+	}
 }
