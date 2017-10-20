@@ -4,6 +4,7 @@ import java.util.Random;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import logica.Tienda;
 import logica.Tile;
 import logica.visitor.VisitorAliado;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -43,9 +44,11 @@ public class Druida extends Aliado{
 		relojSummon=(reloj+1)%(int)(velocidadAt*60);
 		if(relojSummon==0){
 			Random r=new Random();
-			int f = r.nextInt(6);
-			int c = r.nextInt(12);
-			Treant t=new Treant()
+			int f=r.nextInt(6);
+			int c=r.nextInt(12);
+			Tile ti=miTile.getLogica().getTile(f, c);
+			Treant t=new Treant(ti);
+			Tienda.getTienda(null).comprar(t);
 		}
 	}
 }

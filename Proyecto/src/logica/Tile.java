@@ -66,4 +66,7 @@ public class Tile {
 	public void destruirObjeto(OTConVida ocv){
 		componente=null;
 	}
+	public Logica getLogica(){
+		return miJuego;
+	}
 }
