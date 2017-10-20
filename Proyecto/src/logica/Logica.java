@@ -16,9 +16,10 @@ public class Logica {
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int filas=6, columnas=12;
+	private static Logica logica = new Logica();
 	
 	//constructor
-	public Logica(){
+	private Logica(){
 		score = 0;
 		tablero = new Tile[filas][columnas];
 		listaEnemigos = new LinkedList<Enemigo>();
@@ -28,6 +29,10 @@ public class Logica {
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
 		tienda = Tienda.getTienda(this);
+	}
+	
+	public static Logica getLogica(){
+		return logica;
 	}
 	
 	//metodos
