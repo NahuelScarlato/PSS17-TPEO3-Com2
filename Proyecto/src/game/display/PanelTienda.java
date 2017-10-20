@@ -96,7 +96,7 @@ public class PanelTienda extends JPanel {
 		
 		BotonCompra mago = new BotonCompra(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
 		BotonCompra espadachin = new BotonCompra(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
-		BotonCompra paladin = new BotonCompra(this, ImageLoader.paladin, new Mago(new Tile(null, 0, 0)));
+		BotonCompra paladin = new BotonCompra(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
 		BotonCompra arquero = new BotonCompra(this, ImageLoader.arquero, new Arquero(new Tile(null, 0, 0)));
 		BotonCompra monje = new BotonCompra(this, ImageLoader.monje, new Clerigo(new Tile(null, 0, 0)));
 		
