@@ -20,7 +20,7 @@ public class AnimationEnemy extends Animation {
 		movementTimer = 0;
 		myEnemy = enemy;
 		pixelCounter = 0;
-		stopped = true;
+		stopped = false;
 	}
 	
 	public void switchMovementState(){

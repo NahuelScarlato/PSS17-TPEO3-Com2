@@ -3,6 +3,7 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import java.awt.Graphics;
 
 import game.gfx.Animation;
+import game.gfx.ImageLoader;
 import logica.Tienda;
 import logica.Tile;
 import logica.visitor.*;
@@ -47,6 +48,8 @@ public abstract class Aliado extends Personaje {
 	}
 	
 	public void dibujar(Graphics g){
+		g.drawImage(ImageLoader.vida[1], getTile().getColumna() * 64, getTile().getFila() * 64, 40, 4, null);
+		g.drawImage(ImageLoader.vida[0], getTile().getColumna() * 64, getTile().getFila() * 64, (40*vida)/maxVida, 4, null);
 		state.draw(g, this);
 	}
 	public void agregar(Tile t){
