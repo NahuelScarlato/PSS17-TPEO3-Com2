@@ -1,5 +1,6 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
+import game.gfx.Animation;
 import game.gfx.ImageLoader;
 import logica.Tienda;
 import logica.Tile;
@@ -10,24 +11,25 @@ public class EnanoCazador extends Aliado {
 	public EnanoCazador(Tile t){
 		super();
 		miTile=t;
-		velocidadAt=1.3f;
-		velAtMaxima=1.3f;
+		velocidadAt=1.1f;
+		velAtMaxima=1.1f;
 		t.setComponente(this);
 		image=ImageLoader.cazadorEnano;
 		vida=50;
 		maxVida=50;
 		ancho=1;
 		alto=1;
-		impacto=15;
+		impacto=35;
 		alcance=4;
 		valor=75;
 		v=new VisitorAliado(this);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
 	}
 	
 	public void agregar(Tile t){
 		miTile=t;
 		t.setComponente(this);
-		if(t.getFila()!=5){
+		if(t.getFila()!=5 && t.getAbajo().getComponente()==null){
 			Tile abajo=t.getAbajo();
 			Oso o= new Oso(abajo);
 			Tienda.getTienda(null).comprar(o);

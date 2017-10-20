@@ -107,7 +107,7 @@ public class Logica {
 		for(Aliado a:listaAliados){
 			Tile actual = a.getTile().getLeft();
 			boolean encontre = false;
-			for(int i=0; !encontre && i<a.getAlcance(); i++){
+			for(int i=0; !encontre && actual.getColumna()!=0 && i<a.getAlcance(); i++){
 				if(actual.getComponente()!=null){
 					a.atacar(actual.getComponente());
 					encontre = true;

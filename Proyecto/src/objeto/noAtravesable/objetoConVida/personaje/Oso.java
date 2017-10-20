@@ -1,5 +1,6 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
+import game.gfx.Animation;
 import game.gfx.ImageLoader;
 import logica.Tile;
 import logica.visitor.VisitorAliado;
@@ -20,7 +21,9 @@ public class Oso extends Aliado{
 		alto=1;
 		impacto=30;
 		alcance=1;
+		valor=0;
 		v=new VisitorAliado(this);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
 	}
 	public ObjetoNoAtravesable clone(){
 		return new Oso(new Tile(null, 0, 0));
