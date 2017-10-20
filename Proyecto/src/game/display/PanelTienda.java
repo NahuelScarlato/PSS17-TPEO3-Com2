@@ -215,7 +215,7 @@ public class PanelTienda extends JPanel {
 			}
 			
 			panelCompraEnanos = new JPanel(new GridLayout(1,1));
-			BotonCompraAlianza b1 = new BotonCompraAlianza(this, 100, "enanos");
+			BotonCompraAlianza b1 = new BotonCompraAlianza(this, 200, "enanos");
 			panelCompraEnanos.add(b1);
 		
 		panelDwarves.add(panelCompraEnanos);

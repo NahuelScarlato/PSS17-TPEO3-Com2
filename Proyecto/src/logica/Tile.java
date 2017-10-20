@@ -48,6 +48,9 @@ public class Tile {
 	public Tile getLeft(){
 		return miJuego.getTile(fila, columna-1);
 	}
+	public Tile getAbajo(){
+		return miJuego.getTile(fila+1, columna);
+	}
 	public void destruirAliado(Aliado a){
 		componente = null;
 		miJuego.agregarAliadoABorrar(a);

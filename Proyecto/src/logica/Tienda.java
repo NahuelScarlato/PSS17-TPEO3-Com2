@@ -31,12 +31,12 @@ public class Tienda {
 		//asumo que no se puede comprar la alianza si no se tiene el dinero
 		monedas-=val;
 	}
-	public void comprar(Aliado a, int f, int c){
+	public void comprar(Aliado a){
 		monedas-=a.getValor();
 		juego.agregarAliado(a);
 		
 	}
-	public void comprar(OTConVida otcv, int f, int c){
+	public void comprar(OTConVida otcv){
 		monedas-=otcv.getValor();
 	}
 	//agregar comprar para temporales

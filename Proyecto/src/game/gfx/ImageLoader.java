@@ -10,7 +10,7 @@ public class ImageLoader {
 	private static int width = 32, height = 32;
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol;
-	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida;
+	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso;
 	public static BufferedImage goblin, brujo, grunt;
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
@@ -46,6 +46,7 @@ public class ImageLoader {
 		brujo=loadImage("/Textures/Personajes/OrcoBrujo.png");
 		campeonEnano=loadImage("/Textures/Personajes/Campeon Enano.png");
 		cazadorEnano=loadImage("/Textures/Personajes/Cazador Enano.png");
+		oso=loadImage("/Textures/Personajes/Oso.png");
 		grunt=loadImage("/Textures/Personajes/Grunt.png");
 		vida[0] =loadImage("/Textures/VidaVerde.png");
 		vida[1] =loadImage("/Textures/VidaRoja.png");

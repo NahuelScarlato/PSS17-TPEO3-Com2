@@ -1,6 +1,7 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
 import game.gfx.ImageLoader;
+import logica.Tienda;
 import logica.Tile;
 import logica.visitor.VisitorAliado;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -19,8 +20,19 @@ public class EnanoCazador extends Aliado {
 		alto=1;
 		impacto=15;
 		alcance=4;
-		valor=70;
+		valor=75;
 		v=new VisitorAliado(this);
+	}
+	
+	public void agregar(Tile t){
+		miTile=t;
+		t.setComponente(this);
+		if(t.getFila()!=5){
+			Tile abajo=t.getAbajo();
+			Oso o= new Oso(abajo);
+			Tienda.getTienda(null).comprar(o);
+		}
+		Tienda.getTienda(null).comprar(this);
 	}
 	
 	public ObjetoNoAtravesable clone(){

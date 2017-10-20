@@ -52,6 +52,6 @@ public abstract class Aliado extends Personaje {
 	public void agregar(Tile t){
 		miTile=t;
 		t.setComponente(this);
-		Tienda.getTienda(null).comprar(this, t.getFila(), t.getColumna());
+		Tienda.getTienda(null).comprar(this);
 	}
 }
