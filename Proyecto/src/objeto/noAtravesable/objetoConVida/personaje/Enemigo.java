@@ -63,13 +63,13 @@ public abstract class Enemigo extends Personaje{
 		if(!detenido && reloj==0 && miTile.getRight().getComponente()==null){
 			Tile sig = miTile.getRight();
 			miTile.setComponente(null);
-			miTile=sig;
+			miTile = sig;
 			sig.setComponente(this);
 			this.setTile(sig);
 			normalizarVelocidad();
 			animation.switchMovementState();
 		}
-		reloj = (reloj+1)%(int)(velocidadMov*60);
+			reloj = (reloj+1)%(int)(velocidadMov*60);
 	}
 	
 	public void restarVida(int v){

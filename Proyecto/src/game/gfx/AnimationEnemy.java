@@ -20,7 +20,7 @@ public class AnimationEnemy extends Animation {
 		movementTimer = 0;
 		myEnemy = enemy;
 		pixelCounter = 0;
-		stopped = false;
+		stopped = true;
 	}
 	
 	public void switchMovementState(){
@@ -41,12 +41,12 @@ public class AnimationEnemy extends Animation {
 				}
 				if (pixelCounter == 63){
 					myEnemy.switchMovementState();
-					myEnemy.avanzar();
 					stopped = !stopped;
 				}
 				pixelCounter = (pixelCounter + 1) % 64;
-				System.out.println(pixelCounter);
 				movementTimer = 0;
+				g.drawImage(ImageLoader.vida[1], x, y, 40, 4, null);
+				g.drawImage(ImageLoader.vida[0], x, y, (40*myEnemy.getVida())/myEnemy.getMaxVida(), 4, null);
 			}
 			if (timer > indexTime){
 				index = (index + 1) % totalImages;
@@ -55,6 +55,8 @@ public class AnimationEnemy extends Animation {
 		}
 		else {
 			g.drawImage(movement[0], x, y, 64,64, null);
+			g.drawImage(ImageLoader.vida[1], x, y, 40, 4, null);
+			g.drawImage(ImageLoader.vida[0], x, y, (40*myEnemy.getVida())/myEnemy.getMaxVida(), 4, null);
 		}
 	}
 	
