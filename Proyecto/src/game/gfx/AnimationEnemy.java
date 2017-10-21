@@ -17,6 +17,7 @@ public class AnimationEnemy extends Animation {
 		super(x,y,atSpd,att);
 		movement = mov;
 		pixelTime = (int) ((1000 * movSpd) / 64);
+		System.out.println(pixelTime);
 		movementTimer = 0;
 		myEnemy = enemy;
 		pixelCounter = 0;
@@ -37,11 +38,13 @@ public class AnimationEnemy extends Animation {
 				x++;
 				if (pixelCounter == 0){
 					myEnemy.switchMovementState();
+					System.out.println("Personaje fue bloqueado");
 					//stopped = !stopped;
 				}
 				if (pixelCounter == 63){
 					myEnemy.switchMovementState();
 					stopped = !stopped;
+					System.out.println("Personaje fue desbloqueado");
 				}
 				pixelCounter = (pixelCounter + 1) % 64;
 				movementTimer = 0;

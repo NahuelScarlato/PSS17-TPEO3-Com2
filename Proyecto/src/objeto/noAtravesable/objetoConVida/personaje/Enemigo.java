@@ -68,8 +68,9 @@ public abstract class Enemigo extends Personaje{
 			this.setTile(sig);
 			normalizarVelocidad();
 			animation.switchMovementState();
-		}
 			reloj = (reloj+1)%(int)(velocidadMov*60);
+		}
+		if (detenido) reloj = 0;
 	}
 	
 	public void restarVida(int v){
