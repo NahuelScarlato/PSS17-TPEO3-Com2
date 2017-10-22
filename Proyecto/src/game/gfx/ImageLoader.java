@@ -26,6 +26,9 @@ public class ImageLoader {
 	public static BufferedImage[] gruntAtk = new BufferedImage[4];
 	public static BufferedImage[] gruntMove = new BufferedImage[4];
 	public static BufferedImage[] portalBlue = new BufferedImage[4];
+	public static BufferedImage[] aguaMov = new BufferedImage[4];
+	public static BufferedImage[] lava = new BufferedImage[4];
+	public static BufferedImage[] portalOrange = new BufferedImage[4];
 	
  	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
@@ -108,6 +111,15 @@ public class ImageLoader {
 		portalBlue[1] = sheet.getSubimage(32, 0, 32, 32);
 		portalBlue[2] = sheet.getSubimage(64, 0, 32, 32);
 		portalBlue[3] = sheet.getSubimage(96, 0, 32, 32);
+		sheet = loadImage("/Textures/Animations/PortalOrange.png");
+		portalBlue[0] = sheet.getSubimage(0, 0, 32, 32);
+		portalBlue[1] = sheet.getSubimage(32, 0, 32, 32);
+		portalBlue[2] = sheet.getSubimage(64, 0, 32, 32);
+		portalBlue[3] = sheet.getSubimage(96, 0, 32, 32);
+		aguaMov[0] = agua;
+		aguaMov[1] = agua;
+		aguaMov[2] = agua;
+		aguaMov[3] = agua;
 	}
 	
 	public static BufferedImage loadImage(String path){

@@ -9,12 +9,10 @@ public class Portal {
 	protected PortalOut po;
 	
 	public Portal(Tile in, Tile out){
-		po = new PortalOut();
+		po = new PortalOut(out);
 		pi = new PortalIn(null, in);
 		VisitorPortal v = new VisitorPortal(po, pi);
 		pi.setVP(v);
-		po.setTile(out);
-		pi.setTile(in);
 	}
 	
 	public PortalOut getOut(){

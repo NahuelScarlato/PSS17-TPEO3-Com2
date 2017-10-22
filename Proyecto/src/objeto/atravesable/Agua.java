@@ -1,9 +1,8 @@
 package objeto.atravesable;
 
-import java.awt.Graphics;
-
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import logica.Tile;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.Personaje;
@@ -14,10 +13,12 @@ public class Agua extends ObjetoAtravesable{
 	protected VisitorAgua v;
 	
 	//constructor
-	public Agua(){
+	public Agua(Tile t){
 		image = ImageLoader.agua;
 		rall=1.5f;
 		v=new VisitorAgua(this);
+		miTile = t;
+		animation = new Animation(t.getFila()*64, t.getColumna()*64, 0.5f, ImageLoader.aguaMov);
 	}
 	
 	//metodos

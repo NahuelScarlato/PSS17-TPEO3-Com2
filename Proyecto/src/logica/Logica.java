@@ -93,7 +93,7 @@ public class Logica {
 			for (int j = 1; j < columnas; j++){
 				r = random.nextInt(100);
 				if (r < 6) {
-					Agua a=new Agua();
+					Agua a=new Agua(tablero[i][j]);
 					tablero[i][j].setComponenteAtravesable(a);
 					a.setTile(tablero[i][j]);
 					listaAtravesables.addLast(a);

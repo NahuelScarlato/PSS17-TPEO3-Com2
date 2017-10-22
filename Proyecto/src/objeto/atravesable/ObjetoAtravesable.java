@@ -1,11 +1,19 @@
 package objeto.atravesable;
 
+import java.awt.Graphics;
+
+import game.gfx.Animation;
 import logica.Objeto;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public abstract class ObjetoAtravesable extends Objeto{
 	//atributos
+	protected Animation animation;
 	
 	//metodos
 	public abstract void modificar(ObjetoNoAtravesable p);
+	
+	public void dibujar(Graphics g){
+		animation.drawrAtk(g);
+	}
 }
