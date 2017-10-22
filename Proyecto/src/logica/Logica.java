@@ -95,7 +95,7 @@ public class Logica {
 				if (r < 6) {
 					Agua a=new Agua(tablero[i][j]);
 					tablero[i][j].setComponenteAtravesable(a);
-					a.setTile(tablero[i][j]);
+					//a.setTile(tablero[i][j]);
 					listaAtravesables.addLast(a);
 				}
 				else if ( r < 9) {

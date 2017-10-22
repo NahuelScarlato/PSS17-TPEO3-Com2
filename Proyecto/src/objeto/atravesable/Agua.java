@@ -14,11 +14,10 @@ public class Agua extends ObjetoAtravesable{
 	
 	//constructor
 	public Agua(Tile t){
-		image = ImageLoader.agua;
 		rall=1.5f;
 		v=new VisitorAgua(this);
 		miTile = t;
-		animation = new Animation(t.getFila()*64, t.getColumna()*64, 0.5f, ImageLoader.aguaMov);
+		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.5f, ImageLoader.aguaMov);
 	}
 	
 	//metodos
