@@ -112,10 +112,10 @@ public class ImageLoader {
 		portalBlue[2] = sheet.getSubimage(64, 0, 32, 32);
 		portalBlue[3] = sheet.getSubimage(96, 0, 32, 32);
 		sheet = loadImage("/Textures/Animations/PortalOrange.png");
-		portalBlue[0] = sheet.getSubimage(0, 0, 32, 32);
-		portalBlue[1] = sheet.getSubimage(32, 0, 32, 32);
-		portalBlue[2] = sheet.getSubimage(64, 0, 32, 32);
-		portalBlue[3] = sheet.getSubimage(96, 0, 32, 32);
+		portalOrange[0] = sheet.getSubimage(0, 0, 32, 32);
+		portalOrange[1] = sheet.getSubimage(32, 0, 32, 32);
+		portalOrange[2] = sheet.getSubimage(64, 0, 32, 32);
+		portalOrange[3] = sheet.getSubimage(96, 0, 32, 32);
 		aguaMov[0] = agua;
 		aguaMov[1] = agua;
 		aguaMov[2] = agua;

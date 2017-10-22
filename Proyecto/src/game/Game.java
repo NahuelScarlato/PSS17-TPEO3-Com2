@@ -46,7 +46,7 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 		graphicsManager = new GraphicsManager(display);
-		portal = new Portal(myLogic.getTile(0, 3), myLogic.getTile(0, 0));
+		portal = new Portal(myLogic.getTile(0, 3), myLogic.getTile(1, 1));
 		myLogic.agregarAtravesable(portal.getIn());
 		myLogic.agregarAtravesable(portal.getOut());
 	}
