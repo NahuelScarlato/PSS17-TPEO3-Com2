@@ -38,13 +38,10 @@ public class AnimationEnemy extends Animation {
 				x++;
 				if (pixelCounter == 0){
 					myEnemy.switchMovementState();
-					System.out.println("Personaje fue bloqueado");
-					//stopped = !stopped;
 				}
 				if (pixelCounter == 63){
 					myEnemy.switchMovementState();
 					stopped = !stopped;
-					System.out.println("Personaje fue desbloqueado");
 				}
 				pixelCounter = (pixelCounter + 1) % 64;
 				movementTimer = 0;
