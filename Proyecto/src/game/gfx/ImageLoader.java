@@ -25,6 +25,7 @@ public class ImageLoader {
 	public static BufferedImage[] warlockMove = new BufferedImage[4];
 	public static BufferedImage[] gruntAtk = new BufferedImage[4];
 	public static BufferedImage[] gruntMove = new BufferedImage[4];
+	public static BufferedImage[] portalBlue = new BufferedImage[4];
 	
  	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
@@ -102,7 +103,11 @@ public class ImageLoader {
 		gruntMove[1] = grunt;
 		gruntMove[2] = grunt;
 		gruntMove[3] = grunt;
-		
+		sheet = loadImage("/Textures/Animations/PortalBlue.png");
+		portalBlue[0] = sheet.getSubimage(0, 0, 32, 32);
+		portalBlue[1] = sheet.getSubimage(32, 0, 32, 32);
+		portalBlue[2] = sheet.getSubimage(64, 0, 32, 32);
+		portalBlue[3] = sheet.getSubimage(96, 0, 32, 32);
 	}
 	
 	public static BufferedImage loadImage(String path){
