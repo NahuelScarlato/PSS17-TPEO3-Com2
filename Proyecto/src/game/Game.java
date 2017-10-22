@@ -30,6 +30,7 @@ public class Game implements Runnable{
 	
 	private BufferStrategy bs;
 	private Graphics g;
+	private Portal portal;
 	
 	
 	public Game(String title, int width, int height){
@@ -45,6 +46,9 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 		graphicsManager = new GraphicsManager(display);
+		portal = new Portal(myLogic.getTile(0, 3), myLogic.getTile(0, 0));
+		myLogic.agregarAtravesable(portal.getIn());
+		myLogic.agregarAtravesable(portal.getOut());
 	}
 	
 	private void update(){

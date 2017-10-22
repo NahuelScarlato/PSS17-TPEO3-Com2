@@ -10,7 +10,7 @@ public class Portal {
 	
 	public Portal(Tile in, Tile out){
 		po = new PortalOut();
-		pi = new PortalIn(null);
+		pi = new PortalIn(null, in);
 		VisitorPortal v = new VisitorPortal(po, pi);
 		pi.setVP(v);
 		po.setTile(out);
