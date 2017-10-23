@@ -11,23 +11,24 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import game.gfx.ImageLoader;
-import objeto.noAtravesable.ObjetoNoAtravesable;
 
-@SuppressWarnings("serial")
 public class BotonCompra extends JLabel{
 	//atributos
-	protected ObjetoNoAtravesable o;
+	protected int valor;
 	protected PanelTienda p;
+	protected JLabel l;
 	
-	public BotonCompra(PanelTienda pan, BufferedImage i, ObjetoNoAtravesable ob){
-		o=ob;
+	//constructor
+	public BotonCompra(PanelTienda pan, int value){
+		valor=value;
 		setLayout(new CardLayout());
-		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
+		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianza.png")));
+		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianzaAnulado.png")));
 		p=pan;
-		OyenteCompra oy=new OyenteCompra();
-		addMouseListener(oy);
 		setOpaque(true);
-		JLabel per=new JLabel(new ImageIcon(i));
+		JLabel per=new JLabel();
+		l=per;
+		per.setHorizontalAlignment(CENTER);
 		per.setLayout(new CardLayout());
 		JLabel v=new JLabel();
 		v.setLayout(new GridBagLayout());
@@ -39,7 +40,7 @@ public class BotonCompra extends JLabel{
 		c.ipady=45;
 		JLabel val=new JLabel();
 		val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
-		val.setText("" + o.getValor());
+		val.setText("" + valor);
 		val.setHorizontalAlignment(JLabel.RIGHT);
 		val.setVerticalAlignment(JLabel.BOTTOM);
 		val.setLocation(val.getX()-10, val.getY()-10);
@@ -50,26 +51,15 @@ public class BotonCompra extends JLabel{
 		add(per);
 		setHorizontalAlignment(JLabel.CENTER);
 	}
-	public void setearComprable(int v){
-		if(o.getValor()>v){
-			setEnabled(false);
-		}
+	protected void setearIcono(BufferedImage bi){
+		l.setIcon(new ImageIcon(bi));
 	}
-	
-	private class OyenteCompra implements MouseListener{
-		public void mouseClicked(MouseEvent arg0) {
-		}
-		public void mouseEntered(MouseEvent arg0) {
-		}
-		public void mouseExited(MouseEvent arg0) {
-		}
-		public void mousePressed(MouseEvent arg0) {
-			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
-		}
-		public void mouseReleased(MouseEvent arg0) {
-			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
-			ObjetoNoAtravesable aux=o.clone();
-			p.setPrototype(aux);
+	protected void setearTexto(String s){
+		l.setText(s);
+	}
+	public void setearComprable(int v){
+		if(valor>v){
+			setEnabled(false);
 		}
 	}
 }

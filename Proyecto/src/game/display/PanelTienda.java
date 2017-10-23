@@ -26,6 +26,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
+
 import javax.swing.JButton;
 
 @SuppressWarnings("serial")
@@ -36,14 +38,17 @@ public class PanelTienda extends JPanel {
 	protected ObjetoNoAtravesable prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
 	protected JPanel panelCompraElfos, panelCompraEnanos;
-	protected JLabel[] personajesElfos, personajesEnanos;
+	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos;
 	protected JPanel panelElves, panelDwarves;
+	protected LinkedList<BotonCompra> botones;
 
 	/**
 	 * Create the panel.
 	 */
 	public PanelTienda(Game g) {
 		myGame=g;
+		
+		botones=new LinkedList<BotonCompra>();
 		
 		this.setLayout(new GridBagLayout());
 
@@ -100,13 +105,13 @@ public class PanelTienda extends JPanel {
 		cs.ipady=0;
 		
 		JPanel panelPersonajesHumanos= new JPanel(new GridLayout(3, 2));
-		JLabel[] personajesHumanos = new JLabel[5];
+		personajesHumanos = new BotonCompraPersonaje[5];
 		
-		BotonCompra mago = new BotonCompra(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
-		BotonCompra espadachin = new BotonCompra(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
-		BotonCompra paladin = new BotonCompra(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
-		BotonCompra arquero = new BotonCompra(this, ImageLoader.arquero, new Arquero(new Tile(null, 0, 0)));
-		BotonCompra monje = new BotonCompra(this, ImageLoader.monje, new Clerigo(new Tile(null, 0, 0)));
+		BotonCompraPersonaje mago = new BotonCompraPersonaje(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
+		BotonCompraPersonaje espadachin = new BotonCompraPersonaje(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
+		BotonCompraPersonaje paladin = new BotonCompraPersonaje(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
+		BotonCompraPersonaje arquero = new BotonCompraPersonaje(this, ImageLoader.arquero, new Arquero(new Tile(null, 0, 0)));
+		BotonCompraPersonaje monje = new BotonCompraPersonaje(this, ImageLoader.monje, new Clerigo(new Tile(null, 0, 0)));
 		
 		personajesHumanos[0] = espadachin;
 		personajesHumanos[1] = paladin;
@@ -116,6 +121,7 @@ public class PanelTienda extends JPanel {
 		
 		for(int i=0; i<personajesHumanos.length; i++){
 			panelPersonajesHumanos.add(personajesHumanos[i]);
+			botones.addLast(personajesHumanos[i]);
 		}
 		
 		panelHumanos.add(panelPersonajesHumanos, cs);
@@ -150,9 +156,9 @@ public class PanelTienda extends JPanel {
 		panelElves = new JPanel(new CardLayout());
 		
 			panelPersonajesElfos= new JPanel(new GridLayout(1, 1));
-			personajesElfos = new JLabel[1];
+			personajesElfos = new BotonCompraPersonaje[1];
 		
-			BotonCompra druida = new BotonCompra(this, ImageLoader.druida, new Druida(new Tile(null, 0, 0)));
+			BotonCompraPersonaje druida = new BotonCompraPersonaje(this, ImageLoader.druida, new Druida(new Tile(null, 0, 0)));
 		
 			personajesElfos[0] = druida;
 		
@@ -160,11 +166,13 @@ public class PanelTienda extends JPanel {
 				panelPersonajesElfos.add(personajesElfos[i]);
 				personajesElfos[i].setEnabled(false);
 				personajesElfos[i].setVisible(false);
+				botones.addLast(personajesElfos[i]);
 			}
 			
 			panelCompraElfos = new JPanel(new GridLayout(1,1));
 			BotonCompraAlianza b = new BotonCompraAlianza(this, 100, "elfos");
 			panelCompraElfos.add(b);
+			botones.addLast(b);
 		
 		panelElves.add(panelCompraElfos);
 		
@@ -202,10 +210,10 @@ public class PanelTienda extends JPanel {
 		panelDwarves = new JPanel(new CardLayout());
 		
 			panelPersonajesEnanos= new JPanel(new GridLayout(1, 2));
-			personajesEnanos = new JLabel[2];
+			personajesEnanos = new BotonCompraPersonaje[2];
 		
-			BotonCompra champ = new BotonCompra(this, ImageLoader.campeonEnano, new EnanoCampeon(new Tile(null, 0, 0)));
-			BotonCompra cazador = new BotonCompra(this, ImageLoader.cazadorEnano, new EnanoCazador(new Tile(null, 0, 0)));
+			BotonCompraPersonaje champ = new BotonCompraPersonaje(this, ImageLoader.campeonEnano, new EnanoCampeon(new Tile(null, 0, 0)));
+			BotonCompraPersonaje cazador = new BotonCompraPersonaje(this, ImageLoader.cazadorEnano, new EnanoCazador(new Tile(null, 0, 0)));
 		
 			personajesEnanos[0] = champ;
 			personajesEnanos[1] = cazador;
@@ -214,11 +222,13 @@ public class PanelTienda extends JPanel {
 				panelPersonajesEnanos.add(personajesEnanos[i]);
 				personajesEnanos[i].setEnabled(false);
 				personajesEnanos[i].setVisible(false);
+				botones.addLast(personajesEnanos[i]);
 			}
 			
 			panelCompraEnanos = new JPanel(new GridLayout(1,1));
 			BotonCompraAlianza b1 = new BotonCompraAlianza(this, 200, "enanos");
 			panelCompraEnanos.add(b1);
+			botones.addLast(b1);
 		
 		panelDwarves.add(panelCompraEnanos);
 		
@@ -260,6 +270,9 @@ public class PanelTienda extends JPanel {
 	}
 
 	public void actualizarPuntaje(int p, int m){
+		for(BotonCompra b: botones){
+			b.setearComprable(m);
+		}
 		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
 	}
 	public void setPrototype(ObjetoNoAtravesable ob){
