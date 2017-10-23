@@ -17,7 +17,6 @@ public class AnimationEnemy extends Animation {
 		super(x,y,atSpd,att);
 		movement = mov;
 		pixelTime = (int) ((1000 * movSpd) / 64);
-		System.out.println(pixelTime);
 		movementTimer = 0;
 		myEnemy = enemy;
 		pixelCounter = 0;

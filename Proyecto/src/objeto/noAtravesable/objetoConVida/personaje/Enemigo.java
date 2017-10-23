@@ -16,7 +16,7 @@ public abstract class Enemigo extends Personaje{
 	protected float velocidadMov;
 	protected float velMovMaxima;
 	protected int puntaje;
-	protected int Coins;
+	protected int Coins, relojMov;
 	protected VisitorEnemigo v;
 	protected ObjectState stateMoving;
 	protected AnimationEnemy animation;
@@ -27,6 +27,7 @@ public abstract class Enemigo extends Personaje{
 		stateMoving = new ObjectStateMoving();
 		state = stateMoving;
 		detenido = false;
+		relojMov = 1;
 	}
 	
 	//metodos
@@ -60,7 +61,8 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void avanzar(){
-		if(!detenido && reloj==0 && miTile.getRight().getComponente()==null){
+		System.out.println("Orden de avanzar, detenido = " + detenido + " reloj: " + relojMov);
+		if(!detenido && relojMov==0 && miTile.getRight().getComponente()==null){
 			Tile sig = miTile.getRight();
 			miTile.setComponente(null);
 			miTile = sig;
@@ -68,14 +70,16 @@ public abstract class Enemigo extends Personaje{
 			this.setTile(sig);
 			normalizarVelocidad();
 			animation.switchMovementState();
-			reloj = (reloj+1)%(int)(velocidadMov*60);
+			//relojMov = (relojMov+1)%(int)(velocidadMov*60);
 		}
-		if (detenido) reloj = 0;
+		relojMov = (relojMov+1)%(int)(velocidadMov*60);
+		if (detenido) relojMov = 0;
+		
 	}
 	
 	public void restarVida(int v){
 		vida-=v;
-		if(vida<=0){
+		if(vida<=0){ 
 			miTile.destruirEnemigo(this);
 			miTile = null;
 		}

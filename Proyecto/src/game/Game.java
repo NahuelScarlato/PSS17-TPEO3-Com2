@@ -22,7 +22,7 @@ public class Game implements Runnable{
 	private GraphicsManager graphicsManager;
 
 	// Atributo para manejar los graficos del juego.
-	//
+
 	private GameGraphics myGraphics;
 	
 	private boolean running=false;
@@ -30,6 +30,9 @@ public class Game implements Runnable{
 	
 	private BufferStrategy bs;
 	private Graphics g;
+	
+	
+	//Variables de prueba
 	private Portal portal;
 	
 	
