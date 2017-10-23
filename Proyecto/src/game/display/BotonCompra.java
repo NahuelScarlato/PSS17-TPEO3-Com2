@@ -50,6 +50,11 @@ public class BotonCompra extends JLabel{
 		add(per);
 		setHorizontalAlignment(JLabel.CENTER);
 	}
+	public void setearComprable(int v){
+		if(o.getValor()>v){
+			setEnabled(false);
+		}
+	}
 	
 	private class OyenteCompra implements MouseListener{
 		public void mouseClicked(MouseEvent arg0) {

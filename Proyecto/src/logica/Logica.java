@@ -10,7 +10,7 @@ import objeto.noAtravesable.objetoConVida.personaje.*;
 public class Logica {
 	//atributos
 	protected Tienda tienda;
-	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar;
+	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar, enemigosAAgregar;
 	protected LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
 	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
 	protected int score;
@@ -24,6 +24,7 @@ public class Logica {
 		tablero = new Tile[filas][columnas];
 		listaEnemigos = new LinkedList<Enemigo>();
 		enemigosABorrar = new LinkedList<Enemigo>();
+		enemigosAAgregar = new LinkedList<Enemigo>();
 		listaAliados = new LinkedList<Aliado>();
 		aliadosABorrar = new LinkedList<Aliado>();
 		aliadosAAgregar = new LinkedList<Aliado>();
@@ -41,7 +42,7 @@ public class Logica {
 		aliadosAAgregar.addLast(a);
 	}
 	public void agregarEnemigo(Enemigo e){
-		listaEnemigos.addLast(e);
+		enemigosAAgregar.addLast(e);
 	}
 	public void agregarAtravesable(ObjetoAtravesable oa){
 		listaAtravesables.addLast(oa);
@@ -62,6 +63,10 @@ public class Logica {
 			listaAliados.addLast(a);
 		}
 		aliadosAAgregar = new LinkedList<Aliado>();
+		for(Enemigo e : enemigosAAgregar){
+			listaEnemigos.addLast(e);
+		}
+		enemigosAAgregar = new LinkedList<Enemigo>();
 	}
 	public void eliminarObjetos(){
 		for (Aliado a : aliadosABorrar){
@@ -95,18 +100,21 @@ public class Logica {
 				if (r < 6) {
 					Agua a=new Agua(tablero[i][j]);
 					tablero[i][j].setComponenteAtravesable(a);
-					//a.setTile(tablero[i][j]);
 					listaAtravesables.addLast(a);
 				}
 				else if ( r < 9) {
-					Arbol a= new Arbol();
-					tablero[i][j].setComponente(a);
-					a.setTile(tablero[i][j]);
+					if(tablero[i][j].getComponenteAtravesable()==null){
+						Arbol a= new Arbol();
+						tablero[i][j].setComponente(a);
+						a.setTile(tablero[i][j]);
+					}
 				}
 				else if (r < 12) {
-					Piedra p=new Piedra();
-					tablero[i][j].setComponente(p);
-					p.setTile(tablero[i][j]);
+					if(tablero[i][j].getComponenteAtravesable()==null){
+						Piedra p=new Piedra();
+						tablero[i][j].setComponente(p);
+						p.setTile(tablero[i][j]);
+					}
 				}
 				
 			}
@@ -151,6 +159,7 @@ public class Logica {
 			}
 			eliminarObjetos();
 		}
+		agregarObjetos();
 		for(ObjetoAtravesable oa: listaAtravesables){
 			if(oa.getTile().getComponente()!=null)
 				oa.modificar(oa.getTile().getComponente());
