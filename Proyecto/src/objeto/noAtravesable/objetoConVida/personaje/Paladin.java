@@ -46,13 +46,15 @@ public class Paladin extends Aliado{
 			}
 		}
 		public void agregar(Tile t){
-			miTile=t;
-			t.setComponente(this);
-			if(t.getColumna()!=11){
-				segundo=t.getRight();
-				segundo.setComponente(this);
+			if(t.getColumna()!=11 && t.getRight().getComponente()==null){
+				miTile=t;
+				t.setComponente(this);
+				if(t.getColumna()!=11){
+					segundo=t.getRight();
+					segundo.setComponente(this);
+				}
+				Tienda.getTienda(null).comprar(this);
 			}
-			Tienda.getTienda(null).comprar(this);
 		}
 		public ObjetoNoAtravesable clone(){
 			return new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0));
