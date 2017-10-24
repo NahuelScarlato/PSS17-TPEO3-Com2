@@ -11,7 +11,7 @@ public class ImageLoader {
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
-	public static BufferedImage goblin, brujo, grunt;
+	public static BufferedImage goblin, brujo, grunt, jefeOrco;
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
@@ -29,6 +29,7 @@ public class ImageLoader {
 	public static BufferedImage[] aguaMov = new BufferedImage[4];
 	public static BufferedImage[] lava = new BufferedImage[4];
 	public static BufferedImage[] portalOrange = new BufferedImage[4];
+	public static BufferedImage[] jefeOrcoMov = new BufferedImage[4];
 	
  	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
@@ -53,6 +54,7 @@ public class ImageLoader {
 		cazadorEnano=loadImage("/Textures/Personajes/Cazador Enano.png");
 		oso=loadImage("/Textures/Personajes/Oso.png");
 		grunt=loadImage("/Textures/Personajes/Grunt.png");
+		jefeOrco = loadImage("/Textures/Personajes/Jefe Orco.png");
 		vida[0] =loadImage("/Textures/VidaVerde.png");
 		vida[1] =loadImage("/Textures/VidaRoja.png");
 		vida[2] =loadImage("/Textures/VidaAzul.png");
@@ -120,6 +122,10 @@ public class ImageLoader {
 		aguaMov[1] = agua;
 		aguaMov[2] = agua;
 		aguaMov[3] = agua;
+		jefeOrcoMov[0] = jefeOrco;
+		jefeOrcoMov[1] = jefeOrco;
+		jefeOrcoMov[2] = jefeOrco;
+		jefeOrcoMov[3] = jefeOrco;
 	}
 	
 	public static BufferedImage loadImage(String path){

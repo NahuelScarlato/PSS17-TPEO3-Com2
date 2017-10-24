@@ -153,7 +153,7 @@ public class Game implements Runnable{
 	
 	public void crearEnemigo(){
 		Random r = new Random();
-		int ran = r.nextInt(3);
+		int ran = r.nextInt(4);
 		int y = r.nextInt(6);
 		
 		if (myLogic.getTile(y, 0).getComponente() == null){
@@ -166,6 +166,9 @@ public class Game implements Runnable{
 			} else if (ran == 2){
 				Grunt grunt = new Grunt(myLogic.getTile(y, 0));
 				myLogic.agregarEnemigo(grunt);
+			} else if (ran == 3){
+				JefeOrco jefe = new JefeOrco(myLogic.getTile(y, 0));
+				myLogic.agregarEnemigo(jefe);
 			}
 		}
 	}
