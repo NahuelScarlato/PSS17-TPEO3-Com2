@@ -39,7 +39,7 @@ public class BotonCompraPersonaje extends BotonCompra{
 			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
 		}
 		public void mouseReleased(MouseEvent arg0) {
-			if(((BotonCompraPersonaje)arg0.getSource()).isEnabled()){
+			if(((BotonCompra)arg0.getSource()).isEnabled()){
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 				ObjetoNoAtravesable aux=o.clone();
 				p.setPrototype(aux);

@@ -35,8 +35,10 @@ public class BotonCompraAlianza extends BotonCompra{
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianzaPresionado.png")));
 			}
 			public void mouseReleased(MouseEvent arg0) {
-				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianza.png")));
-				p.comprarAlianza(alianza, valor);
+				if(((BotonCompra)arg0.getSource()).isEnabled()){
+					setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianza.png")));
+					p.comprarAlianza(alianza, valor);
+				}
 			}
 		}
 }
