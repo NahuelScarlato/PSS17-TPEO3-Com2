@@ -5,6 +5,8 @@ import game.gfx.ImageLoader;
 import logica.Tile;
 import logica.visitor.VisitorClerigo;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import java.io.*;
+import sun.audio.*;
 
 public class Clerigo extends Aliado {
 	
@@ -28,6 +30,13 @@ public class Clerigo extends Aliado {
 		
 	}
 	public ObjetoNoAtravesable clone(){
+		String audio = "wololo.wav";
+		AudioStream music = null;
+		try{
+			InputStream in = new FileInputStream(audio);
+			music = new AudioStream(in);
+		} catch(IOException e){}
+		AudioPlayer.player.start(music);
 		return new Clerigo(new Tile(null, 0, 0));
 	}
 }

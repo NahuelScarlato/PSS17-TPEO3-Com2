@@ -12,7 +12,6 @@ public class Launcher {
 		Game game = new Game("Juegazo", 768 , 384);
 		
 		game.start();
-		
 		AudioPlayer.player.start(music);
 	}
 }
