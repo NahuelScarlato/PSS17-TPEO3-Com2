@@ -11,7 +11,7 @@ public class ImageLoader {
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
-	public static BufferedImage goblin, brujo, grunt, jefeOrco;
+	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero;
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
@@ -30,6 +30,8 @@ public class ImageLoader {
 	public static BufferedImage[] lava = new BufferedImage[4];
 	public static BufferedImage[] portalOrange = new BufferedImage[4];
 	public static BufferedImage[] jefeOrcoMov = new BufferedImage[4];
+	public static BufferedImage[] orcoBallestaMov = new BufferedImage[4];
+	public static BufferedImage[] orcoBallestaAtk = new BufferedImage[4];
 	
  	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
@@ -50,6 +52,7 @@ public class ImageLoader {
 		treant = loadImage("/Textures/Personajes/Treant.png");
 		goblin=loadImage("/Textures/Personajes/Goblin.png");
 		brujo=loadImage("/Textures/Personajes/OrcoBrujo.png");
+		orcoBallestero=loadImage("/Textures/Personajes/OrcoBallestero.png");
 		campeonEnano=loadImage("/Textures/Personajes/Campeon Enano.png");
 		cazadorEnano=loadImage("/Textures/Personajes/Cazador Enano.png");
 		oso=loadImage("/Textures/Personajes/Oso.png");
@@ -126,6 +129,14 @@ public class ImageLoader {
 		jefeOrcoMov[1] = jefeOrco;
 		jefeOrcoMov[2] = jefeOrco;
 		jefeOrcoMov[3] = jefeOrco;
+		orcoBallestaMov[0] = orcoBallestero;
+		orcoBallestaMov[1] = orcoBallestero;
+		orcoBallestaMov[2] = orcoBallestero;
+		orcoBallestaMov[3] = orcoBallestero;
+		orcoBallestaAtk[0] = orcoBallestero;
+		orcoBallestaAtk[1] = orcoBallestero;
+		orcoBallestaAtk[2] = orcoBallestero;
+		orcoBallestaAtk[3] = orcoBallestero;
 	}
 	
 	public static BufferedImage loadImage(String path){
