@@ -61,7 +61,7 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void avanzar(){
-		System.out.println("Orden de avanzar, detenido = " + detenido + " reloj: " + relojMov);
+		//System.out.println("Orden de avanzar, detenido = " + detenido + " reloj: " + relojMov);
 		if(!detenido && relojMov==0 && miTile.getRight().getComponente()==null){
 			Tile sig = miTile.getRight();
 			miTile.setComponente(null);
