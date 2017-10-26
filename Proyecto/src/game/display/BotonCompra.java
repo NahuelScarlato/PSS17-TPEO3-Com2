@@ -61,5 +61,7 @@ public class BotonCompra extends JLabel{
 		if(valor>v){
 			setEnabled(false);
 		}
+		else
+			setEnabled(true);
 	}
 }
