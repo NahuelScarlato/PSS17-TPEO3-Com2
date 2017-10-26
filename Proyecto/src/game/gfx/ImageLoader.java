@@ -52,7 +52,7 @@ public class ImageLoader {
 		treant = loadImage("/Textures/Personajes/Treant.png");
 		goblin=loadImage("/Textures/Personajes/Goblin.png");
 		brujo=loadImage("/Textures/Personajes/OrcoBrujo.png");
-		orcoBallestero=loadImage("/Textures/Personajes/OrcoBallestero.png");
+		orcoBallestero=loadImage("/Textures/Personajes/Orco Ballestero.png");
 		campeonEnano=loadImage("/Textures/Personajes/Campeon Enano.png");
 		cazadorEnano=loadImage("/Textures/Personajes/Cazador Enano.png");
 		oso=loadImage("/Textures/Personajes/Oso.png");
