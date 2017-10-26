@@ -9,10 +9,10 @@ import objeto.noAtravesable.objetoConVida.personaje.*;
 
 public class Logica {
 	//atributos
-	protected Tienda tienda;
 	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar, enemigosAAgregar;
 	protected LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
 	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
+	protected Tienda tienda;
 	protected int score;
 	protected Tile[][] tablero;
 	protected final int filas=6, columnas=12;
@@ -20,6 +20,7 @@ public class Logica {
 	
 	//constructor
 	private Logica(){
+		tienda=Tienda.getTienda(this);
 		score = 0;
 		tablero = new Tile[filas][columnas];
 		listaEnemigos = new LinkedList<Enemigo>();
@@ -30,7 +31,6 @@ public class Logica {
 		aliadosAAgregar = new LinkedList<Aliado>();
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
-		tienda = Tienda.getTienda(this);
 	}
 	
 	public static Logica getLogica(){
@@ -38,6 +38,9 @@ public class Logica {
 	}
 	
 	//metodos
+	public void agregarMonedas(int m){
+		tienda.sumarMonedas(m);
+	}
 	public void agregarAliado(Aliado a){
 		aliadosAAgregar.addLast(a);
 	}
@@ -185,13 +188,5 @@ public class Logica {
 	
 	public int getColumnas(){
 		return columnas;
-	}
-	
-	public Tienda getTienda(){
-		return tienda;
-	}
-	
-	public void agregarMonedas(int c){
-		tienda.sumarMonedas(c);
 	}
 }

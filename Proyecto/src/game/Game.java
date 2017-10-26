@@ -56,7 +56,7 @@ public class Game implements Runnable{
 	
 	private void update(){
 		myLogic.actualizar();
-		display.actualizarPuntaje(myLogic.getScore(), myLogic.getTienda().getMonedas());
+		display.actualizarPuntaje(myLogic.getScore());
 	}
 	
 	private void render(){

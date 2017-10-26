@@ -6,6 +6,7 @@ import javax.swing.ScrollPaneConstants;
 
 import game.Game;
 import game.gfx.ImageLoader;
+import logica.Tienda;
 import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.Arquero;
@@ -298,6 +299,6 @@ public class PanelTienda extends JPanel {
 			panelDwarves.remove(panelCompraEnanos);
 			panelDwarves.add(panelPersonajesEnanos);
 		}
-		myGame.getLogica().getTienda().comprarAlianza(val);
+		Tienda.getTienda(myGame.getLogica()).comprarAlianza(val);
 	}
 }

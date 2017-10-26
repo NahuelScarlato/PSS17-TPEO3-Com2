@@ -9,12 +9,14 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import game.Game;
+import logica.Tienda;
 
 public class Display {
 
 	private JFrame frame;
 	private Canvas canvas;
 	private Game myGame;
+	private Tienda tienda;
 	private String title;
 	private int width, height;
 	private PanelTienda panel;
@@ -25,6 +27,7 @@ public class Display {
 		this.width = width;
 		this.height = height;
 		myGame = g;
+		tienda = Tienda.getTienda(myGame.getLogica());
 		createDisplay();
 	}
 	
@@ -72,7 +75,7 @@ public class Display {
 		System.out.println(e.getX() + " " + e.getY());
 
 		if(panel.getPrototype()!=null && myGame.getLogica().getTile(e.getY()/64, e.getX()/64).getComponente()==null){
-			panel.getPrototype().agregar(myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
+			panel.getPrototype().agregar(tienda, myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
 			panel.setPrototype(null);
 		}
 		else
@@ -80,7 +83,7 @@ public class Display {
 	}
 	
 
-	public void actualizarPuntaje(int p, int m){
-		panel.actualizarPuntaje(p, m);
+	public void actualizarPuntaje(int p){
+		panel.actualizarPuntaje(p, tienda.getMonedas());
 	}
 }

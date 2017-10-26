@@ -2,6 +2,7 @@ package objeto.noAtravesable;
 
 
 import logica.Objeto;
+import logica.Tienda;
 import logica.Tile;
 import logica.visitor.Visitor;
 import objeto.atravesable.Agua;
@@ -30,7 +31,7 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public void setState(ObjectState newState){
 		state = newState;
 	}
-	public void agregar(Tile t){
+	public void agregar(Tienda tien, Tile t){
 		miTile=t;
 		t.setComponente(this);
 	}

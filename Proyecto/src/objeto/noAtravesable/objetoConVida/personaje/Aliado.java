@@ -52,9 +52,9 @@ public abstract class Aliado extends Personaje {
 		g.drawImage(ImageLoader.vida[0], getTile().getColumna() * 64, getTile().getFila() * 64, (40*vida)/maxVida, 4, null);
 		state.draw(g, this);
 	}
-	public void agregar(Tile t){
+	public void agregar(Tienda tien, Tile t){
 		miTile=t;
 		t.setComponente(this);
-		Tienda.getTienda(null).comprar(this);
+		tien.comprar(this);
 	}
 }

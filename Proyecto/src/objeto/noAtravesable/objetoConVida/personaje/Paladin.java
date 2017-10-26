@@ -45,7 +45,7 @@ public class Paladin extends Aliado{
 				miTile = null;
 			}
 		}
-		public void agregar(Tile t){
+		public void agregar(Tienda tien, Tile t){
 			if(t.getColumna()!=11 && t.getRight().getComponente()==null){
 				miTile=t;
 				t.setComponente(this);
@@ -53,7 +53,7 @@ public class Paladin extends Aliado{
 					segundo=t.getRight();
 					segundo.setComponente(this);
 				}
-				Tienda.getTienda(null).comprar(this);
+				tien.comprar(this);
 			}
 		}
 		public ObjetoNoAtravesable clone(){

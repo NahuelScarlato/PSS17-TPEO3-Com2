@@ -26,15 +26,15 @@ public class EnanoCazador extends Aliado {
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
 	}
 	
-	public void agregar(Tile t){
+	public void agregar(Tienda tien, Tile t){
 		miTile=t;
 		t.setComponente(this);
 		if(t.getFila()!=5 && t.getAbajo().getComponente()==null){
 			Tile abajo=t.getAbajo();
 			Oso o= new Oso(abajo);
-			Tienda.getTienda(null).comprar(o);
+			tien.comprar(o);
 		}
-		Tienda.getTienda(null).comprar(this);
+		tien.comprar(this);
 	}
 	
 	public ObjetoNoAtravesable clone(){
