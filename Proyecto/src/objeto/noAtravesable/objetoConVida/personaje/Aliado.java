@@ -56,5 +56,6 @@ public abstract class Aliado extends Personaje {
 		miTile=t;
 		t.setComponente(this);
 		tien.comprar(this);
+		animation.setPos(t.getColumna(), t.getFila());
 	}
 }

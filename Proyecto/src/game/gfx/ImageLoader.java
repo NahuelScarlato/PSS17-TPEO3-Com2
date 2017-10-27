@@ -83,10 +83,11 @@ public class ImageLoader {
 		paladinAtk[1] = paladin;
 		paladinAtk[2] = paladin;
 		paladinAtk[3] = paladin;
-		arqueroAtk[0] = arquero;
-		arqueroAtk[1] = arquero;
-		arqueroAtk[2] = arquero;
-		arqueroAtk[3] = arquero;
+		sheet = loadImage("/Textures/Animations/Archer attack.png");
+		arqueroAtk[0] = sheet.getSubimage(0, 0, 64, 64);
+		arqueroAtk[1] = sheet.getSubimage(64, 0, 64, 64);
+		arqueroAtk[2] = sheet.getSubimage(128, 0, 64, 64);
+		arqueroAtk[3] = sheet.getSubimage(192, 0, 64, 64);
 		mageAtk[0] = mago;
 		mageAtk[1] = mago;
 		mageAtk[2] = mago;
