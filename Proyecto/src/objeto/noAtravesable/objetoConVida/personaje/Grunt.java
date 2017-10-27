@@ -22,7 +22,7 @@ public class Grunt extends Enemigo{
 		alto=1;
 		impacto=20;
 		alcance=1;
-		velMovMaxima=0.5f;
+		velMovMaxima=2.0f;
 		velAtMaxima=0.7f;
 		puntaje=20;
 		Coins=15;
