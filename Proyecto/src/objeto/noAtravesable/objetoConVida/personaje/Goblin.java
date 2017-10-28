@@ -14,7 +14,7 @@ public class Goblin extends Enemigo {
 		maxVida=35;
 		miTile=t;
 		velocidadAt=0.7f;
-		velocidadMov=1.5f;
+		velocidadMov=0.5f;
 		animation = new AnimationEnemy(this, 0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.goblinAtk, ImageLoader.goblinMove);
 		t.setComponente(this);
 		image = ImageLoader.goblin;

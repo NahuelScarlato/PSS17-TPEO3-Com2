@@ -9,8 +9,6 @@ public class Animation {
 	protected int x, y, index, totalImages, indexTime;
 	protected long lastTime, now, timer;
 	
-	//Hacer los constructores sin los arreglos por parametro, y hacer seters para los arreglos.
-	
 	public Animation (int x, int y, float atkSpeed , BufferedImage[] anim){
 		ataque = anim;
 		this.x = x;

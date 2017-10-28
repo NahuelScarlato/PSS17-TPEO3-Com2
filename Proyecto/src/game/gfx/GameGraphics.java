@@ -36,7 +36,7 @@ public class GameGraphics {
 				
 				if ((logic.getTile(i, j).getComponente())!=null){
 					logic.getTile(i,j).getComponente().dibujar(g);
-					//g.drawImage(logic.getTile(i, j).getComponente().getImage(), j*64, i*64, logic.getTile(i, j).getComponente().getAncho()*64,logic.getTile(i, j).getComponente().getAlto()*64, null);
+					g.drawImage(logic.getTile(i, j).getComponente().getImage(), j*64, i*64, logic.getTile(i, j).getComponente().getAncho()*64,logic.getTile(i, j).getComponente().getAlto()*64, null);
 					//int v = logic.getTile(i, j).getComponente().getVida();
 					//int m = logic.getTile(i, j).getComponente().getMaxVida();
 					//g.drawImage(ImageLoader.vida[1], j*64, i*64, 40, 4, null);

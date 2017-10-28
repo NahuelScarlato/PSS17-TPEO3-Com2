@@ -18,6 +18,7 @@ public class VisitorAliado extends Visitor {
 	public void afectar(Aliado a) {}
 	public void afectar(Enemigo e) {
 		e.restarVida(aliado.getImpacto());
+		aliado.setState(aliado.getAttackingState());
 	}
 	public void afectar(OTConVida otcv) {
 		int pos = aliado.getTile().getColumna();
