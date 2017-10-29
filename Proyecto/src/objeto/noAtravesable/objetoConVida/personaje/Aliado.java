@@ -13,6 +13,7 @@ public abstract class Aliado extends Personaje {
 	//atributos
 	protected VisitorAliado v;
 	protected Animation animation;
+	protected int escudo = 40;
 	
 	public Aliado(){
 		super();
