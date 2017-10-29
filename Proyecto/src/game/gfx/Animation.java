@@ -16,7 +16,7 @@ public class Animation {
 		totalImages = anim.length;
 		index = 0;
 		indexTime = (int) (1000 * atkSpeed / totalImages);
-		timer = 0;
+		timer = 1;
 		lastTime = System.currentTimeMillis();
 	}
 	

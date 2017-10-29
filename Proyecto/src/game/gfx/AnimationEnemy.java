@@ -16,8 +16,8 @@ public class AnimationEnemy extends Animation {
 	public AnimationEnemy(Enemigo enemy, int x, int y, float atSpd, float movSpd , BufferedImage[] att, BufferedImage[] mov){
 		super(x,y,atSpd,att);
 		movement = mov;
-		pixelTime = (int) ((1000 * movSpd) / 64); System.out.println(pixelTime);
-		movementTimer = 0;
+		pixelTime = (int) ((1000 * movSpd) / 64);// System.out.println(pixelTime);
+		movementTimer = 1;
 		myEnemy = enemy;
 		pixelCounter = 0;
 		stopped = false;
@@ -33,7 +33,6 @@ public class AnimationEnemy extends Animation {
 			movementTimer += System.currentTimeMillis() - lastTime;
 			timer += System.currentTimeMillis() - lastTime;
 			lastTime = System.currentTimeMillis();
-			System.out.println(movementTimer);
 			if (movementTimer > pixelTime){
 				x++;
 				if (pixelCounter == 0){
