@@ -113,4 +113,14 @@ public abstract class Enemigo extends Personaje{
 		super.setTile(t);
 		animation.setPos(t.getColumna(), t.getFila());
 	}
+	
+	public void dropear(){
+		Random r = new Random();
+		int prob = r.nextInt(10);
+		if (prob == 4){
+			miTile.setComponente(premio);
+			premio.setTile(miTile);
+			System.out.println("dropie");
+		}
+	}
 }

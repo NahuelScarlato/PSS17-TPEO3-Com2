@@ -57,6 +57,7 @@ public class Tile {
 	}
 	public void destruirEnemigo(Enemigo e){
 		componente = null;
+		e.dropear();
 		miJuego.agregarEnemigoABorrar(e);
 		miJuego.agregarMonedas(e.getCoins());
 	}
