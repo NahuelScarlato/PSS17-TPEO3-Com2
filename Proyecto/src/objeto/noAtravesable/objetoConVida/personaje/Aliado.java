@@ -13,7 +13,7 @@ public abstract class Aliado extends Personaje {
 	//atributos
 	protected VisitorAliado v;
 	protected Animation animation;
-	protected int escudo = 40;
+	protected int escudo = 0;
 	
 	public Aliado(){
 		super();
@@ -32,7 +32,16 @@ public abstract class Aliado extends Personaje {
 	}
 	
 	public void restarVida(int v){
-		vida-=v;
+		if(escudo > 0){
+			escudo -= v;
+		}
+		if(escudo < 0){
+			vida += escudo;
+			escudo = 0;
+		}
+		else{
+			vida-=v;
+		}
 		if(vida<=0){
 			miTile.destruirAliado(this);
 			miTile = null;
