@@ -1,13 +1,9 @@
 package game.display;
 
-import java.awt.CardLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 import game.gfx.ImageLoader;
 
@@ -19,6 +15,8 @@ public class BotonCompraAlianza extends BotonCompra{
 		
 		public BotonCompraAlianza(PanelTienda pan, int valor, String al){
 			super(pan, valor);
+			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianza.png")));
+			setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAlianzaAnulado.png")));
 			alianza=al;
 			addMouseListener(new OyenteCompra());
 			setearTexto("Comprar alianza con "+al);

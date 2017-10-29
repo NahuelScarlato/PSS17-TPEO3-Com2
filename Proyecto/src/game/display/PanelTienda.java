@@ -39,7 +39,8 @@ public class PanelTienda extends JPanel {
 	protected ObjetoNoAtravesable prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
 	protected JPanel panelCompraElfos, panelCompraEnanos;
-	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos;
+	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
+	protected LinkedList<BotonCompraPersonaje> premios;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
 
@@ -50,6 +51,7 @@ public class PanelTienda extends JPanel {
 		myGame=g;
 		
 		botones=new LinkedList<BotonCompra>();
+		premios=new LinkedList<BotonCompraPersonaje>();
 		
 		this.setLayout(new GridBagLayout());
 
@@ -240,14 +242,88 @@ public class PanelTienda extends JPanel {
 		
 		pScroll.add(panelEnanos, conScroll);
 		
-		
-		
 		conScroll.gridy=3;
+		
+		JPanel panelOT = new JPanel(new GridBagLayout());
+		
+		GridBagConstraints c3 = new GridBagConstraints();
+		c3.gridx=0;
+		c3.gridy=0;
+		c3.gridx=0;
+		c3.gridy=0;
+		c3.weightx=0;
+		c3.weighty=0;
+		c3.ipadx=0;
+		c3.ipady=10;
+		c3.fill=GridBagConstraints.BOTH;
+		
+		JLabel labelOT = new JLabel("Objetos", JLabel.CENTER);
+		
+		panelOT.add(labelOT, c3);
+		
+		c3.gridy=1;
+		c3.weightx=0.5;
+		c3.weighty=0.5;
+		c3.ipady=0;
+		
+		JPanel panelObjetosTienda= new JPanel(new GridLayout(2, 2));
+		objetosTienda = new BotonCompraPersonaje[3];
+		
+		BotonCompraPersonaje barricada = new BotonCompraPersonaje(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
+		BotonCompraPersonaje meteorito = new BotonCompraPersonaje(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
+		BotonCompraPersonaje portal = new BotonCompraPersonaje(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
+		
+		objetosTienda[0] = barricada;
+		objetosTienda[1] = meteorito;
+		objetosTienda[2] = portal;
+		
+		for(int i=0; i<objetosTienda.length; i++){
+			panelObjetosTienda.add(objetosTienda[i]);
+			botones.addLast(objetosTienda[i]);
+		}
+		
+		panelOT.add(panelObjetosTienda, c3);
+		
+		pScroll.add(panelOT, conScroll);
+		
+		conScroll.gridy=4;
+		
+		JPanel panelPremios = new JPanel(new GridBagLayout());
+		
+		GridBagConstraints c4 = new GridBagConstraints();
+		c4.gridx=0;
+		c4.gridy=0;
+		c4.gridx=0;
+		c4.gridy=0;
+		c4.weightx=0;
+		c4.weighty=0;
+		c4.ipadx=0;
+		c4.ipady=10;
+		c4.fill=GridBagConstraints.BOTH;
+		
+		JLabel labelPremios = new JLabel("Premios", JLabel.CENTER);
+		
+		panelPremios.add(labelPremios, c4);
+		
+		c4.gridy=1;
+		c4.weightx=0.5;
+		c4.weighty=0.5;
+		c4.ipady=0;
+		
+		JPanel panelPre= new JPanel(new GridLayout(3, 2));
+		
+		//asociar lista de premios a panelPre
+		
+		panelPremios.add(panelPre, c4);
+		
+		pScroll.add(panelPremios, conScroll);
+		
+		conScroll.gridy=5;
 
 		JButton botonAliados = new JButton("Agregar aliado");
 		pScroll.add(botonAliados, conScroll);
 		
-		conScroll.gridy=4;
+		conScroll.gridy=6;
 		
 		botonAliados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
