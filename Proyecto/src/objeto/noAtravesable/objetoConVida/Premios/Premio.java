@@ -20,5 +20,6 @@ public abstract class Premio extends ObjetoNoAtravesable{
 		g.drawImage(image, miTile.getColumna()*64, miTile.getFila()*64, 64, 64, null);
 	}
 	
+	public void restarVida(int n){}
 	public abstract void efecto(int x, int y, Logica l);
 }

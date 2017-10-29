@@ -40,4 +40,5 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 		return valor;
 	}
 	public abstract ObjetoNoAtravesable clone();
+	public abstract void restarVida(int n);
 }
