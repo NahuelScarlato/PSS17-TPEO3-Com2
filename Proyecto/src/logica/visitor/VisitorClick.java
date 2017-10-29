@@ -9,28 +9,28 @@ import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
 
 public class VisitorClick extends Visitor{
 	//atributos
-	protected PanelTienda p;
+	protected PanelTienda panel;
 	
 	//constructor
 	public VisitorClick(PanelTienda pan){
-		p=pan;
+		panel=pan;
 	}
 	
 	//metodos
 	public void afectar(Aliado a) {
-		
+		a.restarVida(1000);
 	}
 	public void afectar(Enemigo e) {
-		
+		e.restarVida(1000);
 	}
 	public void afectar(OTConVida otcv) {
-		
+		otcv.restarVida(1000);
 	}
 	public void afectar(OMConVida omcv) {
-		
+		omcv.restarVida(1000);
 	}
 	public void afectar(Premio p) {
-		
+		panel.agregarPremio(p);
 	}
 
 }

@@ -9,6 +9,7 @@ import game.gfx.ImageLoader;
 import logica.Tienda;
 import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.Arquero;
 import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
 import objeto.noAtravesable.objetoConVida.personaje.Druida;
@@ -40,7 +41,7 @@ public class PanelTienda extends JPanel {
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
 	protected JPanel panelCompraElfos, panelCompraEnanos;
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
-	protected LinkedList<BotonCompraPersonaje> premios;
+	protected LinkedList<BotonCompraPremio> premios;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
 
@@ -51,7 +52,7 @@ public class PanelTienda extends JPanel {
 		myGame=g;
 		
 		botones=new LinkedList<BotonCompra>();
-		premios=new LinkedList<BotonCompraPersonaje>();
+		premios=new LinkedList<BotonCompraPremio>();
 		
 		this.setLayout(new GridBagLayout());
 
@@ -376,5 +377,10 @@ public class PanelTienda extends JPanel {
 			panelDwarves.add(panelPersonajesEnanos);
 		}
 		Tienda.getTienda(myGame.getLogica()).comprarAlianza(val);
+	}
+	public void agregarPremio(Premio p){
+		for(BotonCompraPremio b: premios){
+			//arreglar
+		}
 	}
 }

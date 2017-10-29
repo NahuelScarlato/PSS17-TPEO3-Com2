@@ -7,6 +7,7 @@ import java.awt.image.BufferStrategy;
 
 import logica.*;
 import logica.visitor.Visitor;
+import logica.visitor.VisitorClick;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
