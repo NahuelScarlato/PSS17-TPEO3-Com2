@@ -1,6 +1,7 @@
-package objeto.noAtravesable;
+package objeto.noAtravesable.objetoConVida.Premios;
 
 import logica.visitor.Visitor;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public abstract class Premio extends ObjetoNoAtravesable{
 	//metodos

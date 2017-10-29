@@ -4,6 +4,7 @@ import logica.Tile;
 import objeto.noAtravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.OTConVida.*;
+import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 
 public class VisitorAliado extends Visitor {

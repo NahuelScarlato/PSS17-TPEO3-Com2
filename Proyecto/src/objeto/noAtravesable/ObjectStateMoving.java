@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
+import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
 
