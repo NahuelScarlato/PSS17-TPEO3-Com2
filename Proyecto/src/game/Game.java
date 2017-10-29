@@ -6,6 +6,8 @@ import java.awt.image.BufferStrategy;
 
 
 import logica.*;
+import logica.visitor.Visitor;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import game.display.Display;
@@ -20,6 +22,7 @@ public class Game implements Runnable{
 	public String title;
 	private Logica myLogic;
 	private GraphicsManager graphicsManager;
+	private Visitor v;
 
 	// Atributo para manejar los graficos del juego.
 
@@ -52,6 +55,7 @@ public class Game implements Runnable{
 		portal = new Portal(myLogic.getTile(0, 3), myLogic.getTile(1, 1));
 		myLogic.agregarAtravesable(portal.getIn());
 		myLogic.agregarAtravesable(portal.getOut());
+		v=new VisitorClick(display.getPanelTienda());
 	}
 	
 	private void update(){
@@ -126,10 +130,10 @@ public class Game implements Runnable{
 	
 	public void interaccion(int x, int y){
 		Tile tile = myLogic.getTile(y/64, x/64);
-			System.out.println("Orden de atacar en "+ y/64+", "+x/64);
+			System.out.println("Orden de interactuar en "+ y/64+", "+x/64);
 			if(tile.getComponente()!=null){
-				ObjetoConVida o=(ObjetoConVida)tile.getComponente();
-				o.restarVida(1000);
+				ObjetoNoAtravesable o=tile.getComponente();
+				o.accept(v);
 			}
 		
 	}

@@ -86,4 +86,7 @@ public class Display {
 	public void actualizarPuntaje(int p){
 		panel.actualizarPuntaje(p, tienda.getMonedas());
 	}
+	public PanelTienda getPanelTienda(){
+		return panel;
+	}
 }
