@@ -2,13 +2,13 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
-public class Escudo extends Premio{
-	public Escudo(){
+public class Wololo extends Premio{
+	public Wololo(){
 		super();
 	}
 	@Override
 	public ObjetoNoAtravesable clone() {
-		return new Escudo();
+		return new Wololo();
 	}
-
+	
 }
