@@ -5,6 +5,7 @@ import game.gfx.ImageLoader;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.Premios.Escudo;
 import logica.*;
 
 public class Grunt extends Enemigo{
@@ -29,6 +30,7 @@ public class Grunt extends Enemigo{
 		reloj=1;
 		v = new VisitorEnemigo(this);
 		state = new ObjectStateMoving();
+		premio = new Escudo();
 	}
 	public ObjetoNoAtravesable clone(){
 		return new Grunt(new Tile(null,0,0));

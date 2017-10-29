@@ -2,6 +2,7 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.Premios.Wololo;
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 
@@ -27,6 +28,7 @@ public class Brujo extends Enemigo{
 		reloj=1;
 		v = new VisitorEnemigo(this);
 		setState(new ObjectStateMoving());
+		premio = new Wololo();
 		
 	}
 	public ObjetoNoAtravesable clone(){

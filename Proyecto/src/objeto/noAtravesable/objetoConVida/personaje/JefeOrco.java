@@ -6,6 +6,7 @@ import logica.Tile;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.Premios.Frenzy;
 
 public class JefeOrco extends Enemigo{
 	
@@ -30,6 +31,7 @@ public class JefeOrco extends Enemigo{
 		reloj=1;
 		v=new VisitorEnemigo(this);
 		state=new ObjectStateMoving();
+		premio = new Frenzy();
 	}
 	@Override
 	public ObjetoNoAtravesable clone() {
