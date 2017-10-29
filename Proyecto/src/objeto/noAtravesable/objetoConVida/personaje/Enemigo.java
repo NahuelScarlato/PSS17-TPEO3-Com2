@@ -23,7 +23,7 @@ public abstract class Enemigo extends Personaje{
 	protected AnimationEnemy animation;
 	protected boolean detenido;
 	protected Premio premio;
-	
+
 	public Enemigo(){
 		super();
 		stateMoving = new ObjectStateMoving();
