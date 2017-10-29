@@ -12,6 +12,7 @@ public class ImageLoader {
 	public static BufferedImage tierra, agua, piedra , arbol;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
 	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero;
+	public static BufferedImage pBolaDeFuego, pBomba, pEscudo, pFrenzy, pPeste, pWololo;
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
@@ -62,6 +63,12 @@ public class ImageLoader {
 		vida[1] =loadImage("/Textures/VidaRoja.png");
 		vida[2] =loadImage("/Textures/VidaAzul.png");
 		sheet = loadImage("/Textures/Animations/Goblin walk.png");
+		pBolaDeFuego = loadImage("/Textures/Premios/PremioBolaFuego.png");
+		pBomba = loadImage("/Textures/Premios/PremioBomba.png");
+		pEscudo = loadImage("/Textures/Premios/PremioEscudo.png");
+		pFrenzy = loadImage("/Textures/Premios/PremioFrenzy.png");
+		pPeste = loadImage("/Textures/Premios/PremioPeste.png");
+		pWololo = loadImage("/Textures/Premios/PremioWololo.png");
 		goblinMove[0] = sheet.getSubimage(0, 0, 64, 64);
 		goblinMove[1] = sheet.getSubimage(64, 0, 64, 64);
 		goblinMove[2] = sheet.getSubimage(128, 0, 64, 64);
@@ -140,6 +147,7 @@ public class ImageLoader {
 		orcoBallestaAtk[1] = orcoBallestero;
 		orcoBallestaAtk[2] = orcoBallestero;
 		orcoBallestaAtk[3] = orcoBallestero;
+		
 	}
 	
 	public static BufferedImage loadImage(String path){
