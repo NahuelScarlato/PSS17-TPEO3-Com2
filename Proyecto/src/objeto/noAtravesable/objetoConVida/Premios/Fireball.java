@@ -1,5 +1,6 @@
 package objeto.noAtravesable.objetoConVida.Premios;
 
+import game.display.PremioManager;
 import game.gfx.ImageLoader;
 import logica.Logica;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -18,5 +19,7 @@ public class Fireball extends Premio{
 		if (l.getTile(x, y).getComponente() != null)
 			l.getTile(x, y).getComponente().restarVida(50);
 	}
-	
+	public void accept(PremioManager pm) {
+		pm.visit(this);
+	}
 }

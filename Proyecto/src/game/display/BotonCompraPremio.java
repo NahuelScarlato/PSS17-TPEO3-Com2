@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 @SuppressWarnings("serial")
@@ -48,7 +49,7 @@ public class BotonCompraPremio extends BotonCompra {
 	public void sumarPremio(){
 		c++;
 		cant.setText(""+c);
-		setEnabled(true);
+		p.agregarPremio(this);
 	}
 	
 	private class OyenteCompra implements MouseListener{
@@ -62,15 +63,15 @@ public class BotonCompraPremio extends BotonCompra {
 			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
 		}
 		public void mouseReleased(MouseEvent arg0) {
-			if(((BotonCompra)arg0.getSource()).isEnabled()){
+			if(((BotonCompraPremio)arg0.getSource()).isEnabled()){
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 				if(c>0){
-					ObjetoNoAtravesable aux=o.clone();
+					Objeto aux=o.clone();
 					p.setPrototype(aux);
 					c--;
 					cant.setText(""+c);
 					if(c==0)
-						setEnabled(false);
+						p.eliminarPremio((BotonCompraPremio)arg0.getSource());
 				}
 			}
 		}

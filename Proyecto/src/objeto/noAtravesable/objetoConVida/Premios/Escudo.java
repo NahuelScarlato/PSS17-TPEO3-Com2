@@ -1,5 +1,6 @@
 package objeto.noAtravesable.objetoConVida.Premios;
 
+import game.display.PremioManager;
 import game.gfx.ImageLoader;
 import logica.Logica;
 import logica.visitor.VisitorEscudo;
@@ -36,6 +37,9 @@ public class Escudo extends Premio{
 			l.getTile(x+1, y+1).getComponente().accept(visitor);
 		if (y != l.getFilas()-1)
 			l.getTile(x, y+1).getComponente().accept(visitor);
+	}
+	public void accept(PremioManager pm) {
+		pm.visit(this);
 	}
 
 }

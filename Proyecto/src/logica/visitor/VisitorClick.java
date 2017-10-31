@@ -1,6 +1,7 @@
 package logica.visitor;
 
 import game.display.PanelTienda;
+import game.display.PremioManager;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
@@ -9,11 +10,11 @@ import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
 
 public class VisitorClick extends Visitor{
 	//atributos
-	protected PanelTienda panel;
+	protected PremioManager pm;
 	
 	//constructor
-	public VisitorClick(PanelTienda pan){
-		panel=pan;
+	public VisitorClick(PremioManager pan){
+		pm=pan;
 	}
 	
 	//metodos
@@ -30,7 +31,8 @@ public class VisitorClick extends Visitor{
 		omcv.restarVida(1000);
 	}
 	public void afectar(Premio p) {
-		panel.agregarPremio(p);
+		p.accept(pm);
+		p.eliminar();
 	}
 
 }

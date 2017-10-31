@@ -42,9 +42,8 @@ public class PanelTienda extends JPanel {
 	protected JLabel labelPuntaje;
 	protected Objeto prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
-	protected JPanel panelCompraElfos, panelCompraEnanos;
+	protected JPanel panelCompraElfos, panelCompraEnanos, panelPre;
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
-	protected LinkedList<BotonCompraPremio> premios;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
 
@@ -57,7 +56,6 @@ public class PanelTienda extends JPanel {
 		t.setPanel(this);
 		
 		botones=new LinkedList<BotonCompra>();
-		premios=new LinkedList<BotonCompraPremio>();
 		
 		this.setLayout(new GridBagLayout());
 
@@ -316,7 +314,7 @@ public class PanelTienda extends JPanel {
 		c4.weighty=0.5;
 		c4.ipady=0;
 		
-		JPanel panelPre= new JPanel(new GridLayout(3, 2));
+		panelPre= new JPanel(new GridLayout(3, 2));
 		
 		//asociar lista de premios a panelPre
 		
@@ -383,9 +381,10 @@ public class PanelTienda extends JPanel {
 		}
 		Tienda.getTienda(myGame.getLogica()).comprarAlianza(val);
 	}
-	public void agregarPremio(Premio p){
-		for(BotonCompraPremio b: premios){
-			//arreglar
-		}
+	public void agregarPremio(BotonCompraPremio p){
+		panelPre.add(p);
+	}
+	public void eliminarPremio(BotonCompraPremio p){
+		panelPre.remove(p);
 	}
 }

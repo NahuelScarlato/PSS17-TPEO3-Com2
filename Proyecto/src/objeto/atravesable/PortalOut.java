@@ -2,6 +2,7 @@ package objeto.atravesable;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
@@ -14,5 +15,8 @@ public class PortalOut extends ObjetoAtravesable{
 	}
 	
 	public void modificar(ObjetoNoAtravesable p){}
+	public Objeto clone() {
+		return new PortalOut(new Tile(null, 0, 0));
+	}
 }
 

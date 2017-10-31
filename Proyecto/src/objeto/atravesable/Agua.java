@@ -2,6 +2,7 @@ package objeto.atravesable;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -30,6 +31,9 @@ public class Agua extends ObjetoAtravesable{
 
 	public void normalizar(Personaje p) {
 		p.normalizarVelocidad();
+	}
+	public Objeto clone() {
+		return new Agua(new Tile(null, 0, 0));
 	}
 
 }

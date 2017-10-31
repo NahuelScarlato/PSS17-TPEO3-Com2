@@ -1,5 +1,6 @@
 package objeto.noAtravesable.objetoConVida.Premios;
 
+import game.display.PremioManager;
 import game.gfx.ImageLoader;
 import logica.Logica;
 import objeto.noAtravesable.ObjetoNoAtravesable;
@@ -17,6 +18,10 @@ public class Bomba extends Premio{
 	public void efecto(int x, int y, Logica l) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public void accept(PremioManager pm) {
+		pm.visit(this);
 	}
 
 }

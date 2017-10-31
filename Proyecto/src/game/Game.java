@@ -12,6 +12,7 @@ import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import game.display.Display;
+import game.display.PremioManager;
 import game.gfx.GameGraphics;
 import game.gfx.GraphicsManager;
 import game.gfx.ImageLoader;
@@ -53,7 +54,7 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 		graphicsManager = new GraphicsManager(display);
-		v=new VisitorClick(display.getPanelTienda());
+		v=new VisitorClick(new PremioManager(display.getPanelTienda()));
 	}
 	
 	private void update(){
