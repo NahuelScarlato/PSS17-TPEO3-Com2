@@ -41,7 +41,7 @@ public class Display {
 		frame.setVisible(true);
 		frame.setLayout(new GridBagLayout());
 
-		panel = new PanelTienda(myGame);
+		panel = new PanelTienda(myGame, tienda);
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
@@ -76,7 +76,6 @@ public class Display {
 
 		if(panel.getPrototype()!=null && myGame.getLogica().getTile(e.getY()/64, e.getX()/64).getComponente()==null){
 			panel.getPrototype().agregar(tienda, myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
-			panel.setPrototype(null);
 		}
 		else
 			myGame.interaccion(e.getX(), e.getY());

@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 @SuppressWarnings("serial")
@@ -37,7 +38,7 @@ public class BotonCompraPersonaje extends BotonCompra{
 		public void mouseReleased(MouseEvent arg0) {
 			if(((BotonCompra)arg0.getSource()).isEnabled()){
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
-				ObjetoNoAtravesable aux=o.clone();
+				Objeto aux=o.clone();
 				p.setPrototype(aux);
 			}
 		}

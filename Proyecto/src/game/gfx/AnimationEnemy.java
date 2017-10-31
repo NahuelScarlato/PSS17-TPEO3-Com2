@@ -29,7 +29,7 @@ public class AnimationEnemy extends Animation {
 
 	public void drawMove(Graphics g){
 		if (!stopped){
-			g.drawImage(movement[index], x, y, 64,64, null);
+			g.drawImage(movement[index], x, y, myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
 			movementTimer += System.currentTimeMillis() - lastTime;
 			timer += System.currentTimeMillis() - lastTime;
 			lastTime = System.currentTimeMillis();

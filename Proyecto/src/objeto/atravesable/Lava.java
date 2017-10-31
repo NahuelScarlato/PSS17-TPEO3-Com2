@@ -1,5 +1,6 @@
 package objeto.atravesable;
 
+import logica.Objeto;
 import logica.visitor.VisitorLava;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
@@ -13,5 +14,8 @@ public class Lava extends ObjetoAtravesable{
 	}
 	public int getImpacto(){
 		return impacto;
+	}
+	public Objeto clone() {
+		return new Lava();
 	}
 }

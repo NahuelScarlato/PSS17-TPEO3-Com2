@@ -10,31 +10,11 @@ public class VisitorEscudo extends Visitor{
 
 	@Override
 	public void afectar(Aliado a) {
-		
+		a.crearEscudo();
 	}
-
-	@Override
-	public void afectar(Enemigo e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afectar(OTConVida otcv) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afectar(OMConVida omcv) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afectar(Premio p) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void afectar(Enemigo e) {}
+	public void afectar(OTConVida otcv) {}
+	public void afectar(OMConVida omcv) {}
+	public void afectar(Premio p) {}
 
 }

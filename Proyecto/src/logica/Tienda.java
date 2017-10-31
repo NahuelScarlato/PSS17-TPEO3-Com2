@@ -1,5 +1,7 @@
 package logica;
 
+import game.display.PanelTienda;
+import objeto.atravesable.ObjetoAtravesable;
 import objeto.noAtravesable.objetoConVida.OTConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 
@@ -7,12 +9,16 @@ public class Tienda {
 	//atributos
 	protected int monedas;
 	protected Logica juego;
+	protected PanelTienda miPanel;
 	protected static Tienda instance = null;
 
 	//constructor
 	private Tienda(Logica l){
 		monedas=1000;
 		juego=l;
+	}
+	public void setPanel(PanelTienda p){
+		miPanel=p;
 	}
 	
 	public static Tienda getTienda(Logica l){
@@ -39,6 +45,9 @@ public class Tienda {
 	public void comprar(OTConVida otcv){
 		monedas-=otcv.getValor();
 	}
+	public void agregar(ObjetoAtravesable a){
+		juego.agregarAtravesable(a);
+	}
 	//agregar comprar para temporales
 	
 	public void vender(Aliado a){
@@ -63,4 +72,8 @@ public class Tienda {
 	}
 	
 	//agregar vender para temporales
+	
+	public PanelTienda getPanel(){
+		return miPanel;
+	}
 }

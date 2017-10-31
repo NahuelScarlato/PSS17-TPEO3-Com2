@@ -34,11 +34,11 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public void agregar(Tienda tien, Tile t){
 		miTile=t;
 		t.setComponente(this);
+		tien.getPanel().setPrototype(null);
 	}
 
 	public int getValor(){
 		return valor;
 	}
-	public abstract ObjetoNoAtravesable clone();
 	public abstract void restarVida(int n);
 }

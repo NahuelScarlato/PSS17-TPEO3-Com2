@@ -26,7 +26,9 @@ public abstract class Aliado extends Personaje {
 			e.accept(v);
 		}
 	}
-	
+	public void crearEscudo(){
+		escudo=(int)(maxVida*0.2);
+	}
 	public Animation getAnimation(){
 		return animation;
 	}
@@ -63,8 +65,7 @@ public abstract class Aliado extends Personaje {
 		state.draw(g, this);
 	}
 	public void agregar(Tienda tien, Tile t){
-		miTile=t;
-		t.setComponente(this);
+		super.agregar(tien, t);
 		tien.comprar(this);
 		animation.setPos(t.getColumna(), t.getFila());
 	}

@@ -3,6 +3,8 @@ package logica;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import objeto.noAtravesable.ObjetoNoAtravesable;
+
 public abstract class Objeto {
 	//atributos
 	protected Tile miTile;
@@ -27,6 +29,8 @@ public abstract class Objeto {
 	public int getAlto(){
 		return alto;
 	}
+	public abstract void agregar(Tienda tien, Tile t);
 	
 	public void dibujar(Graphics g){}
+	public abstract Objeto clone();
 }

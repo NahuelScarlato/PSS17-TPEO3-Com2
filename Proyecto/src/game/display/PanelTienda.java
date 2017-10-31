@@ -6,8 +6,11 @@ import javax.swing.ScrollPaneConstants;
 
 import game.Game;
 import game.gfx.ImageLoader;
+import logica.Objeto;
+import logica.Portal;
 import logica.Tienda;
 import logica.Tile;
+import objeto.atravesable.PortalIn;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.Arquero;
@@ -37,7 +40,7 @@ public class PanelTienda extends JPanel {
 	
 	protected Game myGame;
 	protected JLabel labelPuntaje;
-	protected ObjetoNoAtravesable prototipo;
+	protected Objeto prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
 	protected JPanel panelCompraElfos, panelCompraEnanos;
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
@@ -48,8 +51,10 @@ public class PanelTienda extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelTienda(Game g) {
+	public PanelTienda(Game g, Tienda t) {
 		myGame=g;
+		
+		t.setPanel(this);
 		
 		botones=new LinkedList<BotonCompra>();
 		premios=new LinkedList<BotonCompraPremio>();
@@ -270,7 +275,7 @@ public class PanelTienda extends JPanel {
 		JPanel panelObjetosTienda= new JPanel(new GridLayout(2, 2));
 		objetosTienda = new BotonCompraPersonaje[3];
 		
-		BotonCompraPersonaje barricada = new BotonCompraPersonaje(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
+		BotonCompraPersonaje barricada = new BotonCompraPersonaje(this, ImageLoader.portalBlue[0], new Portal());
 		BotonCompraPersonaje meteorito = new BotonCompraPersonaje(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
 		BotonCompraPersonaje portal = new BotonCompraPersonaje(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
 		
@@ -353,10 +358,10 @@ public class PanelTienda extends JPanel {
 		}
 		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
 	}
-	public void setPrototype(ObjetoNoAtravesable ob){
+	public void setPrototype(Objeto ob){
 		prototipo=ob;
 	}
-	public ObjetoNoAtravesable getPrototype(){
+	public Objeto getPrototype(){
 		return prototipo;
 	}
 	public void comprarAlianza(String al, int val){
