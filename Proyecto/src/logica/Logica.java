@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
+import objeto.noAtravesable.objetoConVida.Premios.Bomba;
+import objeto.noAtravesable.objetoConVida.Premios.Escudo;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 
 
@@ -96,6 +98,14 @@ public class Logica {
 				tablero[i][j] = new Tile(this,i,j);
 			}
 		}
+		
+		Bomba b = new Bomba();
+		tablero[0][0].setComponente(b);
+		b.setTile(tablero[0][0]);
+		Escudo e = new Escudo();
+		tablero[0][1].setComponente(e);
+		e.setTile(tablero[0][1]);
+		
 		
 		for (int i = 0; i < filas ; i++){
 			for (int j = 1; j < columnas; j++){

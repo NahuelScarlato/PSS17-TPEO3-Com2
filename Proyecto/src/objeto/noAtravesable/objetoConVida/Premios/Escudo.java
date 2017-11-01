@@ -37,7 +37,7 @@ public class Escudo extends Premio{
 			t.getAbajo().getComponente().accept(visitor);
 		if (x != 5 && y != 11 && t.getAbajo().getRight().getComponente()!=null)
 			t.getAbajo().getRight().getComponente().accept(visitor);
-		if (y != 5 && t.getRight().getComponente()!=null)
+		if (y != 11 && t.getRight().getComponente()!=null)
 			t.getRight().getComponente().accept(visitor);
 	}
 }

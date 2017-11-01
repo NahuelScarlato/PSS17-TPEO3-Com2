@@ -9,7 +9,9 @@ public class Portal extends OTConVida{
 	protected PortalIn pi;
 	protected PortalOut po;
 	
+	
 	public Portal(){
+		valor=50;
 	}
 	
 	public PortalOut getOut(){

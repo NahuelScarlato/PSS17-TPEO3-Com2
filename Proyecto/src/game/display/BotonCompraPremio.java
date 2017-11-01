@@ -41,7 +41,7 @@ public class BotonCompraPremio extends BotonCompra {
 		cant.setText("" + this.c);
 		cant.setHorizontalAlignment(JLabel.RIGHT);
 		cant.setVerticalAlignment(JLabel.TOP);
-		cant.setLocation(cant.getX()-10, cant.getY()+10);
+		//cant.setLocation(cant.getX()-10, cant.getY()+10);
 		cant.setVisible(true);
 		v.add(cant,c);
 		v.setVisible(true);

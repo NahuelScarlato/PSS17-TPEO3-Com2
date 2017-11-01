@@ -39,15 +39,13 @@ public abstract class Aliado extends Personaje {
 	public void restarVida(int v){
 		if(escudo > 0){
 			escudo -= v;
-		}
-		else{
 			if(escudo < 0){
 				vida += escudo;
 				escudo = 0;
 			}
-			else{
-				vida-=v;
-			}
+		}
+		else{
+			vida-=v;
 		}
 		if(vida<=0){
 			miTile.destruirAliado(this);
