@@ -17,8 +17,7 @@ public class VisitorFrenzy extends Visitor {
 	
 	@Override
 	public void afectar(Aliado a) {
-		// TODO Auto-generated method stub
-		
+		frenzy.agregarALista(a);
 	}
 
 	@Override

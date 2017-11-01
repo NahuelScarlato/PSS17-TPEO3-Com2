@@ -1,7 +1,6 @@
 package objetosTemporales;
 
 import java.util.LinkedList;
-
 import logica.Logica;
 import logica.ObjetoTemporal;
 import objeto.noAtravesable.objetoConVida.personaje.Aliado;
@@ -20,6 +19,12 @@ public class EfectoFrenzy extends ObjetoTemporal {
 	protected void efecto(){
 		for (Aliado ali: aliados){
 			ali.modificarAtaque(modificador);
+		}
+	}
+	
+	protected void efectoFinal(){
+		for (Aliado ali: aliados){
+			ali.normalizarAtaque();
 		}
 	}
 }

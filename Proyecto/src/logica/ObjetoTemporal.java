@@ -1,6 +1,6 @@
 package logica;
 
-public class ObjetoTemporal {
+public abstract class ObjetoTemporal {
 
 	protected int reloj;
 	protected Logica logica;
@@ -11,12 +11,18 @@ public class ObjetoTemporal {
 		this.logica.agregarObjetoTemporal(this);
 	}
 	
+	protected abstract void efecto();
+	
+	protected abstract void efectoFinal();
+	
 	public void decrementarReloj(){
 		reloj--;
 		if (reloj == 0){
+			efectoFinal();
 			logica.agregarObjetoTemporalABorrar(this);
+			logica = null;
 		}
-		logica = null;
+		efecto();
 	}
 	
 }
