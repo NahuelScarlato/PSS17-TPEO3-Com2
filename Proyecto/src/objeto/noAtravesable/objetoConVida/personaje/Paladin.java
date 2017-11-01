@@ -37,7 +37,16 @@ public class Paladin extends Aliado{
 			
 		}
 		public void restarVida(int v){
-			vida-=v;
+			if(escudo > 0){
+				escudo -= v;
+				if(escudo < 0){
+					vida += escudo;
+					escudo = 0;
+				}
+			}
+			else{
+				vida-=v;
+			}
 			if(vida<=0){
 				miTile.destruirAliado(this);
 				if(segundo!=null){
