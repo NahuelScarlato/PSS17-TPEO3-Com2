@@ -31,5 +31,6 @@ public abstract class Premio extends ObjetoNoAtravesable{
 	public void agregar(Tienda tien, Tile t){
 		efecto(t);
 		b.restarPremio();
+		tien.getPanel().setPrototype(null);
 	}
 }
