@@ -3,13 +3,10 @@ package game;
 import java.awt.Graphics;
 import java.util.Random;
 import java.awt.image.BufferStrategy;
-
-
 import logica.*;
 import logica.visitor.Visitor;
 import logica.visitor.VisitorClick;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import game.display.Display;
 import game.display.PremioManager;
@@ -36,10 +33,7 @@ public class Game implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
-	
 	//Variables de prueba
-	private Portal portal;
-	
 	
 	public Game(String title, int width, int height){
 		this.width = width;

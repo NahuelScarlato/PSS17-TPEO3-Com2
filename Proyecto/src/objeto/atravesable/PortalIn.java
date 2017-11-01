@@ -3,7 +3,6 @@ package objeto.atravesable;
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
 import logica.Objeto;
-import logica.Tienda;
 import logica.Tile;
 import logica.visitor.VisitorPortal;
 import objeto.noAtravesable.ObjetoNoAtravesable;

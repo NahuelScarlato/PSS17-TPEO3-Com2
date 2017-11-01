@@ -3,16 +3,12 @@ package game.display;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-
 import game.Game;
 import game.gfx.ImageLoader;
 import logica.Objeto;
 import logica.Portal;
 import logica.Tienda;
 import logica.Tile;
-import objeto.atravesable.PortalIn;
-import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.Arquero;
 import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
 import objeto.noAtravesable.objetoConVida.personaje.Druida;

@@ -1,10 +1,7 @@
 package objeto.noAtravesable.objetoConVida.personaje;
 
-import java.util.Random;
-
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
-import logica.Tienda;
 import logica.Tile;
 import logica.visitor.VisitorAliado;
 import objeto.noAtravesable.ObjetoNoAtravesable;

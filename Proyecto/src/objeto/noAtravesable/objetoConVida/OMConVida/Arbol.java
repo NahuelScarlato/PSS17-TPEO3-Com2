@@ -1,6 +1,5 @@
 package objeto.noAtravesable.objetoConVida.OMConVida;
 
-import game.gfx.Animation;
 import game.gfx.ImageLoader;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 

@@ -1,6 +1,5 @@
 package logica.visitor;
 
-import game.display.PanelTienda;
 import game.display.PremioManager;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;

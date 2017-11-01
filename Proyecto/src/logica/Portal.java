@@ -3,8 +3,6 @@ package logica;
 import logica.visitor.VisitorPortal;
 import objeto.atravesable.PortalIn;
 import objeto.atravesable.PortalOut;
-import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 
 public class Portal extends OTConVida{

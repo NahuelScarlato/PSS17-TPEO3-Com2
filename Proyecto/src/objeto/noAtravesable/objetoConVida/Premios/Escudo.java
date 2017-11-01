@@ -2,7 +2,6 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
-import logica.Logica;
 import logica.Tile;
 import logica.visitor.VisitorEscudo;
 import objeto.noAtravesable.ObjetoNoAtravesable;

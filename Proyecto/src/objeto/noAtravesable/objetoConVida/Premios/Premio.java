@@ -3,8 +3,6 @@ package objeto.noAtravesable.objetoConVida.Premios;
 import java.awt.Graphics;
 
 import game.display.PremioManager;
-import game.gfx.ImageLoader;
-import logica.Logica;
 import logica.Tienda;
 import logica.Tile;
 import logica.visitor.Visitor;
