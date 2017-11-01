@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
 import logica.Logica;
+import logica.Tienda;
+import logica.Tile;
 import logica.visitor.Visitor;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
@@ -23,5 +25,8 @@ public abstract class Premio extends ObjetoNoAtravesable{
 	}
 	
 	public void restarVida(int n){}
-	public abstract void efecto(int x, int y, Logica l);
+	public abstract void efecto(Tile t);
+	public void agregar(Tienda tien, Tile t){
+		efecto(t);
+	}
 }

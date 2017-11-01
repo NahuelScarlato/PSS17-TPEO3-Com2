@@ -3,6 +3,7 @@ package objeto.noAtravesable.objetoConVida.Premios;
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
 import logica.Logica;
+import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Fireball extends Premio{
@@ -15,9 +16,9 @@ public class Fireball extends Premio{
 		return new Fireball();
 	}
 	@Override
-	public void efecto(int x, int y, Logica l) {
-		if (l.getTile(x, y).getComponente() != null)
-			l.getTile(x, y).getComponente().restarVida(50);
+	public void efecto(Tile t) {
+		if (t.getComponente() != null)
+			t.getComponente().restarVida(50);
 	}
 	public void accept(PremioManager pm) {
 		pm.visit(this);

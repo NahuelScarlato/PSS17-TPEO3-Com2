@@ -70,4 +70,8 @@ public class Tile {
 	public Logica getLogica(){
 		return miJuego;
 	}
+
+	public Tile getArriba() {
+		return miJuego.getTile(fila-1, columna);
+	}
 }
