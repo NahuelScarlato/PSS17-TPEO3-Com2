@@ -6,6 +6,7 @@ import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.Premios.Peste;
+import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 
 public class Goblin extends Enemigo {
 	//constructor
@@ -34,5 +35,8 @@ public class Goblin extends Enemigo {
 	}
 	public ObjetoNoAtravesable clone(){
 		return new Goblin(new Tile(null,0,0));
+	}
+	public void accept(VisitorWololo vw, Tile t){
+		vw.visit(this, t);
 	}
 }

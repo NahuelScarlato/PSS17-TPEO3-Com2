@@ -2,6 +2,7 @@ package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.*;
+import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 import objeto.noAtravesable.objetoConVida.Premios.Wololo;
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
@@ -33,5 +34,8 @@ public class Brujo extends Enemigo{
 	}
 	public ObjetoNoAtravesable clone(){
 		return new Brujo(new Tile(null, 0, 0));
+	}
+	public void accept(VisitorWololo vw, Tile t){
+		vw.visit(this, t);
 	}
 }

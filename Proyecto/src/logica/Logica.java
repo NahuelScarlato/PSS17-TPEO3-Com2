@@ -6,6 +6,8 @@ import objeto.atravesable.*;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.Premios.Bomba;
 import objeto.noAtravesable.objetoConVida.Premios.Escudo;
+import objeto.noAtravesable.objetoConVida.Premios.Fireball;
+import objeto.noAtravesable.objetoConVida.Premios.Wololo;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 
 
@@ -105,6 +107,12 @@ public class Logica {
 		Escudo e = new Escudo();
 		tablero[0][1].setComponente(e);
 		e.setTile(tablero[0][1]);
+		Fireball f = new Fireball();
+		tablero[0][2].setComponente(f);
+		f.setTile(tablero[0][2]);
+		Wololo w = new Wololo();
+		tablero[0][3].setComponente(w);
+		w.setTile(tablero[0][3]);
 		
 		
 		for (int i = 0; i < filas ; i++){

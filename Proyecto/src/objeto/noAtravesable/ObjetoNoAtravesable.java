@@ -6,6 +6,8 @@ import logica.Tienda;
 import logica.Tile;
 import logica.visitor.Visitor;
 import objeto.atravesable.Agua;
+import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
+import objeto.noAtravesable.objetoConVida.personaje.Aliado;
 
 public abstract class ObjetoNoAtravesable extends Objeto{
 	
@@ -28,6 +30,7 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public void serModificado(Agua a){}
 	public void serNormalizado(Agua a){}
 	public void accept(Visitor v){}
+	public void accept(VisitorWololo vw, Tile t){}
 	public void setState(ObjectState newState){
 		state = newState;
 	}

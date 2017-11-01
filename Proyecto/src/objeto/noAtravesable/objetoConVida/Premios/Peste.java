@@ -17,5 +17,6 @@ public class Peste extends Premio{
 	}
 
 	public void efecto(Tile t) {
+		
 	}
 }

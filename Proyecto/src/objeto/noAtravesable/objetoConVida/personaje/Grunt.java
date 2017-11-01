@@ -6,6 +6,7 @@ import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.Premios.Escudo;
+import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 import logica.*;
 
 public class Grunt extends Enemigo{
@@ -34,5 +35,8 @@ public class Grunt extends Enemigo{
 	}
 	public ObjetoNoAtravesable clone(){
 		return new Grunt(new Tile(null,0,0));
+	}
+	public void accept(VisitorWololo vw, Tile t){
+		vw.visit(this, t);
 	}
 }
