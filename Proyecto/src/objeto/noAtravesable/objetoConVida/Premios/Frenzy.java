@@ -9,15 +9,11 @@ public class Frenzy extends Premio{
 	public Frenzy(){
 		super();
 		image = ImageLoader.pFrenzy;
+		b = PremioManager.frenzy;
 	}
-	@Override
 	public ObjetoNoAtravesable clone() {
 		return new Frenzy();
 	}
-	@Override
 	public void efecto(Tile t) {
-	}
-	public void accept(PremioManager pm) {
-		pm.visit(this);
 	}
 }

@@ -43,6 +43,8 @@ public class Display {
 
 		panel = new PanelTienda(myGame, tienda);
 		
+		PremioManager.init(panel);
+		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width,height));
 		canvas.setMaximumSize(new Dimension(width,height));

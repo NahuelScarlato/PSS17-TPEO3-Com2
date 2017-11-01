@@ -16,6 +16,8 @@ public class EnanoCampeon extends Aliado{
 		image=ImageLoader.campeonEnano;
 		vida=130;
 		maxVida=130;
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
 		impacto=40;

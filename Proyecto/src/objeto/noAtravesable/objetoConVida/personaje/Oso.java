@@ -17,6 +17,8 @@ public class Oso extends Aliado{
 		image=ImageLoader.oso;
 		vida=60;
 		maxVida=60;
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
 		impacto=30;

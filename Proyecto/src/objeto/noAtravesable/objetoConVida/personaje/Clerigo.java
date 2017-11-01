@@ -20,6 +20,8 @@ public class Clerigo extends Aliado {
 		image=ImageLoader.monje;
 		vida=30;
 		maxVida=30;
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
 		impacto=5;

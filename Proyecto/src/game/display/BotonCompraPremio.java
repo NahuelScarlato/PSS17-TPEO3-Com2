@@ -28,7 +28,7 @@ public class BotonCompraPremio extends BotonCompra {
 		addMouseListener(new OyenteCompra());
 		o=ob;
 		setearIcono(i);
-		
+		c=0;
 		JLabel v=new JLabel();
 		v.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -38,10 +38,11 @@ public class BotonCompraPremio extends BotonCompra {
 		c.ipadx=95;
 		c.ipady=45;
 		cant=new JLabel();
-		cant.setText("" + 1);
+		cant.setText("" + this.c);
 		cant.setHorizontalAlignment(JLabel.RIGHT);
 		cant.setVerticalAlignment(JLabel.TOP);
 		cant.setLocation(cant.getX()-10, cant.getY()+10);
+		cant.setVisible(true);
 		v.add(cant,c);
 		v.setVisible(true);
 		add(v);
@@ -50,6 +51,15 @@ public class BotonCompraPremio extends BotonCompra {
 		c++;
 		cant.setText(""+c);
 		p.agregarPremio(this);
+	}
+	public void restarPremio(){
+		c--;
+		cant.setText(""+c);
+		if(c<=0)
+			p.eliminarPremio(this);
+	}
+	public int cantidad(){
+		return c;
 	}
 	
 	private class OyenteCompra implements MouseListener{
@@ -68,10 +78,6 @@ public class BotonCompraPremio extends BotonCompra {
 				if(c>0){
 					Objeto aux=o.clone();
 					p.setPrototype(aux);
-					c--;
-					cant.setText(""+c);
-					if(c==0)
-						p.eliminarPremio((BotonCompraPremio)arg0.getSource());
 				}
 			}
 		}

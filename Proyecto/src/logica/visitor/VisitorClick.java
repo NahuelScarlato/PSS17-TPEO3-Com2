@@ -8,13 +8,6 @@ import objeto.noAtravesable.objetoConVida.personaje.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
 
 public class VisitorClick extends Visitor{
-	//atributos
-	protected PremioManager pm;
-	
-	//constructor
-	public VisitorClick(PremioManager pan){
-		pm=pan;
-	}
 	
 	//metodos
 	public void afectar(Aliado a) {
@@ -30,7 +23,7 @@ public class VisitorClick extends Visitor{
 		omcv.restarVida(1000);
 	}
 	public void afectar(Premio p) {
-		p.accept(pm);
+		p.serClickeado();
 		p.eliminar();
 	}
 

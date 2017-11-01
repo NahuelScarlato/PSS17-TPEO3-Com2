@@ -25,6 +25,8 @@ public class Paladin extends Aliado{
 			image=ImageLoader.paladin;
 			vida=120;
 			maxVida=120;
+			escudo = 0;
+			maxEscudo = (int)(maxVida*0.2);
 			ancho=2;
 			alto=1;
 			impacto=45;

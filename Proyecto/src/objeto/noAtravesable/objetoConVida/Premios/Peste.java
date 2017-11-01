@@ -9,17 +9,13 @@ public class Peste extends Premio{
 	public Peste(){
 		super();
 		image = ImageLoader.pPeste;
+		b = PremioManager.peste;
 	}
 	
-	@Override
 	public ObjetoNoAtravesable clone() {
 		return new Peste();
 	}
 
-	@Override
 	public void efecto(Tile t) {
-	}
-	public void accept(PremioManager pm) {
-		pm.visit(this);
 	}
 }

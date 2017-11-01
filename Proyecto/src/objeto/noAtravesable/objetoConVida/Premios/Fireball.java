@@ -9,17 +9,13 @@ public class Fireball extends Premio{
 	public Fireball(){
 		super();
 		image = ImageLoader.pBolaDeFuego;
+		b = PremioManager.fireball;
 	}
-	@Override
 	public ObjetoNoAtravesable clone() {
 		return new Fireball();
 	}
-	@Override
 	public void efecto(Tile t) {
 		if (t.getComponente() != null)
 			t.getComponente().restarVida(50);
-	}
-	public void accept(PremioManager pm) {
-		pm.visit(this);
 	}
 }

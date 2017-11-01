@@ -48,7 +48,7 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 		graphicsManager = new GraphicsManager(display);
-		v=new VisitorClick(new PremioManager(display.getPanelTienda()));
+		v=new VisitorClick();
 	}
 	
 	private void update(){

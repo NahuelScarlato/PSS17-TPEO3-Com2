@@ -13,10 +13,13 @@ public abstract class Aliado extends Personaje {
 	//atributos
 	protected VisitorAliado v;
 	protected Animation animation;
-	protected int escudo = 0;
+	protected int escudo;
+	protected int maxEscudo;
 	
 	public Aliado(){
 		super();
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		state = stateStatic;
 	}
 	
@@ -37,12 +40,14 @@ public abstract class Aliado extends Personaje {
 		if(escudo > 0){
 			escudo -= v;
 		}
-		if(escudo < 0){
-			vida += escudo;
-			escudo = 0;
-		}
 		else{
-			vida-=v;
+			if(escudo < 0){
+				vida += escudo;
+				escudo = 0;
+			}
+			else{
+				vida-=v;
+			}
 		}
 		if(vida<=0){
 			miTile.destruirAliado(this);
@@ -62,6 +67,7 @@ public abstract class Aliado extends Personaje {
 	public void dibujar(Graphics g){
 		g.drawImage(ImageLoader.vida[1], getTile().getColumna() * 64, getTile().getFila() * 64, 40, 4, null);
 		g.drawImage(ImageLoader.vida[0], getTile().getColumna() * 64, getTile().getFila() * 64, (40*vida)/maxVida, 4, null);
+		g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64)+7, (40*escudo)/maxEscudo, 4, null);
 		state.draw(g, this);
 	}
 	public void agregar(Tienda tien, Tile t){

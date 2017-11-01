@@ -13,6 +13,7 @@ public class Escudo extends Premio{
 		super();
 		visitor = new VisitorEscudo();
 		image = ImageLoader.pEscudo;
+		b = PremioManager.escudo;
 	}
 	public ObjetoNoAtravesable clone() {
 		return new Escudo();
@@ -39,8 +40,4 @@ public class Escudo extends Premio{
 		if (y != 5 && t.getRight().getComponente()!=null)
 			t.getRight().getComponente().accept(visitor);
 	}
-	public void accept(PremioManager pm) {
-		pm.visit(this);
-	}
-
 }

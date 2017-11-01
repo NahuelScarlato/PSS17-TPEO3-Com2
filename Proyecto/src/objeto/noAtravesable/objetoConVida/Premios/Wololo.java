@@ -9,15 +9,11 @@ public class Wololo extends Premio{
 	public Wololo(){
 		super();
 		image = ImageLoader.pWololo;
+		b = PremioManager.wololo;
 	}
-	@Override
 	public ObjetoNoAtravesable clone() {
 		return new Wololo();
 	}
-	@Override
 	public void efecto(Tile t) {
-	}
-	public void accept(PremioManager pm) {
-		pm.visit(this);
 	}
 }

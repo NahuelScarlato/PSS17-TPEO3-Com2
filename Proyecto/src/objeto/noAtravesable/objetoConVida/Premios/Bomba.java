@@ -9,6 +9,7 @@ public class Bomba extends Premio{
 	public Bomba(){
 		super();
 		image = ImageLoader.pBomba;
+		b = PremioManager.bomba;
 	}
 	public ObjetoNoAtravesable clone() {
 		return new Bomba();
@@ -25,8 +26,4 @@ public class Bomba extends Premio{
 		if (t.getFila() != 5 && t.getAbajo().getComponente() != null)
 			t.getAbajo().getComponente().restarVida(35);
 	}
-	public void accept(PremioManager pm) {
-		pm.visit(this);
-	}
-
 }

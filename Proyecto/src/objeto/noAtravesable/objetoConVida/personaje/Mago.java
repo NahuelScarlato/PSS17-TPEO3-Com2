@@ -16,6 +16,8 @@ public class Mago extends Aliado {
 		image=ImageLoader.mago;
 		vida=40;
 		maxVida=40;
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
 		impacto=10;

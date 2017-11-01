@@ -17,6 +17,8 @@ public class Arquero extends Aliado{
 			image=ImageLoader.arquero;
 			vida=50;
 			maxVida=50;
+			escudo = 0;
+			maxEscudo = (int)(maxVida*0.2);
 			ancho=1;
 			alto=1;
 			impacto=25;

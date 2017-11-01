@@ -17,6 +17,8 @@ public class Espadachin extends Aliado{
 		image=ImageLoader.espadachin;
 		vida=65;
 		maxVida=65;
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
 		impacto=30;
