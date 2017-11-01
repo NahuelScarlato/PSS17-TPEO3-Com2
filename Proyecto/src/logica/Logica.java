@@ -10,12 +10,12 @@ import objeto.noAtravesable.objetoConVida.Premios.Fireball;
 import objeto.noAtravesable.objetoConVida.Premios.Wololo;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 
-
 public class Logica {
 	//atributos
 	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar, enemigosAAgregar;
 	protected LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
 	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
+	protected LinkedList<ObjetoTemporal> objetosTemporales, objetosTemporalesABorrar;
 	protected Tienda tienda;
 	protected int score;
 	protected Tile[][] tablero;
@@ -35,6 +35,9 @@ public class Logica {
 		aliadosAAgregar = new LinkedList<Aliado>();
 		listaAtravesables = new LinkedList<ObjetoAtravesable>();
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
+		objetosTemporales = new LinkedList<ObjetoTemporal>();
+		objetosTemporalesABorrar = new LinkedList<ObjetoTemporal>();
+		
 	}
 	
 	public static Logica getLogica(){
@@ -65,6 +68,15 @@ public class Logica {
 	public void agregarAtravesableABorrar(ObjetoAtravesable oa){
 		atravesablesABorrar.addLast(oa);
 	}
+	
+	public void agregarObjetoTemporal(ObjetoTemporal obj){
+		objetosTemporales.addLast(obj);
+	}
+	
+	public void agregarObjetoTemporalABorrar(ObjetoTemporal obj){
+		objetosTemporalesABorrar.addLast(obj);
+	}
+	
 	private void agregarObjetos(){
 		for(Aliado a : aliadosAAgregar){
 			listaAliados.addLast(a);
@@ -76,6 +88,10 @@ public class Logica {
 		enemigosAAgregar = new LinkedList<Enemigo>();
 	}
 	public void eliminarObjetos(){
+		for (ObjetoTemporal obj : objetosTemporalesABorrar){
+			objetosTemporales.remove(obj);
+		}
+		objetosTemporalesABorrar = new LinkedList<ObjetoTemporal>();
 		for (Aliado a : aliadosABorrar){
 			listaAliados.remove(a);
 		}
@@ -143,6 +159,9 @@ public class Logica {
 	}
 	
 	public void actualizar(){
+		for(ObjetoTemporal obj: objetosTemporales){
+			obj.decrementarReloj();
+		}
 		eliminarObjetos();
 		for(Aliado a:listaAliados){
 			if(a.getTile().getColumna()!=0){

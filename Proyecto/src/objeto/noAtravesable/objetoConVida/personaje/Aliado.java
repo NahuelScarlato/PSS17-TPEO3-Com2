@@ -31,6 +31,7 @@ public abstract class Aliado extends Personaje {
 	}
 	public void crearEscudo(){
 		escudo=(int)(maxVida*0.2);
+		maxEscudo = (int)(maxVida*0.2);
 	}
 	public Animation getAnimation(){
 		return animation;
@@ -58,6 +59,16 @@ public abstract class Aliado extends Personaje {
 			vida=maxVida;
 	}
 	
+	public void modificarAtaque(float modVelAtk){
+		velocidadAt = (modVelAtk * velAtMaxima);
+		animation.setAtkSpeed(velocidadAt);
+	}
+	
+	public void normalizarAtaque(){
+		velocidadAt = velAtMaxima;
+		animation.setAtkSpeed(velocidadAt);
+	}	
+	
 	public void accept(Visitor o){
 		o.afectar(this);
 	}
@@ -68,6 +79,7 @@ public abstract class Aliado extends Personaje {
 		g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64)+7, (40*escudo)/maxEscudo, 4, null);
 		state.draw(g, this);
 	}
+	
 	public void agregar(Tienda tien, Tile t){
 		super.agregar(tien, t);
 		tien.comprar(this);
