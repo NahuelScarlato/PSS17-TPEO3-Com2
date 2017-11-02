@@ -7,7 +7,7 @@ import game.gfx.ImageLoader;
 import logica.Tile;
 import logica.visitor.VisitorFrenzy;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.Aliado;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objetosTemporales.EfectoFrenzy;
 
 public class Frenzy extends Premio{
