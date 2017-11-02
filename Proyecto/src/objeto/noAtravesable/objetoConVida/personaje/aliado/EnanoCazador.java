@@ -29,9 +29,7 @@ public class EnanoCazador extends Aliado {
 	}
 	
 	public void agregar(Tienda tien, Tile t){
-		miTile=t;
-		t.setComponente(this);
-		animation.setPos(t.getColumna(), t.getFila());
+		super.agregar(tien, t);
 		if(t.getFila()!=5 && t.getAbajo().getComponente()==null){
 			Tile abajo=t.getAbajo();
 			Oso o= new Oso(abajo);

@@ -65,6 +65,7 @@ public class Paladin extends Aliado{
 					segundo.setComponente(this);
 				}
 				tien.comprar(this);
+				animation.setPos(t.getColumna(), t.getFila());
 			}
 		}
 		public ObjetoNoAtravesable clone(){

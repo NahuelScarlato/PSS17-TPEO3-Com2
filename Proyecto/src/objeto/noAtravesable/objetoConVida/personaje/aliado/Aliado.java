@@ -82,9 +82,11 @@ public abstract class Aliado extends Personaje {
 	}
 	
 	public void agregar(Tienda tien, Tile t){
-		super.agregar(tien, t);
-		tien.comprar(this);
-		animation.setPos(t.getColumna(), t.getFila());
+		if(t.getComponente()==null){
+			super.agregar(tien, t);
+			tien.comprar(this);
+			animation.setPos(t.getColumna(), t.getFila());
+		}
 	}
 	
 	public void setTile(Tile t){
