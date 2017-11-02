@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje.aliado;
+package objeto.noAtravesable.objetoConVida.personaje;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;

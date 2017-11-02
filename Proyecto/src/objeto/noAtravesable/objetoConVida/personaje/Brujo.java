@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje.enemigo;
+package objeto.noAtravesable.objetoConVida.personaje;
 import logica.*;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.*;

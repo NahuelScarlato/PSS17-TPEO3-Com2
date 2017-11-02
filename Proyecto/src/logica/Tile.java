@@ -3,8 +3,6 @@ package logica;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.personaje.*;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 import objeto.atravesable.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 

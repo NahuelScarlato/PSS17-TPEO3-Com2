@@ -7,7 +7,7 @@ import logica.Tile;
 import logica.visitor.Visitor;
 import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
+import objeto.noAtravesable.objetoConVida.personaje.Aliado;
 
 public abstract class ObjetoNoAtravesable extends Objeto{
 	

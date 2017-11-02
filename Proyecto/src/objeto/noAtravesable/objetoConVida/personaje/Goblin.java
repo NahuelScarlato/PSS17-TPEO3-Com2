@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje.enemigo;
+package objeto.noAtravesable.objetoConVida.personaje;
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 import logica.*;
