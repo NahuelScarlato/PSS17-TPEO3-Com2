@@ -15,6 +15,7 @@ public class EnanoCazador extends Aliado {
 		velAtMaxima=1.1f;
 		t.setComponente(this);
 		image=ImageLoader.cazadorEnano;
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.dwarfHunterAtk);
 		vida=50;
 		maxVida=50;
 		escudo = 0;
@@ -25,18 +26,19 @@ public class EnanoCazador extends Aliado {
 		alcance=4;
 		valor=75;
 		v=new VisitorAliado(this);
-		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
 	}
 	
 	public void agregar(Tienda tien, Tile t){
 		miTile=t;
 		t.setComponente(this);
+		animation.setPos(t.getColumna(), t.getFila());
 		if(t.getFila()!=5 && t.getAbajo().getComponente()==null){
 			Tile abajo=t.getAbajo();
 			Oso o= new Oso(abajo);
 			tien.comprar(o);
 		}
 		tien.comprar(this);
+		tien.getPanel().setPrototype(null);
 	}
 	
 	public ObjetoNoAtravesable clone(){

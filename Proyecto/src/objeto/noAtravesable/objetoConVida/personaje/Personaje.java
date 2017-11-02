@@ -42,6 +42,5 @@ public abstract class Personaje extends ObjetoConVida{
 	public void aumentarReloj(){
 		reloj=(reloj+1)%(int)(velocidadAt*60);
 	}
-
 	
 }

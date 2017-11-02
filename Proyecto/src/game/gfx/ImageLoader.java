@@ -99,10 +99,11 @@ public class ImageLoader {
 		mageAtk[1] = mago;
 		mageAtk[2] = mago;
 		mageAtk[3] = mago;
-		dwarfHunterAtk[0] = cazadorEnano;
-		dwarfHunterAtk[1] = cazadorEnano;
-		dwarfHunterAtk[2] = cazadorEnano;
-		dwarfHunterAtk[3] = cazadorEnano;
+		sheet = loadImage("/Textures/Animations/DwarfHunter attack.png");
+		dwarfHunterAtk[0] = sheet.getSubimage(0, 0, 64, 64);
+		dwarfHunterAtk[1] = sheet.getSubimage(64, 0, 64, 64);
+		dwarfHunterAtk[2] = sheet.getSubimage(128, 0, 64, 64);
+		dwarfHunterAtk[3] = sheet.getSubimage(192, 0, 64, 64);
 		warlockAtk[0] = brujo;
 		warlockAtk[1] = brujo;
 		warlockAtk[2] = brujo;
