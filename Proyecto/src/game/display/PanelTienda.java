@@ -9,14 +9,7 @@ import logica.Objeto;
 import logica.Portal;
 import logica.Tienda;
 import logica.Tile;
-import objeto.noAtravesable.objetoConVida.personaje.Arquero;
-import objeto.noAtravesable.objetoConVida.personaje.Clerigo;
-import objeto.noAtravesable.objetoConVida.personaje.Druida;
-import objeto.noAtravesable.objetoConVida.personaje.EnanoCampeon;
-import objeto.noAtravesable.objetoConVida.personaje.EnanoCazador;
-import objeto.noAtravesable.objetoConVida.personaje.Espadachin;
-import objeto.noAtravesable.objetoConVida.personaje.Mago;
-import objeto.noAtravesable.objetoConVida.personaje.Paladin;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.*;
 
 import javax.swing.JLabel;
 

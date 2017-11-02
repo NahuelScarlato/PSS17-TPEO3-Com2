@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje;
+package objeto.noAtravesable.objetoConVida.personaje.aliado;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
@@ -6,28 +6,27 @@ import logica.Tile;
 import logica.visitor.VisitorAliado;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
-public class Oso extends Aliado{
-	//constructor
-	public Oso(Tile t){
+public class Treant extends Aliado{
+	public Treant(Tile t){
 		super();
 		miTile=t;
-		velocidadAt=1.6f;
-		velAtMaxima=1.6f;
 		t.setComponente(this);
-		image=ImageLoader.oso;
-		vida=60;
-		maxVida=60;
+		velocidadAt=1.8f;
+		velAtMaxima=1.8f;
+		image=ImageLoader.treant;
+		vida=100;
+		maxVida=100;
 		escudo = 0;
 		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
-		impacto=30;
+		impacto=15;
 		alcance=1;
 		valor=0;
 		v=new VisitorAliado(this);
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.mageAtk);
 	}
 	public ObjetoNoAtravesable clone(){
-		return new Oso(new Tile(null, 0, 0));
+		return new EnanoCampeon(new Tile(null, 0, 0));
 	}
 }

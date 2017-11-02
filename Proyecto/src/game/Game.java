@@ -8,6 +8,8 @@ import logica.visitor.Visitor;
 import logica.visitor.VisitorClick;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.*;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.*;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.*;
 import game.display.Display;
 import game.display.PremioManager;
 import game.gfx.GameGraphics;

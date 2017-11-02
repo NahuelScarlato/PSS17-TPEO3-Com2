@@ -4,6 +4,7 @@ import game.display.PanelTienda;
 import objeto.atravesable.ObjetoAtravesable;
 import objeto.noAtravesable.objetoConVida.OTConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.*;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public class Tienda {
 	//atributos

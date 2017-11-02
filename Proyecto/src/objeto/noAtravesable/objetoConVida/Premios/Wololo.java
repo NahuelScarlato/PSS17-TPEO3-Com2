@@ -4,7 +4,6 @@ import game.display.PremioManager;
 import game.gfx.ImageLoader;
 import logica.Tile;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.Aliado;
 
 public class Wololo extends Premio{
 	//atributos
