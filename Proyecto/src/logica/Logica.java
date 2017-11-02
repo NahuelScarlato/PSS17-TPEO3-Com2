@@ -3,6 +3,7 @@ package logica;
 import java.util.LinkedList;
 import java.util.Random;
 import objeto.atravesable.*;
+import objeto.noAtravesable.ObjectStateStatic;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.Premios.Bomba;
 import objeto.noAtravesable.objetoConVida.Premios.Escudo;
@@ -173,9 +174,10 @@ public class Logica {
 		}
 		eliminarObjetos();
 		for(Aliado a:listaAliados){
+			boolean encontre = false;
 			if(a.getTile().getColumna()!=0){
 				Tile actual = a.getTile().getLeft();
-				boolean encontre = false;
+				
 				for(int i=0; !encontre && actual.getColumna()!=0 && i<a.getAlcance(); i++){
 					if(actual.getComponente()!=null){
 						a.atacar(actual.getComponente());
@@ -184,6 +186,8 @@ public class Logica {
 					actual=actual.getLeft();
 				}
 			}
+			if (!encontre)
+				a.setState(new ObjectStateStatic());
 			a.aumentarReloj();
 			eliminarObjetos();
 		}
