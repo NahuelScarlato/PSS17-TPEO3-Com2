@@ -64,7 +64,8 @@ public class Frenzy extends Premio{
 		if (y != 11 && t.getRight().getComponente()!=null)
 			t.getRight().getComponente().accept(visitor);
 		
-		efecto = new EfectoFrenzy(300, logica, 1.2f, lista);
+		efecto = new EfectoFrenzy(300, 2.0f, lista);
+		efecto.efectoInicial();
 	}
 	
 }

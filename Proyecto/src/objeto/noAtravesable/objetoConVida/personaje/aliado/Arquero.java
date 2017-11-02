@@ -21,7 +21,7 @@ public class Arquero extends Aliado{
 			maxEscudo = (int)(maxVida*0.2);
 			ancho=1;
 			alto=1;
-			impacto=25;
+			impacto=5;
 			alcance=3;
 			valor=40;
 			v=new VisitorAliado(this);

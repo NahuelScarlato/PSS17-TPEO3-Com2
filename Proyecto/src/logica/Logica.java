@@ -7,6 +7,7 @@ import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.Premios.Bomba;
 import objeto.noAtravesable.objetoConVida.Premios.Escudo;
 import objeto.noAtravesable.objetoConVida.Premios.Fireball;
+import objeto.noAtravesable.objetoConVida.Premios.Frenzy;
 import objeto.noAtravesable.objetoConVida.Premios.Wololo;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
@@ -131,6 +132,12 @@ public class Logica {
 		Wololo w = new Wololo();
 		tablero[0][3].setComponente(w);
 		w.setTile(tablero[0][3]);
+		Frenzy fr = new Frenzy();
+		tablero[0][4].setComponente(fr);
+		fr.setTile(tablero[0][4]);
+		Frenzy fre = new Frenzy();
+		tablero[0][5].setComponente(fre);
+		fre.setTile(tablero[0][5]);
 		
 		
 		for (int i = 0; i < filas ; i++){

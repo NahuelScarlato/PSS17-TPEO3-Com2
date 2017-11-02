@@ -61,7 +61,7 @@ public abstract class Aliado extends Personaje {
 	}
 	
 	public void modificarAtaque(float modVelAtk){
-		velocidadAt = (modVelAtk * velAtMaxima);
+		velocidadAt = (velAtMaxima / modVelAtk);
 		animation.setAtkSpeed(velocidadAt);
 	}
 	

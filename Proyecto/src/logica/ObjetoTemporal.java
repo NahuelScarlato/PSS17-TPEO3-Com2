@@ -3,17 +3,18 @@ package logica;
 public abstract class ObjetoTemporal {
 
 	protected int reloj;
-	protected Logica logica;
+	protected static Logica logica = Logica.getLogica();
 	
-	public ObjetoTemporal(int reloj, Logica logica){
+	public ObjetoTemporal(int reloj){
 		this.reloj = reloj;
-		this.logica = logica;
-		this.logica.agregarObjetoTemporal(this);
+		logica.agregarObjetoTemporal(this);
 	}
 	
-	protected abstract void efecto();
+	public abstract void efectoInicial();
 	
-	protected abstract void efectoFinal();
+	public abstract void efecto();
+	
+	public abstract void efectoFinal();
 	
 	public void decrementarReloj(){
 		reloj--;
