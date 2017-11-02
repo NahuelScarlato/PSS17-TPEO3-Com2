@@ -28,6 +28,7 @@ public abstract class Premio extends ObjetoNoAtravesable{
 	
 	public void restarVida(int n){}
 	public abstract void efecto(Tile t);
+	
 	public void agregar(Tienda tien, Tile t){
 		efecto(t);
 		b.restarPremio();

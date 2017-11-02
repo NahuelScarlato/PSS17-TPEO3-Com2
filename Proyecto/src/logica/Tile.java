@@ -55,6 +55,9 @@ public class Tile {
 		componente = null;
 		miJuego.agregarAliadoABorrar(a);
 	}
+	public void agregarAliado(Aliado a){
+		miJuego.agregarAliado(a);
+	}
 	public void destruirEnemigo(Enemigo e){
 		componente = null;
 		e.dropear();
