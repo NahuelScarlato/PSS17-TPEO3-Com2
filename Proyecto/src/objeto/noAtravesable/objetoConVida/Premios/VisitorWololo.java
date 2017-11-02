@@ -2,8 +2,6 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import logica.Tile;
 import objeto.noAtravesable.objetoConVida.personaje.*;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.*;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.*;
 
 public class VisitorWololo {
 	public void visit(Goblin g, Tile t){

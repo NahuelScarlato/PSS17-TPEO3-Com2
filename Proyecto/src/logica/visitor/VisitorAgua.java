@@ -4,8 +4,8 @@ import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
+import objeto.noAtravesable.objetoConVida.personaje.Aliado;
+import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
 
 public class VisitorAgua extends Visitor{
 	//atributos

@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje.enemigo;
+package objeto.noAtravesable.objetoConVida.personaje;
 
 import logica.*;
 import logica.visitor.*;
@@ -6,7 +6,6 @@ import objeto.noAtravesable.ObjectState;
 import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
-import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
 import java.awt.Graphics;
 import java.util.Random;

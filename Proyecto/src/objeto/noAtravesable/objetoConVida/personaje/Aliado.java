@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje.aliado;
+package objeto.noAtravesable.objetoConVida.personaje;
 
 import java.awt.Graphics;
 
@@ -8,7 +8,6 @@ import logica.Tienda;
 import logica.Tile;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
 public abstract class Aliado extends Personaje {
 	//atributos
