@@ -1,4 +1,4 @@
-package objeto.noAtravesable.objetoConVida.personaje;
+package objeto.noAtravesable.objetoConVida.personaje.aliado;
 
 import java.util.Random;
 

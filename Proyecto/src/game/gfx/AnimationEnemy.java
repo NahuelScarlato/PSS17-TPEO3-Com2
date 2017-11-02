@@ -3,7 +3,7 @@ package game.gfx;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
 public class AnimationEnemy extends Animation {
 

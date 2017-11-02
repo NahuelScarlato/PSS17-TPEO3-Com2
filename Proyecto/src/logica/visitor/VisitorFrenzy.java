@@ -4,8 +4,8 @@ import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.Premios.Frenzy;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
-import objeto.noAtravesable.objetoConVida.personaje.Aliado;
-import objeto.noAtravesable.objetoConVida.personaje.Enemigo;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
 public class VisitorFrenzy extends Visitor {
 
