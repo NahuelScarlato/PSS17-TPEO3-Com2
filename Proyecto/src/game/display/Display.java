@@ -83,7 +83,14 @@ public class Display {
 			myGame.interaccion(e.getX(), e.getY());
 	}
 	
-
+/* PSS */
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+/* PSS */
+	
 	public void actualizarPuntaje(int p){
 		panel.actualizarPuntaje(p, tienda.getMonedas());
 	}

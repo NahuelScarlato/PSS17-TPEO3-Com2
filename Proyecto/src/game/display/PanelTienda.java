@@ -17,6 +17,7 @@ import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCazador;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Espadachin;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Mago;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Paladin;
+import sun.audio.AudioPlayer;
 
 import javax.swing.JLabel;
 
@@ -30,6 +31,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
 public class PanelTienda extends JPanel {
@@ -97,9 +99,9 @@ public class PanelTienda extends JPanel {
 		cs.ipadx=0;
 		cs.ipady=10;
 		cs.fill=GridBagConstraints.BOTH;
-		
+
 		JLabel labelHumanos = new JLabel("Humanos", JLabel.CENTER);
-		
+
 		panelHumanos.add(labelHumanos, cs);
 		
 		cs.gridy=1;
@@ -108,8 +110,9 @@ public class PanelTienda extends JPanel {
 		cs.ipady=0;
 		
 		JPanel panelPersonajesHumanos= new JPanel(new GridLayout(3, 2));
+
 		personajesHumanos = new BotonCompraPersonaje[5];
-		
+
 		BotonCompraPersonaje mago = new BotonCompraPersonaje(this, ImageLoader.mago, new Mago(new Tile(null, 0, 0)));
 		BotonCompraPersonaje espadachin = new BotonCompraPersonaje(this, ImageLoader.espadachin, new Espadachin(new Tile(null, 0, 0)));
 		BotonCompraPersonaje paladin = new BotonCompraPersonaje(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
@@ -341,6 +344,36 @@ public class PanelTienda extends JPanel {
 			}
 		});
 		
+/* PSS */
+		
+		conScroll.gridy++;
+		
+		JButton btnAcercaDe = new JButton("Acerca de");
+		pScroll.add(btnAcercaDe,conScroll);
+		
+		btnAcercaDe.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFrame fAcercaDe = new AcercaDe();
+				fAcercaDe.setVisible(true);
+			}
+		});
+		
+		conScroll.gridy++;
+		
+		JButton btnSalir = new JButton("Salir");
+		pScroll.add(btnSalir,conScroll);
+		
+		btnAcercaDe.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				myGame.stop();
+			}
+		});
+
+/* PSS */
 		
 		add(scrollPane, c);
 		
