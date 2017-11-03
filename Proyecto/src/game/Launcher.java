@@ -10,7 +10,6 @@ public class Launcher {
 		InputStream in = new FileInputStream(audio);
 		AudioStream music = new AudioStream(in);
 		Game game = new Game("Juegazo", 768 , 384);
-		
 		game.start();
 		AudioPlayer.player.start(music);
 	}
