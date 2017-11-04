@@ -7,7 +7,6 @@ import logica.*;
 import logica.visitor.Visitor;
 import logica.visitor.VisitorClick;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCazador;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Mago;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
@@ -15,7 +14,6 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Grunt;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 import game.display.Display;
-import game.display.PremioManager;
 import game.gfx.GameGraphics;
 import game.gfx.GraphicsManager;
 import game.gfx.ImageLoader;
@@ -39,12 +37,15 @@ public class Game implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
+	private Boolean idioma;
+	
 	//Variables de prueba
 	
 	public Game(String title, int width, int height){
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		idioma=true;
 	}
 	
 	private void init(){
@@ -57,11 +58,22 @@ public class Game implements Runnable{
 		v=new VisitorClick();
 	}
 	
+	public void changeIdioma() {
+		idioma = !idioma;
+		if(idioma)
+			title="Juegazo";
+		else
+			title="Great Game";
+		display.changeIdioma(idioma);
+		
+	}
+
 	private void update(){
 		myLogic.actualizar();
 		display.actualizarPuntaje(myLogic.getScore());
 	}
 	
+	@SuppressWarnings("unused")
 	private void render(){
 		bs = display.getCanvas().getBufferStrategy();
 		if(bs == null){
@@ -178,5 +190,9 @@ public class Game implements Runnable{
 	
 	public Logica getLogica(){
 		return myLogic;
+	}
+	
+	public Display getDisplay() {
+		return display;
 	}
 }

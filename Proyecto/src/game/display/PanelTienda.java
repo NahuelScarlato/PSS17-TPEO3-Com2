@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import game.Game;
+import game.Ranking;
 import game.gfx.ImageLoader;
 import logica.Objeto;
 import logica.Portal;
@@ -27,9 +28,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
 public class PanelTienda extends JPanel {
@@ -42,14 +46,35 @@ public class PanelTienda extends JPanel {
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
-
+	
+	//modificacion para version 2.0
+		protected Ranking ranking;
+	//fin
+		
+	/* PSS */	
+		protected JLabel labelHumanos;
+		protected JLabel labelElfos;
+		protected JLabel labelEnanos;
+		protected JLabel labelOT;
+		protected JLabel labelPremios;
+		protected JButton botonAliados;
+		protected JButton botonEnemigos;
+		protected JButton btnAcercaDe;
+		protected JButton btnSalir;
+		private Boolean idioma;
+	/* PSS */
+		
 	/**
 	 * Create the panel.
 	 */
 	public PanelTienda(Game g, Tienda t) {
 		myGame=g;
 		
+		idioma=true;
 		t.setPanel(this);
+		//modificacion para version 1.2
+		ranking= new Ranking();
+		//fin
 		
 		botones=new LinkedList<BotonCompra>();
 		
@@ -63,7 +88,7 @@ public class PanelTienda extends JPanel {
 		c.ipady=30;
 		c.fill=GridBagConstraints.BOTH;
 
-		labelPuntaje = new JLabel("Score: 0   Coins:0");
+		labelPuntaje = new JLabel("Puntaje: 0    Monedas: 0");
 		labelPuntaje.setHorizontalAlignment(JLabel.CENTER);
 		add(labelPuntaje, c);
 		
@@ -97,9 +122,9 @@ public class PanelTienda extends JPanel {
 		cs.ipadx=0;
 		cs.ipady=10;
 		cs.fill=GridBagConstraints.BOTH;
-		
-		JLabel labelHumanos = new JLabel("Humans", JLabel.CENTER);
-		
+
+		labelHumanos = new JLabel("Humanos", JLabel.CENTER);
+
 		panelHumanos.add(labelHumanos, cs);
 		
 		cs.gridy=1;
@@ -147,7 +172,7 @@ public class PanelTienda extends JPanel {
 		c1.ipady=10;
 		c1.fill=GridBagConstraints.BOTH;
 		
-		JLabel labelElfos = new JLabel("Elfs", JLabel.CENTER);
+		labelElfos = new JLabel("Elfos", JLabel.CENTER);
 		
 		panelElfos.add(labelElfos, c1);
 		
@@ -173,7 +198,7 @@ public class PanelTienda extends JPanel {
 			}
 			
 			panelCompraElfos = new JPanel(new GridLayout(1,1));
-			BotonCompraAlianza b = new BotonCompraAlianza(this, 100, "elfs");
+			BotonCompraAlianza b = new BotonCompraAlianza(this, 100, "elfos");
 			panelCompraElfos.add(b);
 			botones.addLast(b);
 		
@@ -201,7 +226,7 @@ public class PanelTienda extends JPanel {
 		c2.ipady=10;
 		c2.fill=GridBagConstraints.BOTH;
 		
-		JLabel labelEnanos = new JLabel("Dwarf", JLabel.CENTER);
+		labelEnanos = new JLabel("Enanos", JLabel.CENTER);
 		
 		panelEnanos.add(labelEnanos, c2);
 		
@@ -229,7 +254,7 @@ public class PanelTienda extends JPanel {
 			}
 			
 			panelCompraEnanos = new JPanel(new GridLayout(1,1));
-			BotonCompraAlianza b1 = new BotonCompraAlianza(this, 200, "Dwarfs");
+			BotonCompraAlianza b1 = new BotonCompraAlianza(this, 200, "enanos");
 			panelCompraEnanos.add(b1);
 			botones.addLast(b1);
 		
@@ -257,7 +282,7 @@ public class PanelTienda extends JPanel {
 		c3.ipady=10;
 		c3.fill=GridBagConstraints.BOTH;
 		
-		JLabel labelOT = new JLabel("Objects", JLabel.CENTER);
+		labelOT = new JLabel("Objetos", JLabel.CENTER);
 		
 		panelOT.add(labelOT, c3);
 		
@@ -301,7 +326,7 @@ public class PanelTienda extends JPanel {
 		c4.ipady=10;
 		c4.fill=GridBagConstraints.BOTH;
 		
-		JLabel labelPremios = new JLabel("Rewards", JLabel.CENTER);
+		labelPremios = new JLabel("Premios", JLabel.CENTER);
 		
 		panelPremios.add(labelPremios, c4);
 		
@@ -320,7 +345,7 @@ public class PanelTienda extends JPanel {
 		
 		conScroll.gridy=5;
 
-		JButton botonAliados = new JButton("Add ally");
+		botonAliados = new JButton("Agregar aliado");
 		pScroll.add(botonAliados, conScroll);
 		
 		conScroll.gridy=6;
@@ -331,7 +356,7 @@ public class PanelTienda extends JPanel {
 			}
 		});
 		
-		JButton botonEnemigos = new JButton("Add enemy");
+		botonEnemigos = new JButton("Agregar enemigos");
 		pScroll.add(botonEnemigos, conScroll);
 		botonEnemigos.addActionListener(new ActionListener() {
 			
@@ -342,6 +367,65 @@ public class PanelTienda extends JPanel {
 		});
 		
 		
+		
+/* PSS */
+		
+		conScroll.gridy++;
+		JButton btnRanking = new JButton("Ranking");
+		btnRanking.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				mostrarRanking();
+				
+			}
+		});
+		pScroll.add(btnRanking,conScroll);
+			
+		
+		conScroll.gridy++;
+		JButton btnLanguage = new JButton("Español <=> English");
+		pScroll.add(btnLanguage, conScroll);
+		
+		btnLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				myGame.changeIdioma();
+				myGame.getDisplay().getFrame().repaint();
+			}
+		});
+		
+		add(scrollPane, c);
+		
+		
+		conScroll.gridy++;
+		
+		btnAcercaDe = new JButton("Acerca de");
+		pScroll.add(btnAcercaDe,conScroll);
+		
+		btnAcercaDe.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFrame fAcercaDe = new AcercaDe();
+				fAcercaDe.setVisible(true);
+			}
+		});
+		
+		conScroll.gridy++;
+		
+		btnSalir = new JButton("Salir");
+		pScroll.add(btnSalir,conScroll);
+		
+		btnSalir.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				
+			}
+		});
+
+/* PSS */
+		
 		add(scrollPane, c);
 		
 	}
@@ -350,7 +434,10 @@ public class PanelTienda extends JPanel {
 		for(BotonCompra b: botones){
 			b.setearComprable(m);
 		}
-		labelPuntaje.setText("Score: "+p+"   Coins: "+m);
+		if(idioma)
+			labelPuntaje.setText("Puntaje: "+p+"   Monedas: "+m);
+		else
+			labelPuntaje.setText("Score: "+p+"   Coins: "+m);
 	}
 	public void setPrototype(Objeto ob){
 		prototipo=ob;
@@ -359,14 +446,14 @@ public class PanelTienda extends JPanel {
 		return prototipo;
 	}
 	public void comprarAlianza(String al, int val){
-		if(al.equals("elfs")){
+		if(al.equals("elfos")){
 			personajesElfos[0].setVisible(true);
 			personajesElfos[0].setEnabled(true);
 			panelCompraElfos.setVisible(false);
 			panelElves.remove(panelCompraElfos);
 			panelElves.add(panelPersonajesElfos);
 		}
-		else if(al.equals("Dwarfs")){
+		else if(al.equals("enanos")){
 			for(JLabel b: personajesEnanos){
 				b.setVisible(true);
 				b.setEnabled(true);
@@ -383,4 +470,43 @@ public class PanelTienda extends JPanel {
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
 	}
+	// Modificacion para la version 1.2
+		/**
+		 * Muestra el Ranking de mejores jugadores.
+		 */
+		public void mostrarRanking() {
+			ranking.mostrar();		
+		}	
+		//fin
+
+		public void changeIdioma(Boolean idioma) {
+			this.idioma=idioma;
+			if(this.idioma){
+				labelPuntaje.setText("Puntaje: 0    Monedas: 0");
+				labelHumanos.setText("Humanos");
+				labelElfos.setText("Elfos");
+				labelEnanos.setText("Enanos");
+				labelOT.setText("Objetos");
+				labelPremios.setText("Premios");
+				botonAliados.setText("Agregar aliado");
+				botonEnemigos.setText("Agregar enemigos");
+				btnAcercaDe.setText("Acerca de");
+				btnSalir.setText("Salir");
+				
+			}
+			else{
+				labelPuntaje.setText("Score: 0    Coins: 0");
+				labelHumanos.setText("Humans");
+				labelElfos.setText("Elves");
+				labelEnanos.setText("Dwarves");
+				labelOT.setText("Objects");
+				labelPremios.setText("Rewards");
+				botonAliados.setText("Add ally");
+				botonEnemigos.setText("Add enemy");
+				btnAcercaDe.setText("About");
+				btnSalir.setText("Exit");
+				
+			}
+			
+		}
 }

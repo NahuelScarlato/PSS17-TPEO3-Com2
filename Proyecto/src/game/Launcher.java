@@ -9,7 +9,7 @@ public class Launcher {
 		String audio = "nix.wav";
 		InputStream in = new FileInputStream(audio);
 		AudioStream music = new AudioStream(in);
-		Game game = new Game("Very good Game", 768 , 384);
+		Game game = new Game("Juegazo", 768 , 384);
 		
 		game.start();
 		AudioPlayer.player.start(music);

@@ -83,7 +83,27 @@ public class Display {
 			myGame.interaccion(e.getX(), e.getY());
 	}
 	
-
+/* PSS */
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+	public void changeIdioma(Boolean idioma){
+		if(idioma){
+			title="Juegazo";
+			frame.setTitle("Juegazo");
+		}
+		else{
+			title="Great Game";
+			frame.setTitle("Great Game");
+		}
+		
+		panel.changeIdioma(idioma);
+	}
+	
+/* PSS */
+	
 	public void actualizarPuntaje(int p){
 		panel.actualizarPuntaje(p, tienda.getMonedas());
 	}
