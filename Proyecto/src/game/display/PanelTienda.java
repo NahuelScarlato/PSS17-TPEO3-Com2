@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import game.Game;
+import game.Ranking;
 import game.gfx.ImageLoader;
 import logica.Objeto;
 import logica.Portal;
@@ -22,12 +23,16 @@ import sun.audio.AudioPlayer;
 import javax.swing.JLabel;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 
 import javax.swing.JButton;
@@ -44,6 +49,9 @@ public class PanelTienda extends JPanel {
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
+	//modificacion para version 2.0
+		protected Ranking ranking;
+	//fin
 
 	/**
 	 * Create the panel.
@@ -52,6 +60,9 @@ public class PanelTienda extends JPanel {
 		myGame=g;
 		
 		t.setPanel(this);
+		//modificacion para version 1.2
+		ranking= new Ranking();
+		//fin
 		
 		botones=new LinkedList<BotonCompra>();
 		
@@ -344,7 +355,21 @@ public class PanelTienda extends JPanel {
 			}
 		});
 		
+		
+		
 /* PSS */
+		
+		conScroll.gridy++;
+		JButton btnRanking = new JButton("Ranking");
+		btnRanking.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				mostrarRanking();
+				
+			}
+		});
+		pScroll.add(btnRanking,conScroll);
+		
 		
 		conScroll.gridy++;
 		
@@ -417,4 +442,12 @@ public class PanelTienda extends JPanel {
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
 	}
+	// Modificacion para la version 1.2
+		/**
+		 * Muestra el Ranking de mejores jugadores.
+		 */
+		public void mostrarRanking() {
+			ranking.mostrar();		
+		}	
+		//fin
 }
