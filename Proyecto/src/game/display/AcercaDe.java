@@ -5,10 +5,11 @@ import javax.swing.*;
 public class AcercaDe extends JFrame{
 	
 	private JPanel panel;
+	private JLabel msg;
 	
 	public AcercaDe(){
 		panel = new JPanel();
-		JLabel msg = new JLabel();
+		msg = new JLabel();
 		msg.setText("<html>Desarrolladores:<br>"+
 							"<ul><li>Dennehy, Ana Inez</li>"+
 							"<li>Girón, Juan Martín</li>"+

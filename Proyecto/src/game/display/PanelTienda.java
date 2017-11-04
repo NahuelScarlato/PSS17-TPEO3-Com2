@@ -365,11 +365,12 @@ public class PanelTienda extends JPanel {
 		JButton btnSalir = new JButton("Salir");
 		pScroll.add(btnSalir,conScroll);
 		
-		btnAcercaDe.addActionListener(new ActionListener() {
+		btnSalir.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				myGame.stop();
+				
 			}
 		});
 
