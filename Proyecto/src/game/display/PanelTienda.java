@@ -369,7 +369,7 @@ public class PanelTienda extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				myGame.stop();
+				System.exit(0);
 				
 			}
 		});
