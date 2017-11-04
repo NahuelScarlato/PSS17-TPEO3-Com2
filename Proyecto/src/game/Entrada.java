@@ -4,7 +4,6 @@
 package game;
 
 
-
 /**
  * Representa un contenedor para componentes de puntajes.
  * @author Llano Jose, Scarlato Nahuel Hernan; Tecnologia de Programacion 2015.
