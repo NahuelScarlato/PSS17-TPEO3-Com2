@@ -30,6 +30,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -418,6 +421,9 @@ public class PanelTienda extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Date date = new Date();
+				DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss-dd/MM/yyyy");
+				ranking.agregarEntrada("", myGame.getLogica().getScore(), hourdateFormat.format(date));
 				System.exit(0);
 				
 			}

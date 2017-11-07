@@ -218,16 +218,16 @@ public class Ranking {
 			PrintWriter writer;
 			try {
 				writer = new PrintWriter("rank.txt", "UTF-8");
-				writer.println("Lori 990 20:10:20-03/11/2017");
-				writer.println("nabui 900 05:30:20-03/11/2017");
-				writer.println("justPecke 800 01:10:20-03/11/2017");
-				writer.println("Zvean 700 03:10:20-03/11/2017");
-				writer.println("juan 600 20:10:20-03/11/2017");
-				writer.println("pedro 500 15:10:20-03/11/2017");
-				writer.println("manu 400 10:10:20-03/11/2017");
-				writer.println("jero 300 05:10:20-03/11/2017");
-				writer.println("paolo 200 07:10:20-03/11/2017");
-				writer.println("guerrero 100 15:10:20-03/11/2017");
+				writer.println("Lori 9 20:10:20-03/11/2017");
+				writer.println("nabui 8 05:30:20-03/11/2017");
+				writer.println("justPecke 7 01:10:20-03/11/2017");
+				writer.println("Zvean 7 03:10:20-03/11/2017");
+				writer.println("juan 6 20:10:20-03/11/2017");
+				writer.println("pedro 5 15:10:20-03/11/2017");
+				writer.println("manu 4 10:10:20-03/11/2017");
+				writer.println("jero 3 05:10:20-03/11/2017");
+				writer.println("paolo 2 07:10:20-03/11/2017");
+				writer.println("guerrero 1 15:10:20-03/11/2017");
 				writer.close();
 				cargarArchivo();
 			} catch (FileNotFoundException | UnsupportedEncodingException ex) {
